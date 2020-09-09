@@ -1,6 +1,9 @@
-.login-form-sec{
+.login-page-cntlr{
 	padding-top: 170px;
 	padding-bottom: 245px;
+}
+.login-form-sec{
+	
 }
 .login-form{
 	background: #fff;
