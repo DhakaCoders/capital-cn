@@ -1,6 +1,10 @@
 header.header{
 	padding: 42px 0 42px;
 }
+.logo a{
+	display: inline-block;
+	vertical-align: baseline;
+}
 .header-inr{
 	display: flex;
 	align-items: center;

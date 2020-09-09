@@ -1,0 +1,212 @@
+.consultation-page-cntlr{
+	padding: 55px 0 25px;
+}
+.cp-entry-hdr{
+	padding-bottom: 30px;
+}
+.cp-entry-hdr-title{
+	color: #fff;
+}
+
+.consultation-item-hdr{
+	background: #2b6f6e;
+	color: #fff;
+	padding: 12px 12px 0 0;
+}
+.consultation-item-hdr ul{
+	display: flex;
+	justify-content: center;
+}
+.consultation-item-hdr ul li{
+	width: 33.3333%;
+	padding-bottom: 12px;
+}
+.consultation-item-hdr ul li:nth-child(1){
+	width: 24%;
+}
+.consultation-item-hdr ul li:nth-child(2){
+	width: 46%;
+}
+.consultation-item-hdr ul li:nth-child(3){
+	width: 30%;
+}
+.consultation-item-hdr ul li div{
+	padding-left: 20px;
+	text-transform: uppercase;
+	font-size: 20px;
+	line-height: 1;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+}
+.consultation-item-hdr ul li div label{
+	font-weight: normal;
+	margin: 0 5px 0 0;
+}
+.consultation-item-hdr ul li div strong{
+	font-weight: 700;
+}
+
+.consultation-item-con-cntlr{
+	background: #fff;
+	padding: 30px 20px 0; 
+}
+.cicc-hdr ul li{
+	float: left;
+	width: 33.3333%;
+	padding: 0 20px 30px 0;
+}
+.cicc-hdr-item i{
+	width: 42px;
+	height: 42px;
+	display: inline-block;
+	vertical-align: baseline;
+	margin-right: 10px;
+}
+.cicc-hdr-item div{
+	display: flex;
+	align-items: center;
+	margin-top: -10px;
+}
+.cicc-hdr-item i img{
+	width: 100%;
+	height: 100%;
+}
+.cicc-hdr-item label{
+	font-size: 20px;
+	line-height: 1;
+	color: #545454;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.cicc-hdr-item strong{
+	font-size: 20px;
+	line-height: 1;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	color: #545454;
+	display: inline-block;
+	vertical-align: baseline;
+}
+.cicc-pdfs{
+	border-top: 2px solid #eeeeee;
+}
+.cicc-pdfs ul{
+	margin: 0 -50px;
+}
+.cicc-pdfs ul li{
+	float: left;
+	width: 33.3333%;
+	padding: 15px 45px 20px;
+	position: relative;
+}
+.cicc-pdfs ul li:after{
+	content: "";
+	position: absolute;
+	top: 15px;
+	bottom: 0;
+	right: 0;
+	width: 1px;
+	background: #DDDDDD;
+
+}
+.cicc-pdfs ul li:nth-child(3n+3):after{
+	content: none;
+}
+
+.cicc-pdf-col{
+	position: relative;
+	padding: 15px 0 0 115px;
+}
+.cicc-pdf-col-lft{
+	position: absolute;
+	left: 0;
+	top: 13px;
+	max-width: 115px;
+	padding-right: 15px;
+	text-align: center;
+}
+.cicc-pdf-col-lft i{
+	margin-bottom: 10px;
+	display: block;
+}
+.ciccpcd-title{
+	text-transform: uppercase;
+	font-size: 16px;
+	line-height: 1;
+	font-weight: 600;
+	display: block;
+	margin: 0 0 15px 0;
+	color: #545454;
+}
+
+.cicc-pdf-col-des p{
+	font-size: 14px;
+	line-height: 2;
+}
+
+.cicc-download-btn a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	border: 1px solid #DDDDDD;
+	max-width: 97px;
+	width: 100%;
+	height: 27px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 10px;
+	line-height: 1;
+	text-transform: uppercase;
+	background: #CCB892;
+}
+.cicc-pdf-col-lft span{
+	display: block;
+	font-size: 10px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	color: #919299;
+
+}
+.consultation-item-con-cntlr{
+	padding-bottom: 25px;
+}
+.consultation-item-close{
+	background: #43bab6;
+	color: #fff;
+	padding: 15px 0 15px;
+	position: relative;
+	cursor: pointer;
+	color: #fff;
+	text-align: center;
+}
+.consultation-item-close:before{
+	content: "";
+	position: absolute;
+	background: url(../images/angle-up.png);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	width: 100px;
+	height: 20px;
+	transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	z-index: 5;
+	top: -20px;
+}
+
+
+.consultation-item-close strong{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: block;
+
+}
