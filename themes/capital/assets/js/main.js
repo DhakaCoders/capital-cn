@@ -162,6 +162,26 @@ google.maps.event.addDomListener(window, 'load', initialize);
 /*Start Rannojit ---->*/
 
 
+$('.consultation-item-hdr').on('click', function(){
+  $(this).parent().addClass('consultation-item-expend');
+  $(this).next().slideDown(300);
+});
+
+$('.consultation-item-close').on('click', function(){
+  $(this).parent().removeClass('consultation-item-expend');
+  $(this).parent().find('.consultation-item-con-cntlr').slideUp(300);
+});
+
+
+$('.consultation-item-open').on('click', function(){
+  $(this).parent().addClass('consultation-item-expend');
+  $(this).parent().find('.consultation-item-con-cntlr').slideDown(300);
+});
+
+
+
+
+
 
 
 
