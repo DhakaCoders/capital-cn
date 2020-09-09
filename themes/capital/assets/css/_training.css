@@ -1,0 +1,127 @@
+.training-page-cntlr{
+	padding: 55px 0 40px;
+}
+
+.training-page-cntlr .cp-entry-hdr{
+	padding-bottom: 70px;
+}
+.training-items ul li{
+	margin-bottom: 30px;
+}
+.training-item{
+	min-height: 175px;
+	background: #fff;
+	padding: 20px 30px 0 20px;
+	border: 1px solid #545454;
+}
+.training-item-inr{
+	position: relative;
+	padding: 0 0 0 245px;
+}
+
+.training-item-lft{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.til-date{
+	background: #2b6f6e;
+	color: #fff;
+	padding: 10px 20px 10px 20px;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 15px;
+}
+.til-date span{
+	font-weight: 600;
+}
+.til-date strong{
+	font-weight: 700;
+}
+
+.training-item-lft-avater{
+	padding: 7px 0 0 65px;
+	position: relative;
+}
+.training-item-lft-avater i{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 42px;
+	height: 42px;
+}
+.training-item-lft-avater i img{
+	width: 100%;
+	height: 100%;
+}
+.training-item-lft-avater label{
+	display: block;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1;
+	color: #545454;
+	margin-bottom: 5px;
+}
+
+.training-item-lft-avater strong{
+	display: block;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1;
+	color: #545454;
+}
+.training-item-des p{
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+.tidpl-item{
+	max-width: 235px;
+	width: 100%;
+	float: left;
+	padding: 0 0 0 65px;
+	position: relative;
+}
+.tidpl-item i{
+	position: absolute;
+	left: 0;
+	top: 0;
+	max-width: 55px;
+}
+
+.tidpl-item-des strong{
+	font-size: 14px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	color: #545454;
+	display: block;
+	padding-bottom: 5px;
+}
+.tidpl-item-des strong span{
+	font-weight: 300;
+	font-size: 12px;
+	display: inline-block;
+	vertical-align: bottom;
+	padding-left: 8px;
+	position: relative;
+	top: 2px;
+	color: #919299;
+}
+
+.tidpl-item-des a{
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 120px;
+	height: 25px;
+	color: #fff;
+	background: #ccb991;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	color: #fff;
+	font-size: 11px;
+	line-height: 1;
+}
