@@ -94,7 +94,6 @@ footer{
 }
 header,
 footer{
-	min-height: 150px;
 	background: #fff;
 	position: relative;
 	z-index: 10;
