@@ -25,10 +25,10 @@
 	width: 24%;
 }
 .consultation-item-hdr ul li:nth-child(2){
-	width: 46%;
+	width: 49%;
 }
 .consultation-item-hdr ul li:nth-child(3){
-	width: 30%;
+	width: 27%;
 }
 .consultation-item-hdr ul li div{
 	padding-left: 20px;
@@ -200,6 +200,31 @@
 }
 
 
+.consultation-item-open{
+	background: #fff;
+	color: #fff;
+	padding: 15px 0 15px;
+	position: relative;
+	cursor: pointer;
+	color: #43BAB4;
+	text-align: center;
+}
+.consultation-item-open:before{
+	content: "";
+	position: absolute;
+	background: url(../images/angle-white-down.png);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	width: 100px;
+	height: 20px;
+	transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	z-index: 5;
+	bottom: -20px;
+}
+
+.consultation-item-open strong,
 .consultation-item-close strong{
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 600;
@@ -209,4 +234,17 @@
 	text-transform: uppercase;
 	display: block;
 
+}
+.consultation-item{
+	margin-bottom: 50px;
+}
+.consultation-item-con-cntlr,
+.consultation-item-close{
+	display: none;
+}
+.consultation-item-expend .consultation-item-open{
+	display: none;
+}
+.consultation-item-expend .consultation-item-close{
+	display: block;
 }

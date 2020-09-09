@@ -94,7 +94,6 @@ footer{
 }
 header,
 footer{
-	min-height: 150px;
 	background: #fff;
 	position: relative;
 	z-index: 10;
@@ -105,7 +104,7 @@ footer{
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
-	min-height: 855px;
+	min-height: 755px;
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
