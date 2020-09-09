@@ -1,0 +1,112 @@
+.login-form-sec{
+	padding-top: 170px;
+}
+.login-form{
+	background: #fff;
+	max-width: 450px;
+	width: 100%;
+	margin: auto;
+	padding: 80px 45px 50px 45px;
+	position: relative;
+}
+.login-top-rt-icon{
+	position: absolute;
+	top: -15px;
+	right: -15px;
+}
+.login-btm-lft-icon{
+	position: absolute;
+	bottom: -15px;
+	left: -15px;	
+}
+.form-title{
+	text-align: center;
+	font-size: 24px;
+	font-weight: 400;
+	color: #545454;
+	line-height: 1;
+	margin-bottom: 34px;
+	font-family: 'Montserrat', sans-serif;
+}
+.input-row{
+	width: 100%;
+	margin-bottom: 20px;
+	position: relative;
+
+}
+.input-row i{
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.input-row input[type="text"],
+.input-row input[type="password"],
+.input-row input[type="submit"]{
+	width: 100%;
+	background: #f2f2f2;
+	border: 1px solid #f2f2f2;
+	padding: 12px 20px; 
+	border-radius: 5px;
+	font-size: 17px;
+	font-weight: 600;
+	color: #545454;
+}
+.input-row input[type="text"]:focus,
+.input-row input[type="password"]:focus{
+	border-color: #707070;
+}
+
+.input-row input[type="submit"]{
+	background: #CCB892;
+	border-color: #CCB892;
+	font-size: 21px;
+	color: #EDEDEC;
+	font-weight: 600;
+	font-family: 'Montserrat', sans-serif;
+	cursor: pointer;
+}
+.input-row input[type="submit"]:hover{
+	background: #369694;
+	border-color: #369694;
+}
+.alert-msg{
+	display: none;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+}
+.success p{
+	color: #28a745;
+}
+.unsuccess p{
+	color: #dc3545;
+}
+.success p,
+.unsuccess p{
+	margin-bottom: 10px;
+	text-transform: capitalize;
+}
+
+
+
+.forget-pass{
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	padding-top: 10px;
+
+}
+.forget-pass p{
+	margin-bottom: 0;
+	font-size: 17px;
+	color: #7D7D77;
+	text-transform: capitalize;
+}
+.forget-pass p > a{
+	display: inline-block;
+	color: #369694;
+}
+.forget-pass p > a:hover{
+	color: #2C706E;
+}
