@@ -1,3 +1,62 @@
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	padding-left: 35px;
+	padding-bottom: 0;
+	line-height: 24px;
+	font-weight: 600;
+}
+ul li {
+	padding: 10px 0 25px 40px;
+	position: relative;
+	line-height: 24px;
+}
+ul li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 13px;
+	background: url(../images/list-icon.png);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	width: 26px;
+	height: 18px;
+}
+ol {
+	padding: 10px 0 0 30px;
+	line-height: 24px;
+	font-weight: 600;
+	list-style: none;
+	counter-reset: my-awesome-counter;
+	-ms-counter-reset: my-awesome-counter;
+	-webkit-counter-reset: my-awesome-counter;
+}
+ol li {
+	counter-increment: my-awesome-counter;
+	-ms-counter-increment: my-awesome-counter;
+	-webkit-counter-increment: my-awesome-counter;
+	padding-bottom: 27px;
+	line-height: 24px;
+	padding-left: 30px;
+	position: relative;
+}
+ol li::before {
+	content: counter(my-awesome-counter) ".";
+	color: #505050;
+	font-weight: 800;
+	text-align: center;
+	font-size: 16px;
+	line-height: 16px;
+	text-align: center;
+	padding: 0 5.5px;
+	position: absolute;
+	left: 0;
+	top: 5px;
+}
+
+
 .slick-slider ul.slick-dots{
 	position: static;
 	height: 16px;

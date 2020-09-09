@@ -24,7 +24,6 @@ a:hover{
 }
 nav.main-nav ul li:hover > a,
 nav.main-nav ul li.current-menu-item a{
-	background:#004e37;
-	color:#fff;
+
 }
 

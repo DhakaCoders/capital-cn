@@ -149,6 +149,23 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 }
 
+
+/* Start Noyon ---> */
+
+
+
+/*Start Shoriful -->*/
+
+
+
+
+/*Start Rannojit ---->*/
+
+
+
+
+
+
     new WOW().init();
 
 })(jQuery);
