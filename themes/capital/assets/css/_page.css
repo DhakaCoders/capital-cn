@@ -87,10 +87,10 @@ ol li::before {
 
 
 header{
-	box-shadow: 0 7px 5px #707070;
+	box-shadow: 0 7px 10px #707070;
 }
 footer{
-	box-shadow: 0 -7px 5px #707070;
+	box-shadow: 0 -7px 10px #707070;
 }
 header,
 footer{
