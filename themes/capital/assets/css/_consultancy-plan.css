@@ -52,7 +52,7 @@
 }
 .cnstncy-plan-hdr-item div strong span{
 	font-size: 16px;
-	font-weight: 400;
+	font-weight: 300;
 }
 .cnstncy-plan-items{
 	margin-top: 25px;
@@ -68,7 +68,9 @@
 	padding: 0 15px;
 	margin-bottom: 30px;
 }
-
+.cnstncy-plan-items > ul > li:nth-child(2n+1){
+    clear: left;
+}
 
 
 
@@ -134,7 +136,7 @@
     margin: 0 0 15px 0;
     color: #545454;
 }
-.cnstncy-item-title span{
+.cnstncy-item-title strong{
 	font-weight: 700;
 }
 .cnstncy-item-sub-title{
@@ -145,8 +147,10 @@
 }
 .cnstncy-item-sub-title span{
 	color: #369694;
+    padding-left: 10px;
 }
 .cnstncy-item-col-des p {
     font-size: 18px;
     line-height: 2;
+    font-weight: 400;
 }

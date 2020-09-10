@@ -48,7 +48,7 @@
 	width: 100%;
 	background: #f2f2f2;
 	border: 1px solid #f2f2f2;
-	padding: 12px 20px; 
+	padding: 12px 40px 12px 20px; 
 	border-radius: 5px;
 	font-size: 17px;
 	font-weight: 600;
@@ -58,7 +58,17 @@
 .input-row input[type="password"]:focus{
 	border-color: #707070;
 }
-
+.input-row input::placeholder,
+.input-row input::placeholder,
+.input-row input:-ms-input-placeholder,
+.input-row input:-ms-input-placeholder,
+.input-row input::-ms-input-placeholder,
+.input-row input::-ms-input-placeholder,
+.input-row input::-webkit-input-placeholder,
+.input-row input::-webkit-input-placeholder{
+  color: #545454;
+  opacity: 1;
+}
 .input-row input[type="submit"]{
 	background: #CCB892;
 	border-color: #CCB892;
@@ -110,5 +120,5 @@
 	color: #369694;
 }
 .forget-pass p > a:hover{
-	color: #2C706E;
+	color: #CCB892;
 }

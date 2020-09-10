@@ -28,7 +28,11 @@
 }
 .content-item:hover .content-item-icon img{
 	transform: scale(1.1);
-}.content-item-icon{
+}
+.content-item-icon img{
+	max-height: 105px;
+}
+.content-item-icon{
 	min-height: 200px;
 	background: #fff;
 	display: flex;
@@ -38,7 +42,10 @@
 .content-item-hdng{
 	text-align: center;
 	background: #2b6f6e;
-	padding: 15px 0;
+	padding: 15px 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .content-item-title{
 	color: #fff;

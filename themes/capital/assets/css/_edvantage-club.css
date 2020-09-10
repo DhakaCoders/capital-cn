@@ -112,10 +112,12 @@
 }
 .ed-services-item-img{
 	display: flex;
+	align-items: center;
 	min-height: 150px;
 	transition: all 0.3s ease-out;
 	-ms-transition: all 0.3s ease-out;
 	-webkit-transition: all 0.3s ease-out;
-
-
+}
+.ed-services-item-img img{
+	max-height: 80px;
 }
