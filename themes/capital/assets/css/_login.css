@@ -5,23 +5,26 @@
 .login-form-sec{
 	
 }
-.login-form{
-	background: #fff;
-	max-width: 450px;
+.login-form-cntlr{
+	position: relative;
+	padding: 25px;
+	max-width: 500px;
 	width: 100%;
 	margin: auto;
+}
+.login-form{
+	background: #fff;
 	padding: 80px 45px 50px 45px;
-	position: relative;
 }
 .login-top-rt-icon{
 	position: absolute;
-	top: -15px;
-	right: -15px;
+	top: 10px;
+	right: 10px;
 }
 .login-btm-lft-icon{
 	position: absolute;
-	bottom: -15px;
-	left: -15px;	
+	bottom: 10px;
+	left: 10px;	
 }
 .form-title{
 	text-align: center;
@@ -53,6 +56,9 @@
 	font-size: 17px;
 	font-weight: 600;
 	color: #545454;
+}
+.input-row input[type="submit"]{
+	padding: 12px 20px 12px 20px; 
 }
 .input-row input[type="text"]:focus,
 .input-row input[type="password"]:focus{
@@ -121,4 +127,91 @@
 }
 .forget-pass p > a:hover{
 	color: #CCB892;
+}
+
+/*responsive*/
+@media(max-width: 1199px){
+	.login-page-cntlr{
+		padding: 150px 0;
+	}
+}
+@media(max-width: 991px){
+	.login-page-cntlr{
+		padding: 130px 0;
+	}
+}
+@media(max-width: 767px){
+	.login-page-cntlr{
+		padding: 90px 0;
+	}
+}
+@media(max-width: 639px){
+
+}
+@media(max-width: 575px){
+	.login-page-cntlr{
+		padding: 60px 0;
+	}
+	.login-form {
+		background: #fff;
+		padding: 60px 30px 35px 30px;
+	}
+	.form-title{
+		margin-bottom: 25px;
+	}
+	.input-row{
+		margin-bottom: 18px;
+	}
+	.input-row input[type="text"],
+	.input-row input[type="password"],
+	.input-row input[type="submit"]{
+		font-size: 16px;
+	}
+	.forget-pass p{
+		font-size: 16px;
+	}
+	.success p,
+	.unsuccess p{
+		font-size: 15px;
+		margin-bottom: 6px;
+	}
+}
+@media(max-width: 479px){
+	.login-page-cntlr{
+		padding: 40px 0;
+	}
+	.login-form {
+		background: #fff;
+		padding: 40px 15px 30px 15px;
+	}
+	.form-title{
+		margin-bottom: 15px;
+	}
+	.input-row{
+		margin-bottom: 15px;
+	}
+	.input-row input[type="text"],
+	.input-row input[type="password"]{
+		font-size: 14px;
+		padding: 9px 40px 9px 15px;
+	}
+	.input-row input[type="submit"]{
+		padding: 9px 15px 9px 15px;
+
+	}
+	.forget-pass{
+		padding-top: 0;
+	}
+	.forget-pass p{
+		font-size: 14px;
+	}
+	.success p,
+	.unsuccess p{
+		font-size: 14px;
+		margin-bottom: 6px;
+	}
+
+}
+@media(max-width: 359px){
+
 }
