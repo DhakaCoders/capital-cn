@@ -1,0 +1,69 @@
+Home
+-------------------
+Desktotop---->
+
+1. https://prnt.sc/uev0h5
+	i) text jodi kome besi hoy tahole center ai jeno thake,
+	ai code gulo add koro
+	ii) left and right a padding diye rakhte hobe boro text hole lege jeno na jay
+
+2. https://prnt.sc/uev3mu
+	img ar akta max-height dite hobe, jodi boro img up kore tahole choto hoye jabe auto
+
+	sob thake boro img tar height ta dite hobe, maybe 105px
+
+
+
+
+Login
+-------------------
+Desktotop---->
+
+1. https://prnt.sc/uev5zh
+	home thake header and footer pest koro apatoto
+
+2. https://prnt.sc/ueva1p
+	placeholder ar color mileni.
+	
+   input ar placeholder css korte hobe, bcoz default a opacity kom thake, tai opacity 1 bolte hobe	
+   r color ta lagle dite hobe 
+   https://prnt.sc/uev8x8
+
+
+3. https://prnt.sc/uevb6b
+	text icon ar vitore dhuke jasche
+
+4. https://prnt.sc/uevcid
+	password a hover korle , button ar bg color ta daw
+
+
+
+Consultancy-Plan
+-------------------
+Desktotop---->
+
+1. https://prnt.sc/uevf50
+	atar font-weight 300 dile jpg ar sathe mile
+
+2. https://prnt.sc/uevh38
+	i) clear left lagbe
+	ii) https://prnt.sc/uevi22 mHc use korte pari
+
+3. https://prnt.sc/uevic1
+	gap besi hobe
+
+4. https://prnt.sc/uevs0e
+	p te font-wight 400 dite hobe, bcoz ul thake 600 pasche
+
+5. https://prnt.sc/uevsxb
+	strong tag hobe
+
+
+
+
+Edvantage-Club
+-------------------
+Desktotop---->
+1. https://prnt.sc/uevzyq
+	img a max-height lagbe, sob thake boro img tar height ta dite hobe
+
