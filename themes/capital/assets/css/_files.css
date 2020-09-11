@@ -1,6 +1,9 @@
 .files-page-cntlr{
 	padding: 55px 0 35px;
 }
+.files-page-cntlr .cp-search-row{
+	margin-bottom: 48px;
+}
 .f-content-title{
 	display: block;
 	font-size: 44px;
