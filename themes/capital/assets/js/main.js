@@ -181,6 +181,35 @@ $('.consultation-item-open').on('click', function(){
 
 
 
+$('.humbergur-btn').on('click', function(e){
+  $('nav.main-nav').addClass('opacity-1');
+  $('.bdoverlay').addClass('active');
+  $('body').addClass('active-scroll-off');
+  $(this).addClass('active-collapse');
+});
+$('.closebtn').on('click', function(e){
+  $('.bdoverlay').removeClass('active');
+  $('nav.main-nav').removeClass('opacity-1');
+  $('body').removeClass('active-scroll-off');
+  $('.line-icon').removeClass('active-collapse');
+});
+
+$('li.menu-item-has-children > a').on('click', function(e){
+  e.preventDefault();
+  $('li.menu-item-has-children .sub-menu').slideUp(300);
+  $(this).toggleClass('sub-menu-active');
+  $(this).next().slideDown(300);
+
+});
+
+
+
+$('.hdr-user-toggle-btn').on('click', function(){
+  $(this).toggleClass('hdr-user-toggle-btn-expend');
+  $('.hdr-user-toggle-menu').slideToggle(300);
+});
+
+
 
 
 
