@@ -1,3 +1,6 @@
+.files-page-cntlr{
+	padding: 55px 0 35px;
+}
 .f-content-title{
 	display: block;
 	font-size: 44px;
@@ -98,6 +101,13 @@
 	justify-content: center;
 	border: 2px solid #ccb991;
 	background: #ccb991;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+}
+.files-grd-item-dwnld-link a:hover{
+	background: transparent;
+	color: #ccb991;
 }
 
 

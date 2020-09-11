@@ -204,7 +204,6 @@ ul.sub-menu li:before,
 Selects
 */
 form .bootstrap-select{
-    text-transform: uppercase;
 	color: #710023;
 	font-size: 16px;
 	font-weight: 400;
@@ -215,7 +214,6 @@ form .bootstrap-select button{
 	background: transparent;
 	border: 0;
 	color: #710023;
-	text-transform: uppercase;
 	font-size: 16px;
 }
 form .bootstrap-select .caret{
@@ -240,23 +238,22 @@ form .bootstrap-select .caret{
 }
 .dropdown-toggle::before{
 	content: "";
-    color: #1E1E1E;
-    font-size: 22px;
+    color: #545454;
     padding-right: 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
-    right: 15px;
-    line-height: 15px;
-    background: url('../images/caret.svg');
+    right: 10px;
+    background: url('../images/caret.png');
     background-repeat: no-repeat!important;
     width: 15px;
     height: 10px;
+    z-index: 1111;
 }
 .bootstrap-select.show .dropdown-toggle::before{
-	content: "\f106"!important;
+	content: ""!important;
 }
 
 .btn-light.focus, 
@@ -288,7 +285,7 @@ form .bootstrap-select .dropdown-toggle:focus{
 }
 form .dropdown-menu{
     margin: 0;
-    background-color: #cabb9f;
+    background-color: #F2F2F2;
     border: none;
     border-radius: 0;
     box-shadow: none;
@@ -300,7 +297,7 @@ form .dropdown-menu li{
 }
 form .dropdown-menu li a{
 	padding-top: 6px;
-	color: #fff;
+	color: #545454;
 }
 .dropdown-menu>.active>a, 
 .dropdown-menu>.active>a:focus, 
