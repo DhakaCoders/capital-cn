@@ -105,6 +105,7 @@
 	.h-content-inr > ul > li{
 		max-width: 370px;
 		width: 100%;
+		padding: 0;
 	}
 	.h-content-inr > ul > li:nth-child(2n+1){
 		clear: initial;
