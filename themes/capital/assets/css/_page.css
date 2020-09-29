@@ -96,7 +96,7 @@ header,
 footer{
 	background: #fff;
 	position: relative;
-	z-index: 2;
+	z-index: 6;
 }
 .sections-cntlr{
 	background-color: #0a9e90;
@@ -106,7 +106,7 @@ footer{
 	background-size: cover;
 	min-height: 755px;
 	position: relative;
-	z-index: 1;
+	z-index: 5;
 	overflow: hidden;
 }
 
@@ -121,4 +121,9 @@ footer{
 
 .sitemap{
 	padding: 100px 0;
+}
+
+.cn-page-con{
+	position: relative;
+	z-index: 11;
 }

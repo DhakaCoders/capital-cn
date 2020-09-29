@@ -43,6 +43,8 @@ a.hdr-login-btn{
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 1;
+	margin-left: auto;
+	margin-right: 0;
 }
 a.hdr-login-btn i{
 	margin-right: 8px;
@@ -210,11 +212,12 @@ body.active-scroll-off{
 .bdoverlay.active {
     z-index: 9999;
     opacity: 1;
+    width: 100%;
+    display: block;
 }
 .bdoverlay {
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
-    left: 0;
     right: 0;
     top: 0;
     bottom: 0;
@@ -223,6 +226,7 @@ body.active-scroll-off{
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     z-index: -1;
+    display: none;
 }
 nav.main-nav{
     position: fixed;
