@@ -122,8 +122,6 @@ footer{
 .sitemap{
 	padding: 100px 0;
 }
-
-.cn-page-con{
-	position: relative;
-	z-index: 11;
+.sitemap ol li a{
+	color: #505050;
 }
