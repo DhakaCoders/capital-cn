@@ -11,26 +11,37 @@
 .training-item{
 	min-height: 175px;
 	background: #fff;
-	padding: 20px 30px 0 20px;
 	border: 1px solid #545454;
 }
 .training-item-inr{
 	position: relative;
-	padding: 0 0 0 245px;
+	padding: 20px 30px 25px 245px;
+	margin-left: 20px;
 }
 
-.training-item-lft{
-	position: absolute;
-	left: 0;
-	top: 0;
+.training-item-lft {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
-.til-date{
+.til-date,
+.training-hdr{
 	background: #2b6f6e;
 	color: #fff;
 	padding: 10px 20px 10px 20px;
 	text-transform: uppercase;
 	font-family: 'Montserrat', sans-serif;
 	margin-bottom: 15px;
+	font-weight: 400;
+}
+.training-hdr{
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+}
+.training-hdr strong span{
+	font-weight: 300;
 }
 .til-date span{
 	font-weight: 600;
@@ -75,6 +86,7 @@
 .training-item-des p{
 	line-height: 1.5;
 	margin-bottom: 20px;
+	font-weight: 400;
 }
 
 .tidpl-item{

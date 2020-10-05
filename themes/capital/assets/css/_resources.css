@@ -37,19 +37,26 @@
 
 .cp-search-item{
 	background: #fff;
-	padding: 15px 206px 1px 30px;
+	padding: 35px 30px 15px 30px;
 	min-height: 120px;
+	display: flex;
 }
-
-.cp-search-item-pdf{
-	position: absolute;
-	right: 27px;
-	top: 50%;
-	transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
+.cp-titleDesc {
+    padding-right: 60px;
 }
-
+.cp-search-item-pdf {
+    width: 150px;
+}
+.cp-search-item .cicc-download-btn a{
+	display: inline-block;
+	line-height: 27px;
+}
+.cp-search-item .cicc-pdf-col-lft{
+	padding-right: 0;
+}
+.cp-search-item .cicc-pdf-col-lft i{
+    margin-left: -10px;
+}
 .cp-search-items ul li{
 	margin-bottom: 20px;
 }

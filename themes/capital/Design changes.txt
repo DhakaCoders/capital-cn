@@ -1,0 +1,22 @@
+The pages that are missing or wrong design for capital edvantage are as follows,
+
+1. Client list page (missing): https://trello.com/c/xTPmNcBI/11-01-2-client-list-relationship-manager-page-only
+
+2. Inbox page (missing): https://trello.com/c/BUHhknF6/3-03inbox-client-and-relationship-manager-page
+
+3. Consultancy Plan page (Change in design): https://trello.com/c/JDZOP9FW/4-04consultancy-plan-client-and-relationship-manager-page
+
+
+8. Files page (Change in design): https://trello.com/c/jchlkFAG/9-09files-client-and-relationship-manager-page
+
+9. Edvantage Club page (Change in design): https://trello.com/c/O2PiPTgG/10-10edvantage-club-client-and-relationship-manager-page
+These?
+
+Initial done:
+4. Requests page (Change in design): https://iuncode.com/CapitalEdvantage/requests.html
+
+5. Consultation page (Change in design): https://trello.com/c/mJXxBUbq/6-06consultation-client-and-relationship-manager-page
+
+6. Resources page (Change in design): https://trello.com/c/igXeZPHu/7-07resources-client-and-relationship-manager-page
+
+7. Training page (Change in design): https://trello.com/c/vldhLcy7/8-08training-client-and-relationship-manager-page

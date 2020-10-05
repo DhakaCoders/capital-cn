@@ -48,7 +48,25 @@
 
 .consultation-item-con-cntlr{
 	background: #fff;
-	padding: 30px 20px 0; 
+	padding: 0; 
+}
+.cicc-hdr {
+    padding-top: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 35px;
+    text-align: center;
+}
+.cicc-hdr strong{
+	padding: 0 20px;
+	font-weight: 400;
+}
+.cicc-hdr strong span{
+	font-weight: 600;
+	color: #000;
+}
+.cicc-pdfs {
+    padding: 25px 50px;
 }
 .cicc-hdr ul li{
 	float: left;
@@ -99,7 +117,7 @@
 }
 .cicc-pdfs ul li{
 	float: left;
-	width: 33.3333%;
+	width: 50%;
 	padding: 15px 45px 20px;
 	position: relative;
 }
@@ -119,13 +137,16 @@
 
 .cicc-pdf-col{
 	position: relative;
-	padding: 15px 0 0 115px;
+	padding: 15px 0 0 0;
+	display: flex;
+}
+.cicc-pdf-col-des{
+	float: left;
 }
 .cicc-pdf-col-lft{
-	position: absolute;
-	left: 0;
-	top: 13px;
+	float: left;
 	max-width: 115px;
+	width: 100%;
 	padding-right: 15px;
 	text-align: center;
 }
