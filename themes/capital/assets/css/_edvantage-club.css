@@ -123,6 +123,14 @@
 .ed-services-item-img img{
 	max-height: 80px;
 }
+.edv-normal-cn{
+	background: #fff;
+	padding: 50px 40px;
+}
+.edv-normal-cn p{
+    line-height: 40px;
+    margin-bottom: 25px;	
+}
 
 /*responsive*/
 @media(max-width: 1199px){

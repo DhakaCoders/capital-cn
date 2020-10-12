@@ -116,17 +116,18 @@
 
 .fgicmd{
 	background: #43BAB4;
-	padding: 8px;
+	padding: 10px;
 }
 .fgicmd-lft{
 	float: left;
 	width:  53.0303%;
+	display: none;
 }
 .fgicmd-rgt{
 	float: right;
-	width:  46.9696%;
-	padding-left: 45px;
-	border-left: 1px solid #fff;
+	width:  100%;
+	padding-left: 0;
+	text-align: right;
 }
 .fgicmd-lft-img{
 	display: inline-block;
@@ -163,18 +164,18 @@
 	line-height: 16px;
 }
 .fgicmd-rgt-upload span{
-	font-size: 10px;
+	font-size: 12px;
 	line-height: 12px;
 	color: #fff;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
 }
 .fgicmd-rgt-upload strong{
-	font-size: 10px;
+	font-size: 12px;
 	line-height: 12px;
 	color: #fff;
 	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
+	font-weight: 600;
 	text-transform: capitalize;
 }
 .fgicmd-lft-field input::-webkit-input-placeholder { /* Chrome/Opera/Safari */

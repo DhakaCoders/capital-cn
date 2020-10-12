@@ -1,0 +1,53 @@
+.clist-list-wrap{
+	background: #fff;
+	padding: 30px 20px;
+}
+.clist-list ul{}
+.clist-list ul li{
+	border: 1px solid #505050;
+	margin-bottom: 30px;
+	padding: 20px 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.clist-list ul li > div{
+	float: left;
+	padding: 0 20px;
+}
+.clist-list ul li > div.cl-btn {
+    float: right;
+    margin-left: auto;
+}
+.cl-profile-in img{
+	margin-right: 15px;
+	max-width: 50px;
+}
+.cl-company,
+.cl-status{
+	font-weight: 500;
+	color: #369694;
+	border-left: 1px solid #505050;
+}
+.cl-profile-in strong{
+	color: #369694;
+	font-weight: normal;
+	font-weight: 500;
+}
+.cl-company span,
+.cl-status span{
+	color: #545454;
+}
+.cl-btn a{
+	background: #CCB892;
+	height: 50px;
+	line-height: 50px;
+	width: 150px;
+	color: #fff;
+	font-weight: 800;
+	text-align: center;
+	display: inline-block;
+}
+.cl-btn a:hover{
+	background: #ccaf78;
+}

@@ -222,15 +222,14 @@
 
 
 .consultation-item-open{
-	background: #fff;
+	background: #CCB892;
 	color: #fff;
 	padding: 15px 0 15px;
 	position: relative;
 	cursor: pointer;
-	color: #43BAB4;
 	text-align: center;
 }
-.consultation-item-open:before{
+/*.consultation-item-open:before{
 	content: "";
 	position: absolute;
 	background: url(../images/angle-white-down.png);
@@ -243,7 +242,7 @@
 	-webkit-transform: translateX(-50%);
 	z-index: 5;
 	bottom: -20px;
-}
+}*/
 
 .consultation-item-open strong,
 .consultation-item-close strong{
