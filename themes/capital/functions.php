@@ -74,7 +74,8 @@ Includes->>
 */
 include_once(THEME_DIR .'/inc/breadcrumbs.php');
 include_once(THEME_DIR .'/inc/cbv-functions.php');
-
+include_once(THEME_DIR .'/inc/account-manage.php');
+insertLoginPage();
 /**
 ACF Option pages->>
 */
