@@ -65,28 +65,3 @@ function disable_new_posts() {
   }
 }
 add_action('admin_menu', 'disable_new_posts');
-
-
- add_action( 'restrict_manage_posts', 'my_search_box' );
- function my_search_box() {
-     // only add search box on desired custom post_type listings
-     global $typenow;
-     if ($typenow == 'client') {
-       
-     }
-  }
-
-  function wisdom_sort_plugins_by_slug( $query ) {
-  global $pagenow;
-  $user = current_user_data();
-  if ( in_array( 'rsmanager', (array) $user->roles ) ) {
-    // Get the post type
-    $post_type = isset( $_GET['post_type'] ) ? $_GET['post_type'] : '';
-    if ( is_admin() && $pagenow=='edit.php' && $post_type == 'client' ) {
-      $query->query_vars['meta_key'] = 'accesspermission';
-      $query->query_vars['meta_value'] = 7;
-      $query->query_vars['meta_compare'] = '=';
-    }
-  }
-}
-add_filter( 'parse_query', 'wisdom_sort_plugins_by_slug' );

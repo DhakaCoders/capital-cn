@@ -105,3 +105,33 @@ function redirect_user_frontend_dashboard(){
   }
    return false;
 }
+
+
+
+function get_current_user_name(){
+   $user = wp_get_current_user();
+   if ( $user &&  is_user_logged_in() ) {
+      if(!empty($user->display_name)){
+        echo $user->display_name;
+      }else{
+        echo $user->user_nicename;
+      }
+   }
+   return false;
+}
+
+
+function get_user_image(){
+	$user = wp_get_current_user();
+	if( $user ):
+	$imageID = get_user_meta($user->ID, 'profileimage', true);
+	if( isset($imageID) && !empty($imageID)){
+	  $imgtag = cbv_get_image_tag( $imageID);
+	  echo $imgtag;
+	}else{
+	  echo '';
+	}
+	else:
+		echo '';
+	endif;
+}

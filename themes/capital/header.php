@@ -70,9 +70,9 @@
                 <div class="hdr-user-cntlr">
                   <div class="hdr-user-toggle-btn">
                     <div class="user-photo">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/user-photo.png">
+                      <?php get_user_image(); ?>
                     </div>
-                    <label>John Smith</label>
+                    <label><?php get_current_user_name(); ?></label>
                   </div>
                   <div class="hdr-user-toggle-menu">
                     <ul class="reset-list">
