@@ -151,15 +151,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 2px solid #707070;
-	background: #707070;
+	border: 2px solid #919299;
+	background: #919299;
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-ms-transition: all 0.5s;
 }
 .files-grd-item-upload-link a:hover{
 	background: transparent;
-	color: #707070;
+	color: #919299;
 }
 
 
@@ -267,7 +267,7 @@
 .fgib-btn-edit a{
 	display: inline-block;
 	vertical-align: baseline;
-	padding: 5px 14px;
+	padding: 2px 14px;
 	background: #ccb893;
 	color: #fff;
 	font-size: 14px;
@@ -275,6 +275,9 @@
 	text-transform: uppercase;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 600;
+}
+.fgib-btn-edit a{
+	padding: 2px 29px;
 }
 .fgib-btn-publish a:hover,
 .fgib-btn-edit a:hover{
@@ -284,7 +287,7 @@
 .fgib-btn-remove a{
 	display: inline-block;
 	vertical-align: baseline;
-	padding: 5px 14px;
+	padding: 2px 14px;
 	background: #C95B53;
 	color: #fff;
 	font-size: 14px;
