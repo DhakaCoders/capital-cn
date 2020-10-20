@@ -30,7 +30,9 @@
 	height: 50px;
 	border: 1px solid #DDDDDD;
 }
-
+.cp-search-row input[type="search"]:focus{
+	border-color: #00A995;
+}
 .resources-page-cntlr .cp-entry-hdr{
 	padding-bottom: 20px;
 }
