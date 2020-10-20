@@ -30,6 +30,11 @@ header.header{
 	border: 1px solid #2C706E;
 	color: #2C706E;
 }
+.hdr-social ul li a:hover,
+a.hdr-login-btn:hover{
+	background: #2C706E;
+	color: #fff;
+}
 a.hdr-login-btn{
 	display: flex;
 	align-items: center;
@@ -238,7 +243,7 @@ nav.main-nav{
     font-size: 18px;
     line-height: 20px;
     max-width: 620px;
-    width: 100%;
+    width: 0;
     z-index: -1;
     opacity: 0;
     -ms-transition: all 0.3s;
@@ -246,6 +251,7 @@ nav.main-nav{
     transition: all 0.3s;
     border-left: 2px solid #7a8382;
 }
+
 nav.main-nav .main-nav-inr{
 	padding: 60px 20px 25px 20px;
 }
@@ -253,6 +259,7 @@ nav.main-nav.opacity-1 {
     right: 0;
     opacity: 1;
     z-index: 9999999;
+    width: 100%;
 }
 .hdr-search button{
 	width: 50px;

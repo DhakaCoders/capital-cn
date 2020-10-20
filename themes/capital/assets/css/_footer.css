@@ -38,3 +38,6 @@
 	color: #545454;
 	font-weight: normal;
 }
+.ftr-menu ul li a:hover{
+	color: #2C706E;
+}
