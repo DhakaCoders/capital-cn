@@ -371,6 +371,9 @@ nav.main-nav .main-nav-inr > ul > li a{
 	display: block;
 	
 }
+nav.main-nav .main-nav-inr > ul > li a:hover{
+	color: #00A995;
+}
 nav.main-nav .main-nav-inr > ul > li.menu-item-has-children:after,
 nav.main-nav .main-nav-inr > ul > li.menu-item-has-children:focus:after,
 nav.main-nav .main-nav-inr > ul > li > a:after{
