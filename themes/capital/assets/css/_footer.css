@@ -10,6 +10,10 @@
 }
 .ftr-copyright p{
 	margin: 0;
+	font-weight: 300;
+}
+.ftr-copyright p strong{
+	font-weight: 400;
 }
 .ftr-menu{
 	margin-left: auto;
