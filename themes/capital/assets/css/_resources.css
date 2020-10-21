@@ -76,3 +76,57 @@
 	color: #919299;
 	font-weight: 300;
 }
+
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	
+
+}
+
+@media(max-width: 991px){
+	.cp-search-item-pdf {
+	    width: 200px;
+	}
+	
+}
+
+@media(max-width: 767px){
+	
+}
+
+@media(max-width: 575px){
+	.cp-search-row input[type="search"]{
+		font-size: 15px;
+	}
+	.cp-search-item{
+		display: block;
+		padding: 30px 20px 15px 20px
+	}
+	.cp-titleDesc{
+		width: 100%;
+		padding-right: 0;
+	}
+
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
+}

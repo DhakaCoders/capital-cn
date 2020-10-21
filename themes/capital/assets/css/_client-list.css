@@ -54,3 +54,76 @@
 .cl-btn a:hover{
 	background: #ccaf78;
 }
+
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	
+
+}
+
+@media(max-width: 991px){
+	.clist-list ul li > div.cl-btn {
+	    float: right;
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-top: 20px;
+	}
+	.clist-list ul li > div{
+		float: none;
+		display: block;
+	}
+	.clist-list ul li{
+		display: block;
+		text-align: center;
+	}
+	.clist-list ul li > div.cl-btn{
+		float: none;
+	}
+	.cl-company, .cl-status{
+		border: none;
+	}
+	.cl-profile-in{
+		padding-bottom: 20px;
+	}
+	.cl-btn a {
+	    background: #CCB892;
+	    height: 45px;
+	    line-height: 45px;
+	    width: 150px;
+	    color: #fff;
+	    font-weight: 800;
+	    text-align: center;
+	    font-size: 17px;
+	    display: inline-block;
+	}
+}
+
+@media(max-width: 767px){
+	
+}
+
+@media(max-width: 575px){
+	
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
+}

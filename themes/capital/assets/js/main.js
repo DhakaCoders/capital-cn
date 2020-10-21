@@ -150,17 +150,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 }
 
 
-/* Start Noyon ---> */
-
-
-
-/*Start Shoriful -->*/
-
-
-
-
-/*Start Rannojit ---->*/
-
 
 $('.consultation-item-hdr').on('click', function(){
   $(this).parent().addClass('consultation-item-expend');
