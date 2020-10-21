@@ -3,7 +3,7 @@
 }
 
 .training-page-cntlr .cp-entry-hdr{
-	padding-bottom: 70px;
+	padding-bottom: 50px;
 }
 .training-items ul li{
 	margin-bottom: 30px;
@@ -11,19 +11,21 @@
 .training-item{
 	min-height: 175px;
 	background: #fff;
-	border: 1px solid #545454;
+	
 }
 .training-item-inr{
 	position: relative;
-	padding: 20px 30px 25px 245px;
-	margin-left: 20px;
+	padding: 20px 30px 25px 265px;
+	border: 1px solid #545454;
 }
 
 .training-item-lft {
     position: absolute;
-    left: 0;
+    left: 25px;
     top: 50%;
     transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
 }
 .til-date,
 .training-hdr{
@@ -136,4 +138,10 @@
 	color: #fff;
 	font-size: 11px;
 	line-height: 1;
+	border: 1px solid #ccb991;
+}
+
+.tidpl-item-des a:hover{
+	background: transparent;
+	color: #ccb991;
 }

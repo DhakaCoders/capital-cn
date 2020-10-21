@@ -94,6 +94,10 @@
 	font-size: 16px;
 	font-weight: 500;
 }
+.success,
+.unsuccess{
+	display: none;
+}
 .success p{
 	color: #28a745;
 }
@@ -130,6 +134,9 @@
 
 /*responsive*/
 @media(max-width: 1199px){
+	.login-page{
+		min-height: initial;
+	}
 	.login-page-cntlr{
 		padding: 150px 0;
 	}

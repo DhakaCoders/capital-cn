@@ -30,7 +30,9 @@
 	height: 50px;
 	border: 1px solid #DDDDDD;
 }
-
+.cp-search-row input[type="search"]:focus{
+	border-color: #00A995;
+}
 .resources-page-cntlr .cp-entry-hdr{
 	padding-bottom: 20px;
 }
@@ -45,7 +47,7 @@
     padding-right: 60px;
 }
 .cp-search-item-pdf {
-    width: 150px;
+    width: 130px;
 }
 .cp-search-item .cicc-download-btn a{
 	display: inline-block;

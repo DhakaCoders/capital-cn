@@ -2,9 +2,12 @@
 	background: #fff;
 	padding: 30px 20px;
 }
+.clist-list ul li{
+	background: #F9F9F9;
+}
 .clist-list ul{}
 .clist-list ul li{
-	border: 1px solid #505050;
+	border: 1px solid #919299;
 	margin-bottom: 30px;
 	padding: 20px 0;
 	display: flex;
