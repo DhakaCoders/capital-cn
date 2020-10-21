@@ -6,7 +6,7 @@ if( isset($_POST['email']) && !empty($_POST['email']) ){
   $emailindex = $_POST['email'];
 }
 ?>
-<div class="sections-cntlr">
+<div class="sections-cntlr login-page">
   <span class="sections-rgt-icon"><img src="assets/images/sections-rgt-icon.png"></span>
   <div class="login-page-cntlr">
     
