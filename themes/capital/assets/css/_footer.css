@@ -49,17 +49,7 @@
 
 
 @media(max-width: 1499px){
-	.ftr-cols{
-		flex-wrap: wrap;
-	}
-	.ftr-copyright{
-		padding-bottom: 15px;
-	}
-	.ftr-copyright,
-	.ftr-menu{
-		width: 100%;
-		text-align: center;
-	}
+	
 }
 
 @media(max-width: 1399px){
@@ -76,7 +66,17 @@
 }
 
 @media(max-width: 991px){
-	
+	.ftr-cols{
+		flex-wrap: wrap;
+	}
+	.ftr-copyright{
+		padding-bottom: 15px;
+	}
+	.ftr-copyright,
+	.ftr-menu{
+		width: 100%;
+		text-align: center;
+	}
 	
 
 	
