@@ -31,6 +31,9 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php 
+$user = wp_get_current_user();
+?>
 <header class="login-heder">
 <div class="bdoverlay"></div>
   <div class="container">
@@ -51,14 +54,6 @@
                   </a>
                 </div>
               </div>
-              <div class="hdr-grd-item hdr-grd-item-02">
-                <div>
-                  <a href="#">
-                    <img src="<?php echo THEME_URI; ?>/assets/images/bell-icon.svg">
-                    <span>11</span>
-                  </a>
-                </div>
-              </div>
               <div class="hdr-grd-item hdr-grd-item-03">
                 <div class="humbergur-btn">
                   <span></span>
@@ -76,8 +71,11 @@
                   </div>
                   <div class="hdr-user-toggle-menu">
                     <ul class="reset-list">
-                      <li><a href="#">My Profile</a></li>
-                      <li><a href="#">My Settings</a></li>
+                      <?php if ( in_array( 'client', (array) $user->roles ) && is_user_logged_in() ) { ?>
+                      <li><a href="<?php echo esc_url( home_url() ); ?>">My Profile</a></li>
+                      <?php }else{ ?>
+                      <li><a href="<?php echo esc_url( home_url('wp-admin') ); ?>">My Profile</a></li>
+                      <?php } ?>
                       <li><a href="<?php get_custom_logout('login'); ?>">Logout</a></li>
                     </ul>
                   </div>
@@ -98,26 +96,8 @@
         </div>
         <ul class="clearfix reset-list">
           <li><a href="#">Home</a></li>
-          <li class="menu-item-has-children">
-            <a href="#">inbox</a>
-            <ul class="sub-menu">
-              <li><a href="#">sub menu</a></li>
-              <li><a href="#">sub menu</a></li>
-              <li><a href="#">sub menu</a></li>
-              <li><a href="#">sub menu</a></li>
-              <li><a href="#">sub menu</a></li>
-            </ul>
-          </li>
-          <li class="menu-item-has-children">
-            <a href="#">consultancy plans </a>
-            <ul class="sub-menu">
-              <li><a href="#">sub menu</a></li>
-              <li><a href="#">sub menu</a></li>
-              <li><a href="#">sub menu</a></li>
-              <li><a href="#">sub menu</a></li>
-              <li><a href="#">sub menu</a></li>
-            </ul>
-          </li>
+          <li><a href="#">inbox</a></li>
+          <li><a href="#">consultancy plans </a></li>
           <li><a href="#">requests</a></li>
           <li><a href="#">consultations</a></li>
           <li><a href="#">training</a></li>

@@ -13,6 +13,12 @@ function wpCheckLoggedin(){
 	}
 }
 
+function redirect_page_notfound(){
+	$siteurl = home_url('404');
+	echo '<script> location.replace("'.$siteurl.'"); </script>';
+	exit();
+}
+
 function get_custom_logout($page_link = ''){
     if(!empty($page_link)){
       echo wp_logout_url( site_url() . '/'.$page_link );
