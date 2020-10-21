@@ -207,6 +207,9 @@
 	.ed-services-title{
 		margin-bottom: 30px;
 	}
+	.edv-normal-cn{
+		padding: 40px 30px;
+	}
 }
 @media(max-width: 767px){
 	.edv-clb-page-cntlr{
@@ -253,6 +256,12 @@
 	.ed-services-inr > ul > li:nth-child(2n+1){
 		clear: left;
 	}
+	.edv-normal-cn{
+		padding: 30px 20px;
+	}
+	.edv-normal-cn p{
+		line-height: 37px;
+	}
 }
 @media(max-width: 639px){
 
@@ -297,6 +306,9 @@
 	}
 	.ed-services-inr > ul > li:nth-child(2n+1){
 		clear: initial;
+	}
+	.edv-normal-cn p{
+		line-height: 34px;
 	}
 }
 @media(max-width: 479px){
