@@ -348,22 +348,20 @@
 	.files-grid-items ul li:nth-child(2n+1) {
 	    clear: left;
 	}
-	.fgicmd-rgt-upload span{
-		display: block;
-	}
-	.fgicmd-rgt-upload strong{
-		display: block;
-	}
 	.files-grd-item-dwnld-des{
 		max-width: 220px;
 	    width: 100%;
 	    margin: 0 auto;
 	}
-	.files-grd-item-dwnld-link {
+	.files-grd-item-dwnld-link,
+	.files-grd-item-upload-link{
 	    margin-left: 0;
 	    max-width: 200px;
 	    width: 100%;
 	    margin: 0 auto;
+	}
+	.files-page-cntlr {
+	    padding: 40px 0 20px;
 	}
 	
 }
@@ -388,7 +386,8 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
-	.files-grd-item{
+	.files-grd-item,
+	.files-grd-item-btm-btn{
 		max-width: 265px;
 		width: 100%;
 		margin: 0 auto;
@@ -404,6 +403,20 @@
 	}
 	.show-xs{
 		display: block!important;
+	}
+	.files-entry-hdr{
+		text-align: center;
+	}
+	.files-entry-hdr-title {
+	    float: initial;
+	}
+	.files-entry-hdr-btn {
+	    float: initial;
+	    margin-bottom: 20px;
+	}
+	.files-entry-hdr-btn a{
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 }

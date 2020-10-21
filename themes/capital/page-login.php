@@ -1,5 +1,5 @@
 <?php 
-get_header('logged');
+get_header('loggedout');
 global $login_errors; 
 $emailindex = '';
 if( isset($_POST['email']) && !empty($_POST['email']) ){
@@ -16,10 +16,10 @@ if( isset($_POST['email']) && !empty($_POST['email']) ){
           <div class="col-md-12">
             <div class="login-form-cntlr">
               <span class="login-top-rt-icon">
-                  <img src="assets/images/login-top-rt-icon.svg" alt="">
+                  <img src="<?php echo THEME_URI; ?>/assets/images/login-top-rt-icon.svg" alt="">
                 </span>
                 <span class="login-btm-lft-icon">
-                  <img src="assets/images/login-btm-left-icon.svg" alt="">
+                  <img src="<?php echo THEME_URI; ?>/assets/images/login-btm-left-icon.svg" alt="">
                 </span>
               <div class="login-form">
                 <h1 class="form-title">Client Log in</h1>
@@ -27,13 +27,13 @@ if( isset($_POST['email']) && !empty($_POST['email']) ){
                   <div class="input-row">
                     <input type="text" name="email" placeholder="Cliend ID" value="<?php echo $emailindex; ?>">
                     <i>
-                      <img src="assets/images/login-user-icon.svg" alt="">
+                      <img src="<?php echo THEME_URI; ?>/assets/images/login-user-icon.svg" alt="">
                     </i>
                   </div>
                   <div class="input-row">
                     <input type="password" name="password" placeholder="Password">
                     <i>
-                      <img src="assets/images/login-pass-icon.svg" alt="">
+                      <img src="<?php echo THEME_URI; ?>/assets/images/login-pass-icon.svg" alt="">
                     </i>
                   </div>
                   <div class="input-row">

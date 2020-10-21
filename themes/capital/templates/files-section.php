@@ -1,5 +1,6 @@
 <?php 
   $user_data = current_user_data();
+  if( !$user_data ) redirect_page_notfound();
 ?>
 <div class="sections-cntlr">
   <span class="sections-rgt-icon"><img src="<?php echo THEME_URI; ?>/assets/images/sections-rgt-icon.png"></span>
@@ -9,6 +10,19 @@
           <div class="row">
             <div class="col-md-12">
               <div class="files-content-inr">
+                <?php 
+                  $args = array(
+                    'post_type' => 'client',
+                    'posts_per_page' => 1,
+                    'author' => $user_data->ID
+                  );
+                  $query = new WP_Query($args);
+                  if( $query->have_posts() ):
+                  while( $query->have_posts() ): $query->the_post();
+                    $draftpublish = get_field('draftpublishfiles', get_the_ID());
+                    if( $draftpublish ):
+                    $files = get_field('import_files', get_the_ID());
+                ?>
                 <div class="files-entry-hdr">
                   <h1 class="f-content-title">Files</h1>
                 </div>
@@ -19,25 +33,14 @@
                   </form>
                 </div>
                 <div class="files-grid-items">
-                  <?php 
-                    if( $user_data ){ 
-                    $args = array(
-                      'post_type' => 'client',
-                      'posts_per_page' => 1,
-                      'author' => $user_data->ID
-                    );
-                    $query = new WP_Query($args);
-                    if( $query->have_posts() ):
-                    while( $query->have_posts() ): $query->the_post();
-                      $draftpublish = get_field('draftpublishfiles', get_the_ID());
-                      $files = get_field('import_files', get_the_ID());
-                      if( $files && $draftpublish ):
-                  ?>
+                  <?php if( $files ): ?>
                   <ul class="reset-list clearfix">
                     <?php 
                     foreach( $files as $file ): 
                       $pdf = $file['addfile']; 
                       $filesize = round($pdf['filesize']/1024, 2);
+                    $showhidefiles = $file['showhidefiles'];
+                    if( $showhidefiles ):
                     ?>
                     <li>
                       <div class="files-grd-item">
@@ -82,22 +85,25 @@
                         </div>
                       </div>
                     </li>
+                    <?php endif; ?>
                     <?php endforeach; ?>
                   </ul>
                   <?php endif; ?>
-                  <?php endwhile; ?>
-                  <?php else: ?>
-
-                  <?php endif; wp_reset_postdata(); ?>
-                  <?php } ?>
                 </div>
+                <?php 
+                  else: 
+                    redirect_page_notfound();
+                  endif; 
+                ?>
+              <?php endwhile; ?>
+              <?php else: ?>
+
+              <?php endif; wp_reset_postdata(); ?>
               </div>
+
             </div>
           </div>
         </div>    
       </section>
-    
-
-
   </div>
 </div>

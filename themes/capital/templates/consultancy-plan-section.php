@@ -1,33 +1,32 @@
 <?php 
   $user_data = current_user_data();
+  if( !$user_data ) redirect_page_notfound();
 ?>
 
 <div class="sections-cntlr">
   <span class="sections-rgt-icon"><img src="<?php echo THEME_URI; ?>/assets/images/sections-rgt-icon.png"></span>
   <div class="cnstncy-plan-page-cntlr">
-    
-
     <section class="consultancy-plan-content">
       <div class="container">
+        <?php  
+          $args = array(
+            'post_type' => 'client',
+            'posts_per_page' => 1,
+            'author' => $user_data->ID
+          );
+          $query = new WP_Query($args);
+          if( $query->have_posts() ):
+          while( $query->have_posts() ): $query->the_post();
+            $draftpublish = get_field('draftpublish', get_the_ID());
+            if( $draftpublish ):
+            $consultplan = get_field('consultancyplan', get_the_ID());
+            $plans = $consultplan['consultancy'];
+        ?>
         <div class="row">
           <div class="col-md-12">
             <div class="cnstncy-plan-inr">
-              <?php 
-                if( $user_data ){ 
-                $args = array(
-                  'post_type' => 'client',
-                  'posts_per_page' => 1,
-                  'author' => $user_data->ID
-                );
-                $query = new WP_Query($args);
-                if( $query->have_posts() ):
-                while( $query->have_posts() ): $query->the_post();
-                  $draftpublish = get_field('draftpublish', get_the_ID());
-                  $consultplan = get_field('consultancyplan', get_the_ID());
-                  $plans = $consultplan['consultancy'];
-              ?>
               <h1 class="cnstncy-plan-title">Consultancy Plan</h1>
-              <?php if( $consultplan && $draftpublish ): ?>
+              <?php if( $consultplan ): ?>
               <div class="cnstncy-plan-hdr">
                 <ul class="reset-list">
                   <li>
@@ -58,7 +57,11 @@
               <?php if( $plans ): ?>
               <div class="cnstncy-plan-items">
                 <ul class="reset-list">
-                  <?php foreach( $plans as $plan ): ?>
+                  <?php 
+                    foreach( $plans as $plan ):
+                    $blockshowhide =  $plan['blockshowhide'];
+                    if( $blockshowhide ):
+                  ?>
                   <li>
                     <div class="cnstncy-plan-item-cntlr">
                      <div class="cnstncy-plan-item mHc">
@@ -85,22 +88,31 @@
                     </div>
                   </div>
                 </li>
+                <?php endif; ?>
                 <?php endforeach; ?>
                 </ul>
               </div>
               <?php endif; ?>
               <?php endif; ?>
-              <?php endwhile; ?>
-              <?php else: ?>
-
-              <?php endif; wp_reset_postdata(); ?>
-              <?php } ?>
             </div>
           </div>
         </div>
+        <?php 
+          else: 
+            redirect_page_notfound();
+          endif; 
+        ?>
+        <?php endwhile; ?>
+        <?php else: ?>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="cnstncy-plan-inr">
+
+              </div>
+            </div>
+          </div>
+        <?php endif; wp_reset_postdata(); ?>
       </div>
     </section>
-
-
   </div>
 </div>
