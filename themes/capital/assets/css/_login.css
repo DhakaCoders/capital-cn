@@ -134,6 +134,9 @@
 
 /*responsive*/
 @media(max-width: 1199px){
+	.login-page{
+		min-height: initial;
+	}
 	.login-page-cntlr{
 		padding: 150px 0;
 	}

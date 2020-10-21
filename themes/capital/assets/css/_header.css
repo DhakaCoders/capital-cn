@@ -493,6 +493,20 @@ nav.main-nav .main-nav-inr > ul > li.menu-item-has-children > ul.sub-menu li{
 	.hdr-mid{
 		width: 300px;
 	}
+	.login-header-inr{
+		position: relative;
+		padding-top: 80px;
+	}
+	.login-heder .logo{
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		max-width: 300px;
+		width: 100%;
+	}
 }
 
 @media(max-width: 575px){
