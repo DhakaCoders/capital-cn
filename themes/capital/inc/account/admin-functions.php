@@ -58,28 +58,6 @@ function submit_post_meta($userid){
 }
 
 
-// Add the custom columns to the book post type:
-add_filter( 'manage_client_posts_columns', 'set_custom_edit_book_columns' );
-function set_custom_edit_book_columns($columns) {
-    unset( $columns['date'] );
-    $columns['client_manager'] = __( '', 'your_text_domain' );
-    $columns['date'] = __( 'Date', 'your_text_domain' );
-    return $columns;
-}
-
-// Add the data to the custom columns for the book post type:
-add_action( 'manage_client_posts_custom_column' , 'custom_book_column', 10, 3 );
-function custom_book_column( $column, $post_id ) {
-    switch ( $column ) {
-        case 'client_manager' :
-        	$users = get_post_meta( $post_id , 'accesspermission' , true );
-            //echo '<div>'.var_dump($users).'</div>'; 
-        break;
-
-    }
-}
-
-
 
  add_action( 'restrict_manage_posts', 'my_search_box' );
  function my_search_box() {
@@ -91,16 +69,18 @@ function custom_book_column( $column, $post_id ) {
   }
 
   function wisdom_sort_plugins_by_slug( $query ) {
-  global $pagenow;
-  $user = current_user_data();
-  if ( in_array( 'rsmanager', (array) $user->roles ) ) {
-    // Get the post type
-    $post_type = isset( $_GET['post_type'] ) ? $_GET['post_type'] : '';
-    if ( is_admin() && $pagenow=='edit.php' && $post_type == 'client' ) {
-      $query->query_vars['meta_key'] = 'accesspermission';
-      $query->query_vars['meta_value'] = serialize( strval( $user->ID ) );
-      $query->query_vars['meta_compare'] = 'LIKE';
-    }
-  }
+    global $pagenow;
+    $user = current_user_data();
+	if( $user ):
+	  if ( in_array( 'rsmanager', (array) $user->roles ) ) {
+	    // Get the post type
+	    $post_type = isset( $_GET['post_type'] ) ? $_GET['post_type'] : '';
+	    if ( is_admin() && $pagenow=='edit.php' && $post_type == 'client' ) {
+	      $query->query_vars['meta_key'] = 'accesspermission';
+	      $query->query_vars['meta_value'] = serialize( strval( $user->ID ) );
+	      $query->query_vars['meta_compare'] = 'LIKE';
+	    }
+	  }
+	endif;
 }
 add_filter( 'parse_query', 'wisdom_sort_plugins_by_slug' );

@@ -1,12 +1,25 @@
 <?php 
   $user_data = current_user_data();
+  if( !$user_data ) redirect_page_notfound();
 ?>
 <div class="sections-cntlr">
   <span class="sections-rgt-icon"><img src="<?php echo THEME_URI; ?>/assets/images/sections-rgt-icon.png"></span>
   <div class="consultation-page-cntlr">
-    
     <section class="cn-page-con">
       <div class="container">
+          <?php 
+            $args = array(
+              'post_type' => 'client',
+              'posts_per_page' => 1,
+              'author' => $user_data->ID
+            );
+            $query = new WP_Query($args);
+            if( $query->have_posts() ):
+            while( $query->have_posts() ): $query->the_post();
+              $draftpublish = get_field('draftpublishconsult', get_the_ID());
+              if( $draftpublish ):
+              $consulttypes = get_field('consultationstype', get_the_ID()); 
+          ?>
           <div class="row">
             <div class="col-md-12">
               <div class="cp-entry-hdr">
@@ -18,22 +31,11 @@
             <div class="col-md-12">
               <div class="consultation-items">
                 <?php 
-                  if( $user_data ){ 
-                  $args = array(
-                    'post_type' => 'client',
-                    'posts_per_page' => 1,
-                    'author' => $user_data->ID
-                  );
-                  $query = new WP_Query($args);
-                  if( $query->have_posts() ):
-                  while( $query->have_posts() ): $query->the_post();
-                    $draftpublish = get_field('draftpublishconsult', get_the_ID());
-                    $consulttypes = get_field('consultationstype', get_the_ID());
-                    if( $consulttypes && $draftpublish ):
-                ?>
-                <?php 
+                if( $consulttypes ):
                 foreach( $consulttypes as $consulttype ): 
                   $consults = $consulttype['consultations'];
+                  $showhideconsult = $consulttype['showhideconsultblock'];
+                  if( $showhideconsult ):
                 ?>
                 <div class="consultation-item">
                   <div class="consultation-item-hdr">
@@ -64,7 +66,11 @@
                     <?php if( $consults ): ?>
                     <div class="cicc-pdfs">
                       <ul class="reset-list clearfix">
-                        <?php foreach( $consults as $consult ): ?>
+                        <?php 
+                          foreach( $consults as $consult ):
+                          $showhidefileblock = $consult['showhidefileblock'];
+                          if( $showhidefileblock ): 
+                        ?>
                         <li>
                           <div class="cicc-pdf-col mHc clearfix">
                             <?php 
@@ -88,6 +94,7 @@
                             </div>
                           </div>
                         </li>
+                        <?php endif; ?>
                         <?php endforeach; ?>
                       </ul>
                     </div>
@@ -100,19 +107,28 @@
                     <strong>OPEN</strong>
                   </div>
                 </div>
+                <?php endif; ?>
                 <?php endforeach; ?>
                 <?php endif; ?>
-                <?php endwhile; ?>
-                <?php else: ?>
-
-                <?php endif; wp_reset_postdata(); ?>
-                <?php } ?>
               </div>
             </div>
           </div>
+          <?php 
+            else: 
+              redirect_page_notfound();
+            endif; 
+          ?>
+          <?php endwhile; ?>
+          <?php else: ?>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="cnstncy-plan-inr">
+
+              </div>
+            </div>
+          </div>
+          <?php endif; wp_reset_postdata(); ?>
       </div>    
     </section>
-
-
   </div>
 </div>

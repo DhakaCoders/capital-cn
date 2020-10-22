@@ -1,5 +1,6 @@
 <?php 
   $user_data = current_user_data();
+  if( !$user_data ) redirect_page_notfound();
 ?>
 <div class="sections-cntlr">
   <span class="sections-rgt-icon"><img src="<?php echo THEME_URI; ?>/assets/images/sections-rgt-icon.png"></span>
@@ -7,6 +8,21 @@
     
     <section class="tn-page-con">
       <div class="container">
+        <?php 
+          if( $user_data ){ 
+          $args = array(
+            'post_type' => 'client',
+            'posts_per_page' => 1,
+            'author' => $user_data->ID
+          );
+          $query = new WP_Query($args);
+          if( $query->have_posts() ):
+          while( $query->have_posts() ): $query->the_post();
+            $draftpublish = get_field('draftpublishtraining', get_the_ID());
+            if( $draftpublish ):
+            $trainings = get_field('trainingstopic', get_the_ID());
+            
+        ?>
           <div class="row">
             <div class="col-md-12">
               <div class="cp-entry-hdr">
@@ -17,23 +33,14 @@
 
           <div class="row">
             <div class="col-md-12">
-              <?php 
-                if( $user_data ){ 
-                $args = array(
-                  'post_type' => 'client',
-                  'posts_per_page' => 1,
-                  'author' => $user_data->ID
-                );
-                $query = new WP_Query($args);
-                if( $query->have_posts() ):
-                while( $query->have_posts() ): $query->the_post();
-                  $draftpublish = get_field('draftpublishtraining', get_the_ID());
-                  $trainings = get_field('trainingstopic', get_the_ID());
-                  if( $trainings && $draftpublish ):
-              ?>
+              <?php if( $trainings ): ?>
               <div class="training-items">
                 <ul class="reset-list clearfix">
-                  <?php foreach( $trainings as $training ): ?>
+                  <?php 
+                    foreach( $trainings as $training ):
+                    $showhidetraining = $training['showhidetraining'];
+                    if( $showhidetraining ): 
+                  ?>
                   <li>
                     <div class="training-item">
                       <div class="training-hdr">
@@ -59,6 +66,8 @@
                           <div class="training-item-des-pdf-list-items clearfix">
                             <?php 
                             foreach( $trainfiles as $trainfile ): 
+                              $showhidefile = $trainfile['showhidefile'];
+                              if( $showhidefile ): 
                               $files = $trainfile['addfile']; 
                               if( $files ):
                               $filesize = round($files['filesize']/1024, 2);
@@ -76,6 +85,7 @@
                               </div>
                             </div>
                             <?php endif; ?>
+                            <?php endif; ?>
                             <?php endforeach; ?>
                           </div>
                           <?php endif; ?>
@@ -83,17 +93,29 @@
                       </div>
                     </div>
                   </li>
+                  <?php endif; ?>
                   <?php endforeach; ?>
                 </ul>
               </div>
               <?php endif; ?>
-              <?php endwhile; ?>
-              <?php else: ?>
-
-              <?php endif; wp_reset_postdata(); ?>
-              <?php } ?>
             </div>
           </div>
+          <?php 
+            else: 
+              redirect_page_notfound();
+            endif; 
+          ?>
+          <?php endwhile; ?>
+          <?php else: ?>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="training-items">
+
+              </div>
+            </div>
+          </div>
+          <?php endif; wp_reset_postdata(); ?>
+          <?php } ?>
       </div>    
     </section>
 

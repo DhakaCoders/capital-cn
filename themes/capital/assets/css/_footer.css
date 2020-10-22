@@ -49,17 +49,7 @@
 
 
 @media(max-width: 1499px){
-	.ftr-cols{
-		flex-wrap: wrap;
-	}
-	.ftr-copyright{
-		padding-bottom: 15px;
-	}
-	.ftr-copyright,
-	.ftr-menu{
-		width: 100%;
-		text-align: center;
-	}
+	
 }
 
 @media(max-width: 1399px){
@@ -76,27 +66,20 @@
 }
 
 @media(max-width: 991px){
-	.login-heder .logo{
-		max-width: 200px;
+	.ftr-cols{
+		flex-wrap: wrap;
 	}
-	.hdr-grd-item-01 img,
-	.hdr-grd-item-02 img{
-		max-height: 25px;
+	.ftr-copyright{
+		padding-bottom: 15px;
 	}
+	.ftr-copyright,
+	.ftr-menu{
+		width: 100%;
+		text-align: center;
+	}
+	
 
-	.hdr-grd-item-01 a span, .hdr-grd-item-02 a span {
-	    font-size: 11px;
-	    width: 22px;
-	    height: 22px;
-	    top: -13px;
-	    right: -8px;
-	}
-	.hdr-grd-item {
-	    padding: 0 22px;
-	}
-	.hdr-grd-item {
-	    min-height: 80px;
-	}
+	
 }
 
 @media(max-width: 767px){
