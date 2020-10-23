@@ -41,7 +41,6 @@ if( is_array($logoObj) ){
 }else{
   $logo_tag = '';
 }
-$smedias = get_field('socialmedia', 'options');
 ?>
 <header class="login-heder">
 <div class="bdoverlay"></div>
@@ -98,39 +97,5 @@ $smedias = get_field('socialmedia', 'options');
       </div>
   </div>
 
-  <div class="menu-sidebar">
-    <nav class="main-nav">
-      <div class="main-nav-inr">
-        <div class="closebtn">
-          <i class="far fa-times-circle"></i>
-          <span>close menu</span>
-        </div>
-        <ul class="clearfix reset-list">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">inbox</a></li>
-          <li><a href="#">consultancy plans </a></li>
-          <li><a href="#">requests</a></li>
-          <li><a href="#">consultations</a></li>
-          <li><a href="#">training</a></li>
-          <li><a href="#">resources</a></li>
-          <li><a href="#">files </a></li>
-          <li><a href="#">the edvantage club </a></li>
-        </ul>
-        <div class="hdr-social">
-          <?php if(!empty($smedias)): ?>
-            <ul class="reset-list">
-              <?php foreach($smedias as $smedia): ?>
-              <li>
-                <a target="_blank" href="<?php echo $smedia['url']; ?>">
-                  <?php echo $smedia['icon']; ?>
-                </a>
-              </li>
-              <?php endforeach; ?>
-            </ul>
-          <?php endif; ?>
-        </div>
-      </div>
-      
-    </nav>
-  </div>
+<?php get_template_part( 'templates/burger', 'menu'); ?>
 </header>
