@@ -34,12 +34,12 @@
               <ul class="reset-list">
                 <li>
                   <div class="content-item">
-                    <a href="<?php echo esc_url( home_url('account/inbox/') );?>" class="overlay-link"></a>
+                    <a href="<?php echo esc_url( home_url('account') );?>" class="overlay-link"></a>
                     <div class="content-item-icon mHc">
                       <img src="<?php echo THEME_URI; ?>/assets/images/inbox.svg" alt="">
                     </div>
                     <div class="content-item-hdng mHc1">
-                      <h2 class="content-item-title"><a href="<?php echo esc_url( home_url('account/inbox/') );?>">inbox</a></h2>
+                      <h2 class="content-item-title"><a href="<?php echo esc_url( home_url('account') );?>">inbox</a></h2>
                     </div>
                   </div>
                 </li>
