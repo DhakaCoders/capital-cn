@@ -60,7 +60,8 @@ $requests = get_field('requests', 'options');
                         </div>
                       </div>
                       <div class="upload-file-btn">
-                        <input type="file" name="request_file" id="request_file" value="UPLOAD A FILE">
+                        <span class="uploadbtn" id="choose_file">UPLOAD A FILE</span>
+                        <input type="hidden" name="request_file" id="request_file" value="">
                       </div>
                       <div class="cnt-btn">
                         <input type="hidden" name="user_request_nonce" value="<?php echo wp_create_nonce('user-request-nonce'); ?>"/>

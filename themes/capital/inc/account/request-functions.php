@@ -22,9 +22,11 @@ function user_request_data(){
 		global $wpdb;
 	    $user_id = get_current_user_id();
 		$request_type = sanitize_text_field($_POST['request_type']);
+		$fileID = sanitize_text_field($_POST['request_file']);
 		$request_notes = sanitize_text_field($_POST['request_notes']);
 		$receiver_id = get_user_meta( $user_id, 'accesspermission', true );
 	    $receiver_data = get_user_by('id', $receiver_id);
+	    $fileID = !empty($fileID)? $fileID:0;
 		$table = $wpdb->prefix . 'request'; 
 		$status = false;
 		if( !empty($request_type) && !empty($request_notes) && !empty($receiver_id) && !empty($user_id) ){
@@ -32,7 +34,7 @@ function user_request_data(){
 				'sender_id' => $user_id,
 				'request_type' => $request_type,
 				'request_details' => $request_notes,
-				'request_details' => $request_notes,
+				'file_id' => $fileID,
 				'receiver_id' => $receiver_id,
 				'created_at' => date('Y-m-d H:i:s'),
 			));
@@ -40,7 +42,7 @@ function user_request_data(){
 
 		if($status){
 			// mail script
-			
+
 			$data['success'] = 'The Request has been sent successfully!';
 		}else{
 			$data['error'] = 'The Request has not been sent!';

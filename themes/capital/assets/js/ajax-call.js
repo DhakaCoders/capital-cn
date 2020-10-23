@@ -13,6 +13,7 @@ function userRequestFormData(){
                 jQuery('.selectpicker').selectpicker('refresh');
                 jQuery("#request_notes").val('');
                 jQuery("#request_file").val('');
+                jQuery("#choose_file").text('UPLOAD A FILE');
                 jQuery('#message').html('<span class="re-success">'+data['success']+'</span>');
                 
             }else{

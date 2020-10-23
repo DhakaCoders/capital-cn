@@ -36,6 +36,7 @@ if(!function_exists('allow_ngo_uploads')){
     $c_role = get_role('client');
     $c_role->add_cap('read');
     $c_role->add_cap('upload_files');
+    $c_role->add_cap('delete_posts');
   }
 }
 

@@ -148,7 +148,8 @@
 .upload-file-btn{
 	margin-bottom: 15px;
 }
-.upload-file-btn input[type=submit]{
+.upload-file-btn input[type=submit],
+.upload-file-btn span.uploadbtn{
 	width: 100%;
 	height: 60px;
 	display: flex;
