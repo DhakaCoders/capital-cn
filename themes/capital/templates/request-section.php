@@ -26,8 +26,10 @@ $requests = get_field('requests', 'options');
                         <i>
                           <img src="<?php echo THEME_URI; ?>/assets/images/rsld-tel.png">
                         </i>
-                        <a href="tel:02514112233">02514 112233</a>
-                        <a href="tel:07850740355">07850 740355</a>
+                        <?php 
+                        if( !empty($requests['telephone_1']) ) printf('<a href="tel:%s">%s</a>', phone_preg($requests['telephone_1']),  $requests['telephone_1']); 
+                        if( !empty($requests['telephone_2']) ) printf('<a href="tel:%s">%s</a>', phone_preg($requests['telephone_2']),  $requests['telephone_2']);
+                        ?>
                       </div>
                     </div>
                   </div>

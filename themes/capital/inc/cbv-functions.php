@@ -73,9 +73,11 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
-function phone_preg(){
+function phone_preg( $show_telefoon ){
+  $replaceArray = '';
   $spacialArry = array(".", "/", "+", " ");
-  return $spacialArry;
+  $show_telefoon = trim(str_replace($spacialArry, $replaceArray, $show_telefoon));
+  return $show_telefoon;
 }
 
 function array_insert(&$array, $position, $insert_arr)
