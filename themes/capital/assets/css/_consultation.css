@@ -6,6 +6,7 @@
 }
 .cp-entry-hdr-title{
 	color: #fff;
+	font-size: 44px;
 }
 
 .consultation-item-hdr{
@@ -278,4 +279,95 @@
 }
 .consultation-item-expend .consultation-item-close{
 	display: block;
+}
+
+
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	
+
+}
+
+@media(max-width: 991px){
+	.consultation-item-hdr ul li div label{
+		display: block;
+	}
+	.consultation-item-hdr ul li div{
+		font-size: 16px;
+	}
+}
+
+@media(max-width: 767px){
+	.cp-entry-hdr-title{
+		font-size: 40px;
+	}
+	.cicc-pdfs ul li{
+		width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.cicc-hdr strong{
+		display: block;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media(max-width: 575px){
+	.consultation-item-hdr ul{
+		flex-wrap: wrap;
+	}
+	.consultation-item-hdr ul li{
+		display: block;
+		width: 100%!important;
+		text-align: center;
+	}
+	.consultation-item-hdr ul li div{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.consultation-item-hdr ul li div label{
+		display: inline-block;
+		vertical-align: baseline;
+	}
+	.consultation-item-hdr{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.cp-entry-hdr-title{
+		font-size: 35px;
+	}
+	.cicc-download-btn a{
+		font-size: 9px;
+	}
+	.consultation-item-hdr ul li div{
+		font-size: 15px;
+	}
+	.cp-entry-hdr {
+	    padding-bottom: 20px;
+	}
+
+}
+
+@media(max-width: 479px){
+	.cp-entry-hdr-title{
+		font-size: 30px;
+	}
+
+}
+
+@media(max-width: 359px){
+
 }

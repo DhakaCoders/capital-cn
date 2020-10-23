@@ -125,7 +125,11 @@
 		width: 100%;
 		margin: auto;
 	}
+	
 }
 @media(max-width: 479px){
-
+	.content-item-icon img{
+		max-height: initial;
+		max-width: 80px;
+	}
 }

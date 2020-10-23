@@ -363,6 +363,12 @@
 	.files-page-cntlr {
 	    padding: 40px 0 20px;
 	}
+	.fgicmd-rgt{
+		text-align: center;
+	}
+	.files-grd-item-btm-btn{
+		text-align: center;
+	}
 	
 }
 
@@ -381,6 +387,14 @@
 		margin-left: 0;
 		margin-right: 0;
 	}
+	
+	
+	.files-page-cntlr {
+	    padding: 45px 0 20px;
+	}
+}
+
+@media(max-width: 639px){
 	.files-grid-items ul li{
 		width: 100%;
 		padding-left: 0;
@@ -388,12 +402,9 @@
 	}
 	.files-grd-item,
 	.files-grd-item-btm-btn{
-		max-width: 265px;
+		max-width: 300px;
 		width: 100%;
 		margin: 0 auto;
-	}
-	.files-page-cntlr {
-	    padding: 45px 0 20px;
 	}
 }
 
