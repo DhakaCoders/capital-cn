@@ -46,7 +46,7 @@
                     $showhideresources = $resource['showhideresources'];
                     if( $showhideresources ):
                   ?>
-                  <li>
+                  <li<?php if( !empty($resource['title']) ): 'class="'.$resource['title'].'"'; endif;?>>
                     <div class="cp-search-item clearfix">
                       <div class="cp-titleDesc">
                         <?php 
