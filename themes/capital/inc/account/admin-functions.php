@@ -87,8 +87,6 @@ add_filter( 'parse_query', 'wisdom_sort_plugins_by_slug' );
 
 function add_script_to_menu_page()
 {
-    // $pagenow, is a global variable referring to the filename of the current page, 
-    // such as ‘admin.php’, ‘post-new.php’
     global $pagenow;
  
     if ($pagenow != 'post.php') {
@@ -105,3 +103,33 @@ function add_script_to_menu_page()
 }
  
 add_action( 'admin_enqueue_scripts', 'add_script_to_menu_page' );
+
+
+add_action('admin_footer', 'add_fronted_redirect_button');
+function add_fronted_redirect_button(){
+	$user_data = current_user_data();
+	if ( in_array( 'rsmanager', (array) $user_data->roles ) && is_user_logged_in() ){
+		$output = '';
+		$output .='<div class="redirect-fronted"> <a href="'.esc_url( home_url('account/') ).'">Home</a> </div>';
+		$output .='
+		<style>
+			.redirect-fronted {
+			    position: fixed;
+			    bottom: 90px;
+			    right: 0px;
+			    background: rgba(0,0,0,0.75);
+			    padding: 10px 15px;
+			}
+
+			.redirect-fronted a {
+			    color: #fff;
+			    text-decoration: none;
+			    font-size: 16px;
+			    font-weight: 600;
+			}
+		</style>
+		';
+		echo $output;
+	}
+}
+

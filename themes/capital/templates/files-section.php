@@ -76,10 +76,22 @@
                               <input type="text" placeholder="Read comments">
                             </div>
                           </div>
+                            <?php 
+                              $managerID = get_user_meta( $user_data->ID, 'accesspermission', true );
+                              $manager_data = get_user_by('id', $managerID);
+                            ?>
                           <div class="fgicmd-rgt">
                             <div class="fgicmd-rgt-upload">
                               <span>Uploaded by:</span>
-                              <strong>Jane Bishop</strong>
+                              <strong>
+                              <?php
+                                if(!empty($manager_data->display_name)){
+                                  echo $manager_data->display_name;
+                                }else{
+                                  echo $manager_data->user_nicename;
+                                }
+                              ?>
+                              </strong>
                             </div>
                           </div>
                         </div>

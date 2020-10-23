@@ -50,10 +50,29 @@
                       <div class="training-item-inr">
                         <div class="training-item-lft">
                           <div class="training-item-lft-avater">
-                            <i><img src="<?php echo THEME_URI; ?>/assets/images/cicc-user-profile-photo-01.png"></i>
+                            <i>
+                            <?php 
+                              $managerID = get_user_meta( $user_data->ID, 'accesspermission', true );
+                              $manager_data = get_user_by('id', $managerID);
+                              $imageID = get_user_meta($manager_data->ID, 'profileimage', true);
+                              if( isset($imageID) && !empty($imageID)){
+                                echo cbv_get_image_tag( $imageID);
+                              }else{
+                                echo '';
+                              }
+                            ?>
+                            </i>
                             <div>
                               <label>PREPARED BY:</label>
-                              <strong>Jane Bishop</strong>
+                              <strong>
+                              <?php
+                                if(!empty($manager_data->display_name)){
+                                  echo $manager_data->display_name;
+                                }else{
+                                  echo $manager_data->user_nicename;
+                                }
+                              ?>
+                              </strong>
                             </div>
                           </div>
                         </div>

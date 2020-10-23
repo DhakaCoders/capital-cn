@@ -130,16 +130,3 @@ function wpdocs_codex_client_init() {
 }
  
 add_action( 'init', 'wpdocs_codex_client_init' );
-
-function insertLoginPage(){
-  if ( get_page_by_title('Login') == null) {
-     $my_post = array(
-        'post_title'    => wp_strip_all_tags( 'Login' ),
-        'post_content'  => '[login]',
-        'post_status'   => 'publish',
-        'post_author'   => 1,
-        'post_type'     => 'page',
-      );
-      wp_insert_post( $my_post );
-  }
-}
