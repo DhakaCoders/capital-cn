@@ -8,11 +8,15 @@
               <?php if( !empty( $copyright_text ) ) printf( '<span>%s</span>', $copyright_text); ?> 
             </div>
             <div class="ftr-menu">
-              <ul class="reset-list">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Cookies</a></li>
-              </ul>
+            <?php 
+              $ftmenuOptions = array( 
+                  'theme_location' => 'cbv_copyright_menu', 
+                  'menu_class' => 'reset-list',
+                  'container' => '',
+                  'container_class' => ''
+                );
+              wp_nav_menu( $ftmenuOptions ); 
+            ?> 
             </div>
           </div>
       </div>

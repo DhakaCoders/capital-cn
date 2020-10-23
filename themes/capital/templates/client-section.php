@@ -22,8 +22,7 @@ $user_data = current_user_data();
                   $cients = get_users(
                     array(
                       'meta_key' => 'accesspermission',
-                      'meta_value' => serialize( strval( $user_data->ID ) ),
-                      'meta_compare' => 'LIKE'
+                      'meta_value' => $user_data->ID
                     )
                   );
                   //printr($cients);

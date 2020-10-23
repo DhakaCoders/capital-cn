@@ -35,7 +35,7 @@ if (!class_exists('cbv_create_tables')) {
 				$b_sql = "CREATE TABLE $conversation_tbl_name (
 					id BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 					sender_id BIGINT(20) UNSIGNED NOT NULL,
-					request_details MEDIUMTEXT,
+					message MEDIUMTEXT,
 					status VARCHAR(30) DEFAULT 'unread',
 					receiver_id BIGINT(20) UNSIGNED NOT NULL,
 					created_at datetime

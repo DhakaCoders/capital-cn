@@ -32,7 +32,7 @@
       </div>
       <ul class="clearfix reset-list">
         <li><a href="<?php echo esc_url( home_url('account') );?>">Home</a></li>
-        <li><a href="#">inbox</a></li>
+        <li><a href="<?php echo esc_url( home_url('account/inbox/') );?>">inbox</a></li>
         <?php 
           if( !empty($thisID) ):
             $consoltplan_status = get_field('draftpublish', $thisID);
@@ -43,7 +43,9 @@
             endif; 
           endif; 
         ?>
+        <?php if ( in_array( 'client', (array) $user_data->roles ) && is_user_logged_in() ) { ?>
         <li><a href="<?php echo esc_url( home_url('account/request/') );?>">requests</a></li>
+        <?php } ?>
         <?php 
           if( !empty($thisID) ):
             $consult_status = get_field('draftpublishconsult', $thisID);

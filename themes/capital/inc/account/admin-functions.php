@@ -77,8 +77,7 @@ function submit_post_meta($userid){
 	    $post_type = isset( $_GET['post_type'] ) ? $_GET['post_type'] : '';
 	    if ( is_admin() && $pagenow=='edit.php' && $post_type == 'client' ) {
 	      $query->query_vars['meta_key'] = 'accesspermission';
-	      $query->query_vars['meta_value'] = serialize( strval( $user->ID ) );
-	      $query->query_vars['meta_compare'] = 'LIKE';
+	      $query->query_vars['meta_value'] = $user->ID ;
 	    }
 	  }
 	endif;
