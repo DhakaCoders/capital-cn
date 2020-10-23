@@ -1,6 +1,8 @@
 <?php
+include_once(THEME_DIR .'/inc/account/query.php');
 include_once(THEME_DIR .'/inc/account/login-functions.php');
 include_once(THEME_DIR .'/inc/account/admin-functions.php');
+include_once(THEME_DIR .'/inc/account/request-functions.php');
 
 add_action('admin_init', 'add_custom_role');
 
@@ -38,12 +40,13 @@ if(!function_exists('allow_ngo_uploads')){
 }
 
 function custom_rewrite_rule() {
-    add_rewrite_rule('^topic/([^/]+)([/]?)(.*)','index.php?topic=$matches[1]','top');
+    add_rewrite_rule('^account/([^/]+)([/]?)(.*)','index.php?pagename=account&var1=$matches[1]&var2=$matches[3]','top');
 
 }
 
 function custom_rewrite_tag() {
-  add_rewrite_tag('%topic%', '([^&]+)');
+  add_rewrite_tag('%var1%', '([^&]+)');
+  add_rewrite_tag('%var2%', '([^&]+)');
 }
 add_action('init', 'custom_rewrite_tag', 10, 0);
 add_filter('init', 'custom_rewrite_rule');
@@ -65,3 +68,7 @@ function disable_new_posts() {
   }
 }
 add_action('admin_menu', 'disable_new_posts');
+
+/* table crate hook*/
+include_once(THEME_DIR .'/inc/account/table.php');
+add_action('init', array('cbv_create_tables','create_tables'));

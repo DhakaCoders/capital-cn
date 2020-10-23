@@ -207,7 +207,18 @@
 }
 
 
-
+span.re-success {
+    color: green;
+    padding: 10px 0;
+    display: inline-block;
+    font-size: 14px;
+}
+span.re-error {
+    color: red;
+    padding: 10px 0;
+    display: inline-block;
+    font-size: 14px;
+}
 
 
 @media(max-width: 1199px){

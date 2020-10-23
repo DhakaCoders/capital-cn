@@ -84,3 +84,25 @@ function submit_post_meta($userid){
 	endif;
 }
 add_filter( 'parse_query', 'wisdom_sort_plugins_by_slug' );
+
+
+function add_script_to_menu_page()
+{
+    // $pagenow, is a global variable referring to the filename of the current page, 
+    // such as ‘admin.php’, ‘post-new.php’
+    global $pagenow;
+ 
+    if ($pagenow != 'post.php') {
+        return;
+    }
+     
+    // loading css
+    //wp_register_style( 'some-css', get_template_directory_uri() . '/css/some.css', false, '1.0.0' );
+    //wp_enqueue_style( 'some-css' );
+     
+    // loading js
+    wp_register_script( 'cbv-admin-js', get_template_directory_uri().'/assets/js/cbv-admin.js', array('jquery-core'), false, true );
+    wp_enqueue_script( 'cbv-admin-js' );
+}
+ 
+add_action( 'admin_enqueue_scripts', 'add_script_to_menu_page' );

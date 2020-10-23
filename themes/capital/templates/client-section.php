@@ -57,7 +57,7 @@ $user_data = current_user_data();
                         </div>
                         <div class="cl-company"><span>Company Name:</span> Applebee's</div>
                         <div class="cl-status"><span>Company Name:</span> Applebee's</div>
-                        <div class="cl-btn"><a href="<?php echo esc_url(home_url('client/'.$cient->ID)); ?>">LAUNCH</a></div>
+                        <div class="cl-btn"><a href="<?php echo esc_url(home_url('account/client/'.$cient->ID)); ?>">LAUNCH</a></div>
                       </li>
                       <?php endforeach; ?>
                     </ul>

@@ -31,6 +31,15 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php 
+$logoObj = get_field('hdlogo', 'options');
+if( is_array($logoObj) ){
+  $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
+}else{
+  $logo_tag = '';
+}
+$smedias = get_field('socialmedia', 'options');
+?>
 <header class="header">
   <div class="container">
       <div class="row">
@@ -38,28 +47,24 @@
           <div class="header-inr clearfix">
             <div class="hdr-lft">
               <div class="hdr-social">
+              <?php if(!empty($smedias)): ?>
                 <ul class="reset-list">
+                  <?php foreach($smedias as $smedia): ?>
                   <li>
-                    <a href="#">
-                      <i class="fab fa-facebook-f"></i>
+                    <a target="_blank" href="<?php echo $smedia['url']; ?>">
+                      <?php echo $smedia['icon']; ?>
                     </a>
                   </li>
-                  <li>
-                    <a href="#">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fab fa-linkedin-in"></i>
-                    </a>
-                  </li>
+                  <?php endforeach; ?>
                 </ul>
+              <?php endif; ?>
               </div>
             </div>
             <div class="hdr-mid">
               <div class="logo">
-                <a href="#"><img src="<?php echo THEME_URI; ?>/assets/images/logo.png"></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                  <?php echo $logo_tag; ?>
+                </a>
               </div>
             </div>
             <div class="hdr-rgt">

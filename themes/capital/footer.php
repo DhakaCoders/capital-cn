@@ -1,10 +1,11 @@
+<?php $copyright_text = get_field('copyright_text', 'options'); ?>
 <footer class="footer-wrp">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
           <div class="ftr-cols">
             <div class="ftr-copyright">
-              <p>&copy; Copyright 2020 - All rights reserved to <strong>Capital Edvantage</strong></p>
+              <?php if( !empty( $copyright_text ) ) printf( '<span>%s</span>', $copyright_text); ?> 
             </div>
             <div class="ftr-menu">
               <ul class="reset-list">

@@ -1,5 +1,5 @@
 <?php 
-  wpCheckloggetout();
+ wpCheckloggetout();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>> 
@@ -34,6 +34,15 @@
 <?php 
 $user = wp_get_current_user();
 ?>
+<?php 
+$logoObj = get_field('hdlogo', 'options');
+if( is_array($logoObj) ){
+  $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
+}else{
+  $logo_tag = '';
+}
+$smedias = get_field('socialmedia', 'options');
+?>
 <header class="login-heder">
 <div class="bdoverlay"></div>
   <div class="container">
@@ -42,7 +51,9 @@ $user = wp_get_current_user();
           <div class="login-header-inr clearfix">
             <div class="login-hdr-lft">
               <div class="logo">
-                <a href="#"><img src="<?php echo THEME_URI; ?>/assets/images/logo.png"></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                  <?php echo $logo_tag; ?>
+                </a>
               </div>
             </div>
             <div class="login-hdr-rgt">
@@ -72,11 +83,11 @@ $user = wp_get_current_user();
                   <div class="hdr-user-toggle-menu">
                     <ul class="reset-list">
                       <?php if ( in_array( 'client', (array) $user->roles ) && is_user_logged_in() ) { ?>
-                      <li><a href="<?php echo esc_url( home_url() ); ?>">My Profile</a></li>
+                      <li><a href="<?php echo esc_url( home_url('account') ); ?>">My Profile</a></li>
                       <?php }else{ ?>
                       <li><a href="<?php echo esc_url( home_url('wp-admin') ); ?>">My Profile</a></li>
                       <?php } ?>
-                      <li><a href="<?php get_custom_logout('login'); ?>">Logout</a></li>
+                      <li><a href="<?php get_custom_logout(); ?>">Logout</a></li>
                     </ul>
                   </div>
                 </div>
@@ -106,23 +117,17 @@ $user = wp_get_current_user();
           <li><a href="#">the edvantage club </a></li>
         </ul>
         <div class="hdr-social">
-          <ul class="reset-list">
-            <li>
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
+          <?php if(!empty($smedias)): ?>
+            <ul class="reset-list">
+              <?php foreach($smedias as $smedia): ?>
+              <li>
+                <a target="_blank" href="<?php echo $smedia['url']; ?>">
+                  <?php echo $smedia['icon']; ?>
+                </a>
+              </li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>
         </div>
       </div>
       
