@@ -56,6 +56,7 @@ $user_data = current_user_data();
                         </div>
                         <?php $companyname = get_user_meta($cient->ID, 'company_name', true); ?>
                         <div class="cl-company"><span>Company Name:</span> <?php if( !empty($companyname) ) printf('%s', $companyname); ?></div>
+                        <div class="cl-status"><span>Status:</span> Planning</div>
                         <div class="cl-btn"><a href="<?php echo esc_url(home_url('account/client/'.$cient->ID)); ?>">LAUNCH</a></div>
                       </li>
                       <?php endforeach; ?>
