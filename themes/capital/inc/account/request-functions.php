@@ -38,6 +38,7 @@ function user_conversation_data(){
 
 		if($status){
 			// mail script
+			$data['message'] = '<div class="message-sender"><span class="sender">'.$message.'</span></div>';
 			$data['success'] = 'The Request has been sent successfully!';
 		}else{
 			$data['error'] = 'The Request has not been sent!';
@@ -62,17 +63,19 @@ function get_conversation_date(){
 	$data = array();
 	if (isset( $_POST["none"] ) && $_POST["none"] == 'none') {
 		global $wpdb;
-	    $user_id = get_current_user_id();
+		$receiverid = $_POST["receiverid"];
+	    $senderid = get_current_user_id();
 		$table = $wpdb->prefix . 'conversation'; 
 		$results = false;
 		$results = false;
-			$results = $wpdb->get_results (
-            "
-            SELECT * 
-            FROM  $table 
-            WHERE sender_id =  $user_id
-            "
-            );
+		$results = $wpdb->get_results (
+        "
+        SELECT * 
+        FROM  $table 
+        WHERE (sender_id =  $senderid AND receiver_id = $receiverid)
+        OR (sender_id =  $receiverid AND receiver_id = $senderid)
+        "
+        );
 
 
 		if($results){
@@ -85,7 +88,7 @@ function get_conversation_date(){
                     "created" => $value->created_at
                 );
 			}
-			echo json_encode($results);
+			echo json_encode($return_arr);
 		}else{
 			$data['error'] = 'error';
 			echo json_encode($data);
