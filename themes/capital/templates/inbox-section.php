@@ -38,12 +38,12 @@
                   </div>
                   <form class="form" id="user_conversation" onsubmit="userConversationFormData(); return false">
                     <input type="hidden" name="action" value="user_conversation_data">
-                    <input type="hidden" name="receiver_id" value="<?php echo $receiver_id; ?>">
+                    <input type="hidden" name="receiver_id" id="receiverid" value="<?php echo $receiver_id; ?>">
                     <div class="cnt-btn">
                       <input type="hidden" name="user_conversation_nonce" value="<?php echo wp_create_nonce('user-conversation-nonce'); ?>"/>
                       <div class="inputFields-row">
                         <div class="inputField">
-                          <input type="text" name="message" placeholder="Write a message...">
+                          <input type="text" name="message" id="message" placeholder="Write a message...">
                         </div>
                       </div>
                       <input type="submit" value="SEND">
@@ -54,19 +54,9 @@
             </div>
             <?php
               }elseif ( in_array( 'rsmanager', (array) $user_data->roles ) && is_user_logged_in() ){
-                if( isset($topic) && !empty($topic) && $topic == 'client'):
-                  $authorid = $wp_query->get( 'var2' );
-                  if( isset($authorid) && !empty($authorid)){
-                    $clientpost = $wpdb->get_row( "SELECT * FROM $wpdb->posts WHERE post_author = '$authorid' AND post_type = 'client' " );
-                    if( $clientpost ){
-                      $clientpostID = $clientpost->ID;
-                    }
-                  }
-                endif;
-                $thisID = $user_data->ID;
-            ?>
+                 
 
-            <?php
+              get_template_part( 'templates/manager', 'chat');
               }
             ?>
             </div>

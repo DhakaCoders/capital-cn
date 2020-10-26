@@ -222,17 +222,54 @@ span.re-error {
 }
 .get_messages{
 	width: 100%;
-	height: 50px;
+	min-height: 150px;
 	padding-left: 10px;
-	font-size: 17px;
+	padding-bottom: 20px;
+	font-size: 15px;
 	color: #545454;
 	font-weight: 600;
-	background: #F2F2F2;
+	background: #FFFFFF;
 	border: 1px solid #F2F2F2;
 	border-radius: 5px;
 	position: relative;
 }
 
+.message-sender {
+    width: 100%;
+    text-align: right;
+    padding: 4px 10px;
+}
+
+.message-sender span.sender {
+    background: #F7F7F7;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    color: #858585;
+}
+.message-receiver {
+    width: 100%;
+    text-align: left;
+    padding: 4px 10px;
+}
+.message-receiver span.receiver {
+    background: #369694;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    vertical-align: super;
+}
+span.chatavatar {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background: #E1E1E1;
+    vertical-align: sub;
+    border-radius: 50px;
+    margin-right: 10px;
+    border: 1px solid #369694;
+}
 @media(max-width: 1199px){
 	.hide-lg{
 		display: none!important;
