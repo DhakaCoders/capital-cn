@@ -30,7 +30,7 @@
   <![endif]-->	
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> onload="getConversationData(); return false;">
+<body <?php body_class(); ?>>
 <?php 
 $user = wp_get_current_user();
 ?>

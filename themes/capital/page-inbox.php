@@ -1,4 +1,9 @@
-
+<?php 
+/*
+  Template Name: Inbox
+*/
+get_header(); 
+?>
 <div class="sections-cntlr">
   <span class="sections-rgt-icon"><img src="<?php echo THEME_URI; ?>/assets/images/sections-rgt-icon.png"></span>
   <div class="requests-page-cntlr">
@@ -17,3 +22,6 @@
       </section>
   </div>
 </div>
+<?
+get_footer(); 
+?>
