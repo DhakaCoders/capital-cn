@@ -13,8 +13,8 @@ $user_data = current_user_data();
                   <h1 class="f-content-title">Client List</h1>
                 </div>
                 <div class="cp-search-row">
-                  <form>
-                    <input type="search" name="" placeholder="Search Client">
+                  <form id="clientform">
+                    <input type="search" name="" id="clientinput" placeholder="Search Client">
                     <button><i class="fas fa-search"></i></button>
                   </form>
                 </div>
@@ -30,9 +30,17 @@ $user_data = current_user_data();
                 <div class="clist-list-wrap">
                   <div class="clist-list">
                     <?php if( $cients ): ?>
-                    <ul class="reset-list">
-                      <?php foreach( $cients as $cient ): ?>
-                      <li class="clearfix">
+                    <ul class="reset-list" id="clientlist">
+                      <?php 
+                      foreach( $cients as $cient ): 
+                        if(!empty($cient->display_name)){
+                          $clientname = $cient->display_name;
+                        }else{
+                          $clientname = $cient->user_nicename;
+                        }
+                        $keyword = str_replace(' ', '', $clientname);
+                      ?>
+                      <li class="clearfix <?php echo strtolower($keyword); ?>" >
                         <div class="cl-profile clearfix">
                           <div class="cl-profile-in">
                             <?php 
@@ -45,11 +53,7 @@ $user_data = current_user_data();
                             ?>
                             <strong>
                               <?php
-                                if(!empty($cient->display_name)){
-                                  echo $cient->display_name;
-                                }else{
-                                  echo $cient->user_nicename;
-                                }
+                                echo $clientname;
                               ?>
                             </strong>
                           </div>

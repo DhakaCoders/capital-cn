@@ -237,7 +237,19 @@ $('#change_pass_form').submit(function(){
 });
 
 
-    new WOW().init();
+new WOW().init();
+
+$('#clientform').submit(function(e){
+  e.preventDefault();
+  var inputVal = $("#clientinput").val();
+  var keyword = inputVal.toLowerCase()
+  var value = keyword.trim();
+  console.log(value);
+  $("#clientlist li").show().filter(function() {
+    return $(this).text().toLowerCase().trim().indexOf(value) == -1;
+  }).hide();
+
+});
 
 })(jQuery);
 
