@@ -27,6 +27,7 @@ function user_request_data(){
 		$request_notes = sanitize_text_field($_POST['request_notes']);
 		$receiver_id = get_user_meta( $user_id, 'accesspermission', true );
 	    $receiver_data = get_user_by('id', $receiver_id);
+	    $receiver_email = get_user_by('email', $receiver_id);
 	    $fileID = !empty($fileID)? $fileID:0;
 		$table = $wpdb->prefix . 'request'; 
 		$status = false;
@@ -43,8 +44,15 @@ function user_request_data(){
 
 		if($status){
 			// mail script
-
-			$data['success'] = 'The Request has been sent successfully!';
+		    $body = '<p><strong>Request Type:</strong> '.$request_type.'</p>';
+		    $body .= '<p><strong>Request Type:</strong></p>';
+		    $body .= '<p>'.$request_notes.'</p>';
+		    $send = wp_mail( $receiver_email, 'Client Request', $body );
+		    if($body){
+				$data['success'] = 'The Request has been sent successfully!';
+			}else{
+				$data['error'] = 'The Request has not been sent!';
+			}
 		}else{
 			$data['error'] = 'The Request has not been sent!';
 		}
