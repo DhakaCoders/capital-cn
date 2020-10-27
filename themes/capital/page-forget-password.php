@@ -1,12 +1,11 @@
-<?php 
+<?php
+/*
+  Template Name: Forget Password
+*/ 
 get_header('loggedout');
-global $login_errors; 
-$emailindex = '';
-if( isset($_POST['email']) && !empty($_POST['email']) ){
-  $emailindex = $_POST['email'];
-}
+global $email_errors;
 ?>
-<div class="sections-cntlr">
+<div class="sections-cntlr login-page">
   <span class="sections-rgt-icon"><img src="<?php echo THEME_URI; ?>/assets/images/sections-rgt-icon.png"></span>
   <div class="login-page-cntlr">
     
@@ -22,33 +21,32 @@ if( isset($_POST['email']) && !empty($_POST['email']) ){
                   <img src="<?php echo THEME_URI; ?>/assets/images/login-btm-left-icon.svg" alt="">
                 </span>
               <div class="login-form">
-                <h1 class="form-title">Client Log in</h1>
-                <form action="" method="POST">
+                <h1 class="form-title">Forgot Password?</h1>
+                <form action="" method="post">
                   <div class="input-row">
-                    <input type="text" name="email" placeholder="Cliend ID" value="<?php echo $emailindex; ?>">
+                    <input type="email" name="exists_email" placeholder="Your email address" required="required">
                     <i>
                       <img src="<?php echo THEME_URI; ?>/assets/images/login-user-icon.svg" alt="">
                     </i>
                   </div>
                   <div class="input-row">
-                    <input type="password" name="password" placeholder="Password">
-                    <i>
-                      <img src="<?php echo THEME_URI; ?>/assets/images/login-pass-icon.svg" alt="">
-                    </i>
+                    <input type="hidden" name="forget_password_nonce" value="<?php echo wp_create_nonce('forget-password-nonce'); ?>"/>
+                    <input type="submit" name="submit" value="GET NEW PASSWORD">
                   </div>
-                  <div class="input-row">
-                    <input type="hidden" name="user_login_nonce" value="<?php echo wp_create_nonce('user-login-nonce'); ?>"/>
-                    <input type="submit" name="submit" value="LOGIN">
-                  </div>
-                  <?php if( array_key_exists("loging_error", $login_errors) ): ?>
                   <div class="alert-msg">
-                    <div class="unsuccess">
-                      <?php printf('<p>%s</p>', $login_errors['loging_error']); ?>
+                    <?php if( array_key_exists("email_success", $email_errors) ): ?>
+                    <div class="success">
+                      <?php printf('<p>%s</p>', $email_errors['email_success']); ?>
                     </div>
-                  </div>
-                  <?php endif; ?>
-                  <div class="forget-pass">
-                    <p>Forget <a href="<?php echo esc_url(home_url( 'forget-password' )); ?>" target="_blank">Password</a>?</p>
+                    <?php endif; ?>
+                    <?php if( array_key_exists("email_error", $email_errors) ): ?>
+                    <div class="unsuccess">
+                      <?php printf('<p>%s</p>', $email_errors['email_error']); ?>
+                    </div>
+                    <?php 
+                      endif;
+                      unset($email_errors);
+                    ?>
                   </div>
                 </form>
               </div>

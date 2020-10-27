@@ -200,7 +200,41 @@ $('.hdr-user-toggle-btn').on('click', function(){
 
 
 
+//on keypress 
+$('#confpass').keyup(function(e){
+  //get values 
+  var pass = $('#newpass').val();
+  var confpass = $(this).val();
+  
+  //check the strings
+  if(pass == confpass){
+    //if both are same remove the error and allow to submit
+    $('.error').text('');
+    allowsubmit = true;
+  }else{
+    //if not matching show error and not allow to submit
+    $('.error').text('Password not matching');
+    allowsubmit = false;
+  }
+});
 
+//jquery form submit
+$('#change_pass_form').submit(function(){
+
+  var pass = $('#newpass').val();
+  var confpass = $('#confpass').val();
+
+  //just to make sure once again during submit
+  //if both are true then only allow submit
+  if(pass == confpass){
+    allowsubmit = true;
+  }
+  if(allowsubmit){
+    return true;
+  }else{
+    return false;
+  }
+});
 
 
 

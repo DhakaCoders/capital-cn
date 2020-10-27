@@ -68,7 +68,7 @@ $smedias = get_field('socialmedia', 'options');
               </div>
             </div>
             <div class="hdr-rgt">
-              <a class="hdr-login-btn" href="#"><i class="fas fa-sign-in-alt"></i>login</a>
+              <a class="hdr-login-btn" href="<?php echo esc_url(home_url('/')); ?>"><i class="fas fa-sign-in-alt"></i>login</a>
             </div>
           </div>
         </div>

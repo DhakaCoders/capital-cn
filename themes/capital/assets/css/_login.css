@@ -46,6 +46,7 @@
 	transform: translateY(-50%);
 }
 .input-row input[type="text"],
+.input-row input[type="email"],
 .input-row input[type="password"],
 .input-row input[type="submit"]{
 	width: 100%;
@@ -61,6 +62,7 @@
 	padding: 12px 20px 12px 20px; 
 }
 .input-row input[type="text"]:focus,
+.input-row input[type="email"]:focus,
 .input-row input[type="password"]:focus{
 	border-color: #707070;
 }
@@ -94,10 +96,10 @@
 	font-size: 16px;
 	font-weight: 500;
 }
-.success,
+/*.success,
 .unsuccess{
 	display: none;
-}
+}*/
 .success p{
 	color: #28a745;
 }
