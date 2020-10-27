@@ -60,6 +60,8 @@ $user_data = current_user_data();
                       </li>
                       <?php endforeach; ?>
                     </ul>
+                    <?php else: ?>
+                      <p>No Results</p>
                     <?php endif; ?>
                   </div>
                 </div>
@@ -68,8 +70,5 @@ $user_data = current_user_data();
           </div>
         </div>    
       </section>
-    
-
-
   </div>
 </div>

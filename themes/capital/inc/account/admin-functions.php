@@ -104,11 +104,30 @@ function add_script_to_menu_page()
  
 add_action( 'admin_enqueue_scripts', 'add_script_to_menu_page' );
 
+function wpmu_role_based_style() {
+	
+	if ( current_user_can( 'rsmanager' ) ) {
+		if( isset($_GET['page']) && $_GET['page'] == 'cbv_options' ){
+			echo '<script> location.replace("'.home_url('wp-admin').'"); </script>';
+			exit();
+		}
+		?>
+		<style>
+			#toplevel_page_cbv_options {display:none;}
+			ul.subsubsub span.count{display:none;}
+		</style>
+		<?php 
+	}
+}
+
+// for back-end; comment out if you don't want to hide in back-end
+add_action( 'admin_footer', 'wpmu_role_based_style', 99 );
+
+
 
 add_action('admin_footer', 'add_fronted_redirect_button');
 function add_fronted_redirect_button(){
-	$user_data = current_user_data();
-	if ( in_array( 'rsmanager', (array) $user_data->roles ) && is_user_logged_in() ){
+	if ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
 		$output = '';
 		$output .='<div class="redirect-fronted"> <a href="'.esc_url( home_url('account/') ).'">Home</a> </div>';
 		$output .='

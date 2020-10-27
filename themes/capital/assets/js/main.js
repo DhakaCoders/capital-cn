@@ -237,7 +237,10 @@ $('#change_pass_form').submit(function(){
 });
 
 
-
     new WOW().init();
 
 })(jQuery);
+
+function searchResources(){
+    
+}

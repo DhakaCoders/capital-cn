@@ -4,13 +4,13 @@
   $user_data = current_user_data();
   $topic = $wp_query->get( 'var1' );
   $thisID = $clientpostID = '';
-  if ( in_array( 'client', (array) $user_data->roles ) && is_user_logged_in() ) { 
+  if ( current_user_can( 'client' ) && is_user_logged_in() ) { 
     $curuserpost = $wpdb->get_row( "SELECT * FROM $wpdb->posts WHERE post_author = '$user_data->ID' AND post_type = 'client' " );
     if( $curuserpost ){
       $thisID = $curuserpost->ID;
     } 
 
-  }elseif ( in_array( 'rsmanager', (array) $user_data->roles ) && is_user_logged_in() ){
+  }elseif ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
     if( isset($topic) && !empty($topic) && $topic == 'client'):
       $authorid = $wp_query->get( 'var2' );
       if( isset($authorid) && !empty($authorid)){
@@ -32,7 +32,7 @@
       </div>
       <ul class="clearfix reset-list">
         <li><a href="<?php echo esc_url( home_url('account') );?>">Home</a></li>
-        <li><a href="<?php echo esc_url( home_url('account/inbox/') );?>">inbox</a></li>
+        <li><a href="<?php echo esc_url( home_url('inbox') );?>">inbox</a></li>
         <?php 
           if( !empty($thisID) ):
             $consoltplan_status = get_field('draftpublish', $thisID);
@@ -43,7 +43,7 @@
             endif; 
           endif; 
         ?>
-        <?php if ( in_array( 'client', (array) $user_data->roles ) && is_user_logged_in() ) { ?>
+        <?php if ( current_user_can( 'client' )  && is_user_logged_in() ) { ?>
         <li><a href="<?php echo esc_url( home_url('account/request/') );?>">requests</a></li>
         <?php } ?>
         <?php 

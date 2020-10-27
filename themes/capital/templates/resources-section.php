@@ -31,22 +31,22 @@
           <div class="row">
             <div class="col-md-12">
               <div class="cp-search-row">
-                <form>
-                  <input type="search" name=""  placeholder="Search Resources">
-                  <button><i class="fas fa-search"></i></button>
+                <form id="resourceForm" onsubmit="searchResources(); return false">
+                  <input type="search" name="" id="resourceKeyword"  placeholder="Search Resources">
+                  <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
               </div>
             </div>
             <div class="col-md-12">
               <?php if( $resources ): ?>
               <div class="cp-search-items">
-                <ul class="reset-list clearfix">
+                <ul class="reset-list clearfix" id="resources-search">
                   <?php 
                     foreach( $resources as $resource ): 
                     $showhideresources = $resource['showhideresources'];
                     if( $showhideresources ):
                   ?>
-                  <li<?php if( !empty($resource['title']) ): 'class="'.$resource['title'].'"'; endif;?>>
+                  <li<?php if( !empty($resource['title']) ): echo ' class="'.$resource['title'].'"'; endif;?>>
                     <div class="cp-search-item clearfix">
                       <div class="cp-titleDesc">
                         <?php 
@@ -88,7 +88,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="cp-search-items">
-
+                <p>No Results</p>
               </div>
             </div>
           </div>
