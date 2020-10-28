@@ -65,7 +65,9 @@ add_action( 'wp_enqueue_scripts', 'cbv_theme_scripts');
 
 add_action( 'wp_enqueue_scripts', 'get_enqueue_media' );
 function get_enqueue_media() {
-    if(is_user_logged_in()){
+    global $wp_query;
+    $topic = $wp_query->get( 'var1' );
+    if(is_user_logged_in() && isset($topic) && ($topic == 'request')){
         wp_enqueue_media();
         wp_enqueue_script('wpmedia-js',  THEME_URI.'/assets/js/wpmedia.js', array('jquery'), '1.0.0', true);
     }

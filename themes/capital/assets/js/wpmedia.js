@@ -9,7 +9,7 @@ jQuery(document).ready( function($){
         }
         
         logoMediaUploader = wp.media.frames.file_frame = wp.media({
-           title: 'Choose a File',
+           title: '',
            button: {
              text: 'Choose File'  
            },
@@ -28,11 +28,3 @@ jQuery(document).ready( function($){
   }
 
 });
-
-function DeleteGalleryImage(id){
-      var answer = confirm("Are you sure you want to remove gallery image?");
-      if( answer == true ){
-        jQuery('#myplugin-image-li'+id).remove('#myplugin-image-li'+id);
-      }
-      return;
-}

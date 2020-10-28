@@ -107,7 +107,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="cnstncy-plan-inr">
-
+                <p>No Results</p>
               </div>
             </div>
           </div>

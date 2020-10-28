@@ -44,9 +44,10 @@ add_action('wp_enqueue_scripts', 'action_init_hooks');
 function action_init_hooks(){
 	if( !is_user_logged_in() ){
 		user_login_account();
+		user_forget_password();
+		user_set_password();
 	}
 }
-
 function user_login_account(){
 	global $login_errors;
 	$login_errors = array();
@@ -93,6 +94,71 @@ function user_login_account(){
 	        }
 		}else{
 			$login_errors['loging_error'] = 'Unsuccessfully Your Login';
+		}
+
+	}
+	return false;
+}
+function user_forget_password(){
+	global $email_errors;
+	$email_errors = array();
+	if (isset( $_POST["exists_email"] ) && wp_verify_nonce($_POST['forget_password_nonce'], 'forget-password-nonce')) {
+		$success = true;
+		if (filter_var($_POST["exists_email"], FILTER_VALIDATE_EMAIL)) {
+			$user = get_user_by( 'email', sanitize_email($_POST["exists_email"]) );
+		}
+		
+		// this returns the user ID and other info from the user name
+		if( isset($user) && $user ){
+			$unique_code = substr(number_format(time() * rand(),0,'',''),0,6);
+			update_user_meta( $user->ID, 'new_password_code', $unique_code );
+			$redirect_to = site_url('set-password/?token='.$unique_code);
+	    	$body  = '<p>Hi!</p>';
+		    $body .= '<p>If you would like to set a new password, please <a href="'.$redirect_to.'">click on this link</a></p>';
+		    $send = wp_mail( $_POST["exists_email"], 'New Password', $body );
+		    if($body){
+				$email_errors['email_success'] = 'Please check your email and click on the link to set a new password';
+			}else{
+				$email_errors['email_error'] = 'Something went wrong! Please try again.';
+			}
+		}else{
+			$email_errors['email_error'] = 'Email address does not found';
+		}
+
+	}
+	return false;
+}
+
+function user_set_password(){
+	global $email_errors;
+	$email_errors = array();
+	if (isset( $_POST["new_password"] ) && isset( $_POST["token"] ) && wp_verify_nonce($_POST['set_password_nonce'], 'set-password-nonce')) {
+		if ( !empty($_POST["token"] ) ) {
+			$token = $_POST["token"];
+			$users = get_users(array('meta_key' => 'new_password_code', 'meta_value' => $token));
+			// this returns the user ID and other info from the user name
+			if( isset($users) && $users ){
+				foreach ($users as $key => $user) {
+					$userID = $user->ID;
+				}
+				$new_pass = $_POST["new_password"];
+				$redirect_to = site_url();
+		    	$userdata = array(
+			            'ID'        =>  $userID,
+			            'user_pass' =>  $new_pass,
+		        );  
+	    		$user_id = wp_update_user($userdata);
+	    		if($user_id){
+	    			update_user_meta( $user_id, 'new_password_code', '' );
+	    			$email_errors['email_success'] = 'Password has been updated successfully.';
+	    		}else{
+	    			$email_errors['email_error'] = 'Password has not been updated successfully.';
+	    		}
+			}else{
+				$email_errors['email_error'] = 'Perhaps your token is being expired. Please go back your email and click the link again.';
+			}
+		}else{
+			$email_errors['email_error'] = 'Token is required.';
 		}
 
 	}

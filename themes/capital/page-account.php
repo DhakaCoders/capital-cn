@@ -10,8 +10,6 @@ $topic = $wp_query->get( 'var1' );
 if( in_array( 'rsmanager', (array) $user_data->roles ) && is_user_logged_in() ){
     if( $topic == 'client'){
       get_template_part( 'templates/main', 'section');
-    }elseif( $topic == 'inbox'){
-      get_template_part( 'templates/inbox', 'section');
     }elseif( $topic == 'edvantage-club'){
       get_template_part( 'templates/edvantage-club', 'section');
     }else{
@@ -33,8 +31,6 @@ if( in_array( 'rsmanager', (array) $user_data->roles ) && is_user_logged_in() ){
       get_template_part( 'templates/edvantage-club', 'section');
     }elseif( $topic == 'request'){
       get_template_part( 'templates/request', 'section');
-    }elseif( $topic == 'inbox'){
-      get_template_part( 'templates/inbox', 'section');
     }elseif( $topic == 'client'){
       get_template_part( 'templates/main', 'section');
     }else{

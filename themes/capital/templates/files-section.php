@@ -42,7 +42,7 @@
                     $showhidefiles = $file['showhidefiles'];
                     if( $showhidefiles ):
                     ?>
-                    <li>
+                    <li<?php if( !empty($file['keyword']) ): echo ' class="'.$file['keyword'].'"'; endif;?>>
                       <div class="files-grd-item">
                         <div class="fgiwnld">
                           <div class="files-grd-item-dwnld-des">
@@ -109,7 +109,7 @@
                 ?>
               <?php endwhile; ?>
               <?php else: ?>
-
+                <p>No Results</p>
               <?php endif; wp_reset_postdata(); ?>
               </div>
 
