@@ -3,16 +3,17 @@
   global $wp_query, $wpdb;
   $user_data = current_user_data();
   $topic = $wp_query->get( 'var1' );
+  $authorid = $wp_query->get( 'var2' );
   $thisID = $clientpostID = '';
   if ( current_user_can( 'client' ) && is_user_logged_in() ) { 
     $curuserpost = $wpdb->get_row( "SELECT * FROM $wpdb->posts WHERE post_author = '$user_data->ID' AND post_type = 'client' " );
     if( $curuserpost ){
       $thisID = $curuserpost->ID;
     } 
+    $authorid =  get_user_meta($user_data->ID, 'accesspermission', true);
 
   }elseif ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
     if( isset($topic) && !empty($topic) && $topic == 'client'):
-      $authorid = $wp_query->get( 'var2' );
       if( isset($authorid) && !empty($authorid)){
         $clientpost = $wpdb->get_row( "SELECT * FROM $wpdb->posts WHERE post_author = '$authorid' AND post_type = 'client' " );
         if( $clientpost ){
@@ -32,7 +33,7 @@
       </div>
       <ul class="clearfix reset-list">
         <li><a href="<?php echo esc_url( home_url('account') );?>">Home</a></li>
-        <li><a href="<?php echo esc_url( home_url('inbox') );?>">inbox</a></li>
+        <li><a href="<?php echo esc_url( home_url('account/inbox/'.$authorid) );?>">inbox</a></li>
         <?php 
           if( !empty($thisID) ):
             $consoltplan_status = get_field('draftpublish', $thisID);
