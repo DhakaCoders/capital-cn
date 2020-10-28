@@ -9,6 +9,7 @@
     if( $curuserpost ){
       $thisID = $curuserpost->ID;
     } 
+    $authorid =  get_user_meta($user_data->ID, 'accesspermission', true);
 
   }elseif ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
     if( isset($topic) && !empty($topic) && $topic == 'client'):
@@ -34,12 +35,12 @@
               <ul class="reset-list">
                 <li>
                   <div class="content-item">
-                    <a href="<?php echo esc_url( home_url('account/inbox/client/'.$authorid) );?>" class="overlay-link"></a>
+                    <a href="<?php echo esc_url( home_url('account/inbox/'.$authorid) );?>" class="overlay-link"></a>
                     <div class="content-item-icon mHc">
                       <img src="<?php echo THEME_URI; ?>/assets/images/inbox.svg" alt="">
                     </div>
                     <div class="content-item-hdng mHc1">
-                      <h2 class="content-item-title"><a href="<?php echo esc_url( home_url('account/inbox/client/'.$authorid) );?>">inbox</a></h2>
+                      <h2 class="content-item-title"><a href="<?php echo esc_url( home_url('account/client/'.$authorid) );?>">inbox</a></h2>
                     </div>
                   </div>
                 </li>
