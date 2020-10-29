@@ -1,0 +1,77 @@
+.inbox-page-sec{
+	padding: 50px 0 70px;
+}
+.inbox-page-sec-lft{
+	margin-bottom: 50px;
+}
+.inbox-page-sec-rgt{
+	min-height: 100px;
+	background: #fff;
+}
+
+.msg-avater-info{
+	background: #fff;
+	padding: 55px 30px 30px 20px;
+}
+
+.msg-avater-info-inr{
+	position: relative;
+	padding: 0 0 0 95px;
+}
+
+.msg-avater-pro{
+	max-width: 65px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.msg-avater-pro img{
+	width: 100%;
+	border-radius: 100%;
+	border: 1px solid #43BAB4;
+}
+
+.msg-avater-des > strong{
+	display: block;
+	color: #545454;
+	font-size: 22px;
+	line-height: 1.2;
+	margin-bottom: 20px;
+}
+
+.msg-avater-des div{
+	font-size: 15px;
+	line-height: 1.2;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+	color: #191919;
+}
+
+.msg-avater-des p{
+	line-height: 1.5;
+	color: #919299;
+	font-size: 18px;
+}
+
+
+@media(max-width: 991px){
+	.msg-avater-info-inr{
+		padding-left: 80px;
+	}
+	.msg-avater-info {
+	    padding: 45px 25px 20px 20px;
+	}
+}
+
+
+@media(max-width: 479px){
+	.msg-avater-pro{
+		position: static;
+		margin-bottom: 15px;
+	}
+	.msg-avater-info-inr{
+		padding-left: 0;
+
+	}
+}
