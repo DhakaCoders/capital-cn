@@ -251,6 +251,23 @@ $('#clientform').submit(function(e){
 
 });
 
+if( $('#has-chat').length ){
+  var did = $('#has-chat').data('ti');
+  if( $('.wcUsersList .wcUsersListContainer a[data-wp-id="3"]').length ){
+    //$('.wcUsersList .wcUsersListContainer a[data-wp-id="3"]').trigger('click');
+    $('.wcUsersList .wcUsersListContainer a[data-wp-id="3"]').click();
+    console.log('hello1');
+  }
+}
+var counter = 0;
+$(document).on('mouseover mouseout', 'body', function(){
+  if( counter == 0 ){
+  var did = $('#has-chat').data('ti');
+  $('.wcUsersList .wcUsersListContainer a[data-wp-id="'+did+'"]').click();
+  counter++;
+  }
+});
+
 })(jQuery);
 
 function searchResources(){

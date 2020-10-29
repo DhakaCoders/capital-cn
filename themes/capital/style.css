@@ -13,8 +13,68 @@ Text Domain: capital
 
 @import url('assets/css/main.css');
 
+.wcMessagesContainerTab.wcChannelTab{
+	display: none;
+}
+.wcMessagesContainerTab .wcMessagesContainerTabCloseLink{
+	display: none!important;
+}
 
-
-
-
+.userChatBox{
+	max-width: 700px;
+	margin: 0 auto;
+}
+.userChatBox .wcUsersList,
+.wcWindowTitle{
+	display: none!important;
+}
+.userChatBox .wcUsersListIncluded .wcMessages{
+	width: 100%;
+}
+.wcMessages .wcMessage.wcCurrentUserMessage .wcMessageUser,
+.wcMessages .wcMessage.wcCurrentUserMessage .wcMessageAvatar,
+.wcMessages .wcMessageUser,
+.wcMessage img.wcMessageAvatar,
+.wcMessages .wcMessage .wcActionWrapper .wcAdminAction.wcSpamReportButton{
+	display: none;
+}
+.wcMessages .wcMessage.wcCurrentUserMessage .wcActionWrapper,
+.wcMessages .wcMessage.wcCurrentUserMessage .wcMessageTime,
+.wcMessages .wcMessage .wcActionWrapper{
+	display: inline-block;
+	float: initial;
+}
+.wcContainer .wcMessages .wcMessage .wcMessageContent{
+	background: transparent;
+	padding: 0 0;
+}
+.wcContainer .wcMessages .wcMessage .wcMessageContent .wcMessageContentInternal{
+	padding: 10px;
+	display: inline-block;
+	background: #f7f7f7;
+	border-radius: 10px;
+	color: #000;
+}
+.wcContainer .wcMessages .wcMessage.wcCurrentUserMessage .wcMessageContent .wcMessageContentInternal{
+	background: #cee5e3;
+}
+.wcMessages .wcMessage{
+	text-align: left;
+}
+.wcMessages .wcMessage.wcCurrentUserMessage{
+	text-align: right;
+}
+.wcMessage .wcMessageQuoted{
+	margin: -3px -10px -5px;
+	padding: 8px 8px 12px;
+}
+.wcMessage:not(.wcCurrentUserMessage) + .wcMessage:not(.wcCurrentUserMessage) .wcMessageAvatar{
+	display: none;
+}
+/*.wcMessage:not(.wcCurrentUserMessage) + .wcMessage:not(.wcCurrentUserMessage) .wcMessageContent{
+	margin-top: -30px;
+}*/
+.wcContainer .wcMessages .wcMessage{
+	margin-bottom: 0;
+}
 

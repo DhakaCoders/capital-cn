@@ -33,7 +33,11 @@ if ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
             <div class="col-md-12">
 
             <div class="requests-sec-inr clearfix">
-
+<div class="userChatBox">
+<?php 
+if (function_exists('wise_chat')) { wise_chat(); }
+?>
+</div>
             </div>
             </div>
           </div>
