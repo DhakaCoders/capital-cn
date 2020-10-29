@@ -43,6 +43,7 @@ $user_data = current_user_data();
                       <li class="clearfix <?php echo strtolower($keyword); ?>" >
                         <div class="cl-profile clearfix">
                           <div class="cl-profile-in">
+                            <div class="cl-profile-img">
                             <?php 
                               $imageID = get_user_meta($cient->ID, 'profileimage', true);
                               if( isset($imageID) && !empty($imageID)){
@@ -51,6 +52,7 @@ $user_data = current_user_data();
                                 echo '';
                               }
                             ?>
+                            </div>
                             <strong>
                               <?php
                                 echo $clientname;

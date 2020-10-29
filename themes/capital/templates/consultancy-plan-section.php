@@ -39,7 +39,12 @@
                     <div class="cnstncy-plan-hdr-item">
                       <label>CONSULTANCY LENGTH:</label>
                       <div>
-                        <strong>8 Weeks <?php if( !empty($consultplan['consultancy_length']) ) printf('<span>(%s)</span>', $consultplan['consultancy_length']); ?></strong>
+                        <strong>
+                        <?php
+                        if( !empty($consultplan['program_weeks']) ) echo $consultplan['program_weeks'];
+                        if( !empty($consultplan['consultancy_length']) )  printf('<span> (%s)</span>', $consultplan['consultancy_length']); 
+                        ?>
+                        </strong>
                       </div>
                     </div>
                   </li>
@@ -82,7 +87,7 @@
                         <div class="cnstncy-download-btn">
                           <a href="<?php echo $files['url']; ?>" download>DOWNLOAD</a>
                         </div>
-                        <?php if( !empty($filesize) ) printf( '<span>(%skb)</span>', $filesize ); ?>
+                        <?php if( !empty($filesize) ) printf( '<span>(%skb)</span>', round($filesize) ); ?>
                       </div>
                       <?php endif; ?>
                     </div>

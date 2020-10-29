@@ -46,7 +46,7 @@
                         </div>
                       </li>
                       <li>
-                        <div><label>CONSULTATION TYPE:</label>
+                        <div><label>EMPLOYEE NAME:</label>
                           <?php if( !empty($consulttype['title']) ) printf('<strong>%s</strong>', $consulttype['title']); ?>
                         </div>
                       </li>
@@ -83,7 +83,7 @@
                               <div class="cicc-download-btn">
                                 <a href="<?php echo $files['url']; ?>" download>DOWNLOAD</a>
                               </div>
-                              <?php if( !empty($filesize) ) printf( '<span>(%skb)</span>', $filesize ); ?>
+                              <?php if( !empty($filesize) ) printf( '<span>(%skb)</span>', round($filesize) ); ?>
                             </div>
                             <?php endif; ?>
                             <div class="cicc-pdf-col-des">

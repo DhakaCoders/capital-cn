@@ -77,4 +77,32 @@ Text Domain: capital
 .wcContainer .wcMessages .wcMessage{
 	margin-bottom: 0;
 }
-
+.wcControls input.wcSubmitButton, .wcControls input.wcInput{
+	padding-left: 15px;
+}
+.wcContainer .wcMessagesContainerTab.wcMessagesContainerTabActive{
+	position: relative;
+	display: block;
+    background: #2b6f6e;
+    border: 0;
+    padding: 15px 70px;
+}
+.wcContainer .wcMessagesContainerTab.wcMessagesContainerTabActive .wcMessagesContainerTabLink{
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;	
+}
+.wcContainer .wcMessagesContainerTab.wcMessagesContainerTabActive:after{
+	content: "";
+	border: 1px solid #43BAB4;
+	position: absolute;
+	left: 0;
+	height: 50px;
+	width: 50px;
+	background-position: center!important;
+    background-size: cover!important;
+    border-radius: 100%;
+    overflow: hidden;
+    left: 10px;
+    top: 4px;
+}

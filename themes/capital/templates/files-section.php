@@ -57,7 +57,7 @@
                               <?php if( !empty($pdf['filename']) ) printf( '<strong>%s</strong>', $pdf['filename'] ); ?>
                             </div>
                             <div class="fgidwnld-size">
-                              <?php if( !empty($filesize) ) printf( '<span>(%skb)</span>', $filesize ); ?>
+                              <?php if( !empty($filesize) ) printf( '<span>(%skb)</span>', round($filesize) ); ?>
                             </div>
                           </div>
                           <div class="files-grd-item-dwnld-link">

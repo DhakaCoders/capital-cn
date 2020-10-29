@@ -207,3 +207,18 @@ function get_user_image(){
 		echo '';
 	endif;
 }
+
+function get_user_image_url($id){
+	$user = wp_get_current_user();
+	if( $id ):
+	$imageID = get_user_meta($id, 'profileimage', true);
+	if( isset($imageID) && !empty($imageID)){
+	  $imgtag = cbv_get_image_src( $imageID);
+	  return $imgtag;
+	}else{
+	  return '';
+	}
+	else:
+		return '';
+	endif;
+}

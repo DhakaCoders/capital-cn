@@ -263,7 +263,7 @@ var counter = 0;
 $(document).on('mouseover mouseout', 'body', function(){
   if( counter == 0 ){
   var did = $('#has-chat').data('ti');
-  $('.wcUsersList .wcUsersListContainer a[data-wp-id="'+did+'"]').click();
+  setTimeout(function(){ $('.wcUsersList .wcUsersListContainer a[data-wp-id="'+did+'"]').click(); }, 3000);
   counter++;
   }
 });

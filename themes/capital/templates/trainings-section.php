@@ -97,7 +97,7 @@
                                 <strong>
                                   <?php 
                                     if( !empty($files['filename']) ) printf( '%s ', $files['filename'] ); 
-                                    if( !empty($filesize) ) printf( '<span>(%skb)</span>', $filesize ); 
+                                    if( !empty($filesize) ) printf( '<span>(%skb)</span>', round($filesize) ); 
                                   ?>
                                 </strong>
                                 <a href="<?php echo $files['url']; ?>" download>download</a>

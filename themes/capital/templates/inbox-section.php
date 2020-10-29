@@ -47,3 +47,11 @@ if (function_exists('wise_chat')) { wise_chat(); }
 </div>
 <div id="others-clients" data-more-ti="<?php echo $clientImpIDs; ?>"></div>
 <div id="has-chat" data-ti="<?php echo $clientCurrentID; ?>"></div>
+<?php 
+$climg = get_user_image_url($clientCurrentID);
+?>
+<style type="text/css">
+  .wcContainer .wcMessagesContainerTab.wcMessagesContainerTabActive:after{
+    background: url(<?php echo $climg; ?>);
+  }
+</style>

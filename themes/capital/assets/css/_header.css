@@ -147,6 +147,7 @@ header.login-heder{
 	height: 65px;
 	border: 1px solid #43BAB4;
 	border-radius: 100% 100%;
+	overflow: hidden;
 }
 .user-photo img{
 	width: 100%;

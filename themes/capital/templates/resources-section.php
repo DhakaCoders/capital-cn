@@ -65,7 +65,7 @@
                           <div class="cicc-download-btn">
                             <a href="<?php echo $files['url']; ?>" download>DOWNLOAD</a>
                           </div>
-                          <?php if( !empty($filesize) ) printf( '<span>(%skb)</span>', $filesize ); ?>
+                          <?php if( !empty($filesize) ) printf( '<span>(%skb)</span>', round($filesize) ); ?>
                         </div>
                       </div>
                       <?php endif; ?>

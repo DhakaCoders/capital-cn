@@ -129,15 +129,13 @@ add_action('admin_footer', 'add_fronted_redirect_button');
 function add_fronted_redirect_button(){
 	if ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
 		$output = '';
-		$output .='<div class="redirect-fronted"> <a href="'.esc_url( home_url('account/') ).'">Home</a> </div>';
+		$output .='<div class="redirect-fronted"> <a href="'.esc_url( home_url('account/') ).'">Client List</a> </div>';
 		$output .='
 		<style>
 			.redirect-fronted {
 			    position: fixed;
 			    bottom: 90px;
 			    right: 0px;
-			    background: rgba(0,0,0,0.75);
-			    padding: 10px 15px;
 			}
 
 			.redirect-fronted a {
@@ -145,6 +143,12 @@ function add_fronted_redirect_button(){
 			    text-decoration: none;
 			    font-size: 16px;
 			    font-weight: 600;
+			    padding: 20px 25px;
+			    display: inline-block;
+			    background: rgba(0,0,0,0.75);
+			}
+			.redirect-fronted a:hover{
+				background: rgba(0,0,0,0.95);
 			}
 		</style>
 		';
