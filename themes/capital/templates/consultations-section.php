@@ -33,10 +33,12 @@
                 <?php 
                 if( $consulttypes ):
                 foreach( $consulttypes as $consulttype ): 
-                  $consults = $consulttype['consultations'];
+                  $requestform = $consulttype['request_form'];
+                  $consultreport = $consulttype['consultation_report'];
                   $showhideconsult = $consulttype['showhideconsultblock'];
                   if( $showhideconsult ):
                 ?>
+                
                 <div class="consultation-item">
                   <div class="consultation-item-hdr">
                     <ul class="reset-list">
@@ -47,7 +49,21 @@
                       </li>
                       <li>
                         <div><label>EMPLOYEE NAME:</label>
-                          <?php if( !empty($consulttype['title']) ) printf('<strong>%s</strong>', $consulttype['title']); ?>
+                        <?php 
+                          $managerID =  get_user_meta($user_data->ID, 'accesspermission', true); 
+                          if( !empty($managerID) ):
+                          $manager_obj = get_user_by('id', $managerID);
+                        ?>
+                         <strong>
+                          <?php 
+                            if(!empty($manager_obj->display_name)){
+                              echo $manager_obj->display_name;
+                            }else{
+                              echo $manager_obj->user_nicename;
+                            }
+                          ?>
+                        </strong>
+                        <?php endif; ?>
                         </div>
                       </li>
                       <li>
@@ -61,20 +77,19 @@
                   <div class="consultation-item-con-cntlr">
                     <div class="cicc-hdr">
                         <strong>URGENCY: <?php if( !empty($consulttype['urgency']) ) printf('<span>%s</span>', $consulttype['urgency']); ?></strong> 
-                        <strong>CONSULTATION TYPE: <?php if( !empty($consulttype['title']) ) printf('<span>%s</span>', $consulttype['title']); ?></strong>
+                        <strong>CONSULTATION TYPE: <?php if( !empty($consulttype['consultations_type']) ) printf('<span>%s</span>', $consulttype['consultations_type']); ?></strong>
                     </div>
-                    <?php if( $consults ): ?>
+                    <?php if( $requestform OR  $consultreport): ?>
                     <div class="cicc-pdfs">
                       <ul class="reset-list clearfix">
                         <?php 
-                          foreach( $consults as $consult ):
-                          $showhidefileblock = $consult['showhidefileblock'];
-                          if( $showhidefileblock ): 
+                          $showhidefilerequest = $requestform['showhidefileblock'];
+                          if( $showhidefilerequest ): 
                         ?>
                         <li>
                           <div class="cicc-pdf-col mHc clearfix">
                             <?php 
-                              $files = $consult['import_file']; 
+                              $files = $requestform['import_file']; 
                               if( $files ):
                                 $filesize = round($files['filesize']/1024, 2);
                             ?>
@@ -87,15 +102,42 @@
                             </div>
                             <?php endif; ?>
                             <div class="cicc-pdf-col-des">
-                              <?php 
-                              if( !empty($consult['title']) ) printf('<h6 class="ciccpcd-title">%s</h6>', $consult['title']); 
-                              if( !empty($consult['description']) ) echo wpautop($consult['description']);
-                              ?>
+                            <?php 
+                              printf('<h6 class="ciccpcd-title">%s</h6>', 'REQUEST FORM'); 
+                              if( !empty($requestform['description']) ) echo wpautop($requestform['description']);
+                            ?>
                             </div>
                           </div>
                         </li>
                         <?php endif; ?>
-                        <?php endforeach; ?>
+                        <?php 
+                          $showhidefilereport = $consultreport['showhidefileblock'];
+                          if( $showhidefilereport ): 
+                        ?>
+                        <li>
+                          <div class="cicc-pdf-col mHc clearfix">
+                            <?php 
+                              $files = $consultreport['import_file']; 
+                              if( $files ):
+                                $filesize = round($files['filesize']/1024, 2);
+                            ?>
+                            <div class="cicc-pdf-col-lft">
+                              <i><img src="<?php echo THEME_URI; ?>/assets/images/file-icon.png"></i>
+                              <div class="cicc-download-btn">
+                                <a href="<?php echo $files['url']; ?>" download>DOWNLOAD</a>
+                              </div>
+                              <?php if( !empty($filesize) ) printf( '<span>(%skb)</span>', round($filesize) ); ?>
+                            </div>
+                            <?php endif; ?>
+                            <div class="cicc-pdf-col-des">
+                            <?php 
+                              printf('<h6 class="ciccpcd-title">%s</h6>', 'CONSULTATION REPORT'); 
+                              if( !empty($consultreport['description']) ) echo wpautop($consultreport['description']);
+                            ?>
+                            </div>
+                          </div>
+                        </li>
+                        <?php endif; ?>
                       </ul>
                     </div>
                     <?php endif; ?>

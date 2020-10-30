@@ -48,15 +48,29 @@
                       </div>
                     </div>
                   </li>
+                  <?php 
+                    $managerID =  get_user_meta($user_data->ID, 'accesspermission', true); 
+                    if( !empty($managerID) ):
+                      $manager_obj = get_user_by('id', $managerID);
+                  ?>
                   <li>
                     <div class="cnstncy-plan-hdr-item cicc-hdr-item">
                       <label>RELATIONSHIP MANAGER:</label>
                       <div>
-                        <i><img src="<?php echo THEME_URI; ?>/assets/images/cicc-user-profile-photo-01.png"></i>
-                        <strong>Jane Bishop</strong>
+                        <i><img src="<?php echo get_user_image_url($managerID); ?>"></i>
+                        <strong>
+                          <?php 
+                            if(!empty($manager_obj->display_name)){
+                              echo $manager_obj->display_name;
+                            }else{
+                              echo $manager_obj->user_nicename;
+                            }
+                          ?>
+                        </strong>
                       </div>
                     </div>
                   </li>
+                  <?php endif; ?>
                 </ul>
               </div>
               <?php if( $plans ): ?>

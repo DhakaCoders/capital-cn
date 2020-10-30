@@ -201,24 +201,29 @@ function get_user_image(){
 	  $imgtag = cbv_get_image_tag( $imageID);
 	  echo $imgtag;
 	}else{
-	  echo '';
+	  echo '<img src="'.THEME_URI.'/assets/images/profile-dflt.jpg" alt="Profile Image">';
 	}
-	else:
-		echo '';
 	endif;
 }
 
 function get_user_image_url($id){
-	$user = wp_get_current_user();
-	if( $id ):
+	if( empty($id) ) return;
 	$imageID = get_user_meta($id, 'profileimage', true);
 	if( isset($imageID) && !empty($imageID)){
 	  $imgtag = cbv_get_image_src( $imageID);
 	  return $imgtag;
 	}else{
-	  return '';
+	  return THEME_URI.'/assets/images/profile-dflt.jpg';
 	}
-	else:
-		return '';
-	endif;
+}
+
+function get_user_image_tag($id){
+	if( empty($id) ) return;
+	$imageID = get_user_meta($id, 'profileimage', true);
+	if( isset($imageID) && !empty($imageID)){
+	  $imgtag = cbv_get_image_tag( $imageID);
+	  return $imgtag;
+	}else{
+	  return '<img src="'.THEME_URI.'/assets/images/profile-dflt.jpg" alt="Profile Image">';
+	}
 }

@@ -50,30 +50,29 @@
                       <div class="training-item-inr">
                         <div class="training-item-lft">
                           <div class="training-item-lft-avater">
-                            <i>
                             <?php 
                               $managerID = get_user_meta( $user_data->ID, 'accesspermission', true );
-                              $manager_data = get_user_by('id', $managerID);
-                              $imageID = get_user_meta($manager_data->ID, 'profileimage', true);
-                              if( isset($imageID) && !empty($imageID)){
-                                echo cbv_get_image_tag( $imageID);
-                              }else{
-                                echo '';
-                              }
+                              if( isset($managerID) && !empty($managerID)){
+                            ?>
+                            <i>
+                            <?php 
+                             $manager_obj = get_user_by('id', $managerID);
+                             echo get_user_image_tag($managerID)
                             ?>
                             </i>
                             <div>
                               <label>PREPARED BY:</label>
                               <strong>
                               <?php
-                                if(!empty($manager_data->display_name)){
-                                  echo $manager_data->display_name;
+                                if(!empty($manager_obj->display_name)){
+                                  echo $manager_obj->display_name;
                                 }else{
-                                  echo $manager_data->user_nicename;
+                                  echo $manager_obj->user_nicename;
                                 }
                               ?>
                               </strong>
                             </div>
+                          <?php } ?>
                           </div>
                         </div>
                         <div class="training-item-des">
