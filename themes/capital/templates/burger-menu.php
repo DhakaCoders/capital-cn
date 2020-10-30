@@ -36,12 +36,14 @@
         <li><a href="<?php echo esc_url( home_url('account/inbox/'.$authorid) );?>">inbox</a></li>
         <?php 
           if( !empty($thisID) ):
-            $consoltplan_status = get_field('draftpublish', $thisID);
-            if( $consoltplan_status ):
-              echo '<li><a href="'.esc_url( home_url('account/consultancy-plan/') ).'">consultancy plans </a></li>'; 
-            else:
+            if ( current_user_can( 'client' )) { 
+              $consoltplan_status = get_field('draftpublish', $thisID);
+              if( $consoltplan_status ):
+                echo '<li><a href="'.esc_url( home_url('account/consultancy-plan/') ).'">consultancy plans </a></li>'; 
+              endif;
+            }else{
               echo '<li><a href="'.esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit&key=#field_5f8b26500cd63') ).'">consultancy plans </a></li>'; 
-            endif; 
+            }
           endif; 
         ?>
         <?php if ( current_user_can( 'client' )  && is_user_logged_in() ) { ?>
@@ -49,39 +51,47 @@
         <?php } ?>
         <?php 
           if( !empty($thisID) ):
-            $consult_status = get_field('draftpublishconsult', $thisID);
-            if( $consult_status ): 
-              echo '<li><a href="'.esc_url( home_url('account/consultations/') ).'">consultations</a></li>'; 
-            else:
-              echo '<li><a href="'.esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit&key=#field_5f8b27c7c87cd') ).'">consultations</a></li>'; 
-            endif; 
+            if ( current_user_can( 'client' )) { 
+              $consult_status = get_field('draftpublishconsult', $thisID);
+              if( $consult_status ): 
+                echo '<li><a href="'.esc_url( home_url('account/consultations/') ).'">consultations</a></li>'; 
+              endif;
+            }else{
+              echo '<li><a href="'.esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit&key=#field_5f8b27c7c87cd') ).'">consultations</a></li>';  
+            }
           endif; 
 
           if( !empty($thisID) ):
-            $training_status = get_field('draftpublishtraining', $thisID);
-            if( $training_status ): 
-              echo '<li><a href="'.esc_url( home_url('account/trainings/') ).'">Training</a></li>'; 
-            else:
+            if ( current_user_can( 'client' )) { 
+              $training_status = get_field('draftpublishtraining', $thisID);
+              if( $training_status ): 
+                echo '<li><a href="'.esc_url( home_url('account/trainings/') ).'">Training</a></li>'; 
+              endif;
+            }else{
               echo '<li><a href="'.esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit&key=#field_5f8b27c7c87cd') ).'">Training</a></li>'; 
-            endif; 
+            }
           endif; 
 
           if( !empty($thisID) ):
-            $resources_status = get_field('draftpublishresources', $thisID);
-            if( $resources_status ):
-              echo '<li><a href="'.esc_url( home_url('account/resources/') ).'">resources</a></li>'; 
-            else:
+            if ( current_user_can( 'client' )) { 
+              $resources_status = get_field('draftpublishresources', $thisID);
+              if( $resources_status ):
+                echo '<li><a href="'.esc_url( home_url('account/resources/') ).'">resources</a></li>'; 
+              endif;
+            }else{
               echo '<li><a href="'.esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit&key=#field_5f8b27c7c87cd') ).'">resources</a></li>'; 
-            endif; 
+            }
           endif;
 
           if( !empty($thisID) ):
-            $files_status = get_field('draftpublishfiles', $thisID);
-            if( $files_status ):
-              echo '<li><a href="'.esc_url( home_url('account/files/') ).'">Files</a></li>'; 
-            else:
+            if ( current_user_can( 'client' )) { 
+              $files_status = get_field('draftpublishfiles', $thisID);
+              if( $files_status ):
+                echo '<li><a href="'.esc_url( home_url('account/files/') ).'">Files</a></li>'; 
+              endif;
+            }else{
               echo '<li><a href="'.esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit&key=#field_5f8b27c7c87cd') ).'">Files</a></li>'; 
-            endif; 
+            }
           endif;
         ?>
         <li><a href="<?php echo esc_url( home_url('account/edvantage-club/') );?>">the edvantage club </a></li>

@@ -45,36 +45,38 @@
                   </div>
                 </li>
                 <?php 
-                  if( !empty($thisID) ):
+                  if( !empty($thisID) ){
+                  if ( current_user_can( 'client' )) {  
                   $consoltplan_status = get_field('draftpublish', $thisID);
                   if( $consoltplan_status ): 
                 ?>
-                <li>
-                  <div class="content-item">
-                    <a href="<?php echo esc_url( home_url('account/consultancy-plan/') );?>" class="overlay-link"></a>
-                    <div class="content-item-icon mHc">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/consultancy-plan-icon.svg" alt="">
-                    </div>
-                    <div class="content-item-hdng mHc1">
-                      <h2 class="content-item-title"><a href="<?php echo esc_url( home_url('account/consultancy-plan/') );?>">CONSULTANCY PLAN</a></h2>
-                    </div>
-                  </div>
-                </li>
-                <?php else: ?>
-                <li>
-                  <div class="content-item">
-                    <a href="<?php echo esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit&key=#field_5f8b26500cd63') );?>" class="overlay-link"></a>
-                    <div class="content-item-icon mHc">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/consultancy-plan-icon.svg" alt="">
-                    </div>
-                    <div class="content-item-hdng mHc1">
-                      <h2 class="content-item-title"><a href="<?php echo esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit&key=#field_5f8b26500cd63') );?>">CONSULTANCY PLAN</a></h2>
-                    </div>
-                  </div>
-                </li>
+                    <li>
+                      <div class="content-item">
+                        <a href="<?php echo esc_url( home_url('account/consultancy-plan/') );?>" class="overlay-link"></a>
+                        <div class="content-item-icon mHc">
+                          <img src="<?php echo THEME_URI; ?>/assets/images/consultancy-plan-icon.svg" alt="">
+                        </div>
+                        <div class="content-item-hdng mHc1">
+                          <h2 class="content-item-title"><a href="<?php echo esc_url( home_url('account/consultancy-plan/') );?>">CONSULTANCY PLAN</a></h2>
+                        </div>
+                      </div>
+                    </li>
                 <?php endif; ?>
-                <?php endif; ?>
-                <?php if ( current_user_can( 'client' ) && is_user_logged_in() ) { ?>
+                <?php }else{ ?>
+                  <li>
+                    <div class="content-item">
+                      <a href="<?php echo esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit&key=#field_5f8b26500cd63') );?>" class="overlay-link"></a>
+                      <div class="content-item-icon mHc">
+                        <img src="<?php echo THEME_URI; ?>/assets/images/consultancy-plan-icon.svg" alt="">
+                      </div>
+                      <div class="content-item-hdng mHc1">
+                        <h2 class="content-item-title"><a href="<?php echo esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit&key=#field_5f8b26500cd63') );?>">CONSULTANCY PLAN</a></h2>
+                      </div>
+                    </div>
+                  </li>
+                <?php } ?>
+                <?php } ?>
+                <?php if ( current_user_can( 'client' )) { ?>
                 <li>
                   <div class="content-item">
                     <a href="<?php echo esc_url( home_url('account/request/') );?>" class="overlay-link"></a>
@@ -88,7 +90,8 @@
                 </li>
                 <?php } ?>
                 <?php 
-                  if( !empty($thisID) ):
+                  if( !empty($thisID) ){
+                  if ( current_user_can( 'client' )) {
                   $consult_status = get_field('draftpublishconsult', $thisID);
                   if( $consult_status ): 
                 ?>
@@ -103,7 +106,8 @@
                     </div>
                   </div>
                 </li>
-                <?php else: ?>
+                <?php endif; ?>
+                <?php }else{ ?>
                 <li>
                   <div class="content-item">
                     <a href="<?php echo esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit&key#field_5f8b27c7c87cd') );?>" class="overlay-link"></a>
@@ -115,12 +119,11 @@
                     </div>
                   </div>
                 </li>
+                <?php } ?>
+                <?php } ?>
                 <?php 
-                  endif;
-                  endif;
-                ?>
-                <?php 
-                  if( !empty($thisID) ):
+                  if( !empty($thisID) ){
+                  if ( current_user_can( 'client' )) {
                   $training_status = get_field('draftpublishtraining', $thisID);
                   if( $training_status ): 
                 ?>
@@ -135,7 +138,8 @@
                     </div>
                   </div>
                 </li>
-                <?php else: ?>
+                <?php endif; ?>
+                <?php }else{ ?>
                 <li>
                   <div class="content-item">
                     <a href="<?php echo esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit') );?>" class="overlay-link"></a>
@@ -147,12 +151,11 @@
                     </div>
                   </div>
                 </li>
+                <?php } ?>
+                <?php } ?>
                 <?php 
-                  endif;
-                  endif; 
-                ?>
-                <?php 
-                  if( !empty($thisID) ):
+                  if( !empty($thisID) ){
+                  if ( current_user_can( 'client' )) {
                   $resources_status = get_field('draftpublishresources', $thisID);
                   if( $resources_status ): 
                 ?>
@@ -167,7 +170,8 @@
                     </div>
                   </div>
                 </li>
-                <?php else: ?>
+                <?php endif; ?>
+                <?php }else{ ?>
                 <li>
                   <div class="content-item">
                     <a href="<?php echo esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit') );?>" class="overlay-link"></a>
@@ -179,12 +183,11 @@
                     </div>
                   </div>
                 </li>
+                <?php } ?>
+                <?php } ?>
                 <?php 
-                  endif;
-                  endif; 
-                ?>
-                <?php 
-                  if( !empty($thisID) ):
+                  if( !empty($thisID) ){
+                  if ( current_user_can( 'client' )) {
                   $files_status = get_field('draftpublishfiles', $thisID);
                   if( $files_status ): 
                 ?>
@@ -199,7 +202,8 @@
                     </div>
                   </div>
                 </li>
-                <?php else: ?>
+                <?php endif; ?>
+                <?php }else{  ?>
                 <li>
                   <div class="content-item">
                     <a href="<?php echo esc_url( home_url('wp-admin/post.php?post='.$clientpostID.'&action=edit') );?>" class="overlay-link"></a>
@@ -211,10 +215,8 @@
                     </div>
                   </div>
                 </li>
-                <?php 
-                  endif;
-                  endif; 
-                ?>
+                <?php } ?>
+                <?php } ?>
                 <li>
                   <div class="content-item">
                     <a href="<?php echo esc_url( home_url('account/edvantage-club/') );?>" class="overlay-link"></a>
