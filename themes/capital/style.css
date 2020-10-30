@@ -21,8 +21,7 @@ Text Domain: capital
 }
 
 .userChatBox{
-	max-width: 700px;
-	margin: 0 auto;
+
 }
 .userChatBox .wcUsersList,
 .wcWindowTitle{
@@ -76,6 +75,9 @@ Text Domain: capital
 }*/
 .wcContainer .wcMessages .wcMessage{
 	margin-bottom: 0;
+}
+.wcContainer .wcMessages .wcMessage:last-child{
+	margin-bottom: 15px;
 }
 .wcControls input.wcSubmitButton, .wcControls input.wcInput{
 	padding-left: 15px;
