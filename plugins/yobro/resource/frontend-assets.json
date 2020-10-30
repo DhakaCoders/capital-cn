@@ -1,0 +1,12 @@
+{
+  "draftjs": {
+    "js": "draftjs.01d46f.chunk.js"
+  },
+  "yobro_frontend": {
+    "js": "yobro_frontend_eb3532.js",
+    "css": "../css/yobro-bundle-front-two.css"
+  },
+  "vendor": {
+    "js": "yobro_forntend_vendor.519dd2.js"
+  }
+}

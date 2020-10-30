@@ -1,0 +1,295 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: YoBro Pro\n"
+"POT-Creation-Date: 2018-04-30 14:17+0600\n"
+"PO-Revision-Date: 2018-04-30 14:29+0600\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: yobro.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class-yobro-admin-menu.php:12 admin/class-yobro-admin-menu.php:13
+msgid "Yo Bro"
+msgstr "Yo Bro"
+
+#: admin/class-yobro-admin-menu.php:23
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Non hai permessi sufficienti per accedere a questa pagina."
+
+#: admin/templates/yobro-settings.php:15
+msgid "Yo Bro Settings"
+msgstr "Yo Bro Settings"
+
+#: admin/templates/yobro-settings.php:17
+msgid "Enable Files in Chat"
+msgstr "Abilitare salvataggio automatico"
+
+#: admin/templates/yobro-settings.php:26
+msgid "AWS Access Key ID"
+msgstr "AWS chiava accesso ID"
+
+#: admin/templates/yobro-settings.php:32
+msgid "AWS Secret Access Key"
+msgstr "AWS chiave di accesso segreta"
+
+#: admin/templates/yobro-settings.php:38
+msgid "AWS Bucket Name"
+msgstr "Bucket Name"
+
+#: admin/templates/yobro-settings.php:44
+msgid "AWS Bucket Region"
+msgstr "Bucket Region"
+
+#: admin/templates/yobro-settings.php:50
+msgid "Maximum File Size in MB"
+msgstr "Dimensioni massime del file (MB)"
+
+#: admin/templates/yobro-settings.php:56
+msgid "Maximum Number of Files in Single Upload"
+msgstr "Numero massimo di file in Upload singolo"
+
+#: admin/templates/yobro-settings.php:62
+msgid "Enable Multiple Files"
+msgstr "File multipli"
+
+#: admin/templates/yobro-settings.php:71
+msgid "Enable Avatar"
+msgstr "Avatar Utente"
+
+#: admin/templates/yobro-settings.php:80
+msgid "Chat Page Url"
+msgstr "URL della pagina di chat"
+
+#: admin/templates/yobro-settings.php:86
+msgid "Number of Conversation in Notification"
+msgstr "Numero di conversazione nella notifica"
+
+#: admin/templates/yobro-settings.php:92
+msgid "Number of Message in MessageBox"
+msgstr "Numero di messaggi in MessageBox"
+
+#: admin/templates/yobro-settings.php:101
+msgid "Chat Button Name"
+msgstr "Pulsante Chat"
+
+#: admin/templates/yobro-settings.php:108
+msgid "Save Changes"
+msgstr "Salva Modifiche"
+
+#: app/class-yobro-install.php:32
+msgid "Welcome to YoBro – You‘re almost ready to start :)"
+msgstr "Benvenuto a glassy – sei quasi pronto per iniziare :)"
+
+#: app/class-yobro-localize-scripts.php:15
+msgid "Enter some text..."
+msgstr "Inserire qualche altro testo"
+
+#: app/class-yobro-localize-scripts.php:16
+msgid "New"
+msgstr "Nuovo"
+
+#: app/class-yobro-localize-scripts.php:17
+msgid "Block"
+msgstr "Blocco"
+
+#: app/class-yobro-localize-scripts.php:18
+msgid "Unblock"
+msgstr "Sblocca"
+
+#: app/class-yobro-localize-scripts.php:19
+msgid "Block User?"
+msgstr "Blocca Utente"
+
+#: app/class-yobro-localize-scripts.php:20
+msgid "Unblock User?"
+msgstr "Sblocca Utente"
+
+#: app/class-yobro-localize-scripts.php:21
+msgid "Search"
+msgstr "ricerca"
+
+#: app/class-yobro-localize-scripts.php:22
+msgid "Create New Message"
+msgstr "Crea un nuovo messaggio"
+
+#: app/class-yobro-localize-scripts.php:23
+msgid "Search an User..."
+msgstr "Gruppo di ricerca utenti"
+
+#: app/class-yobro-localize-scripts.php:24
+msgid "Message..."
+msgstr "Messaggio..."
+
+#: app/class-yobro-localize-scripts.php:25
+msgid "Send"
+msgstr "Invia"
+
+#: app/class-yobro-localize-scripts.php:26
+msgid "Sorry! No Conversation Found."
+msgstr "Mi dispiace! Nessuna conversazione trovata."
+
+#: app/class-yobro-localize-scripts.php:27
+msgid "A Few Seconds Ago"
+msgstr "alcuni secondi fa"
+
+#: app/class-yobro-localize-scripts.php:28
+msgid "Click Enter to Send"
+msgstr "Clicca su \"Invio\"."
+
+#: app/class-yobro-localize-scripts.php:29
+msgid "You have blocked this user"
+msgstr "Hai bloccato %@."
+
+#: app/class-yobro-localize-scripts.php:30
+msgid "unblock now"
+msgstr "Sblocca ora"
+
+#: app/class-yobro-localize-scripts.php:31
+msgid "Yes"
+msgstr "Si"
+
+#: app/class-yobro-localize-scripts.php:32
+msgid "No"
+msgstr "No"
+
+#: app/class-yobro-localize-scripts.php:33
+msgid "Delete"
+msgstr "Elimina"
+
+#: app/class-yobro-localize-scripts.php:34
+msgid "Deleted"
+msgstr "Eliminato"
+
+#: app/class-yobro-localize-scripts.php:35
+msgid "Cancel"
+msgstr "Annulla"
+
+#: app/class-yobro-localize-scripts.php:36
+msgid "Canceled"
+msgstr "Annullato"
+
+#: app/class-yobro-localize-scripts.php:37
+msgid "You can't send message to this user."
+msgstr "Invia un messaggio a questo utente"
+
+#: app/class-yobro-localize-scripts.php:38
+msgid "Delete Message"
+msgstr "Cancella messaggio"
+
+#: app/class-yobro-localize-scripts.php:39
+msgid "Are you sure you want to delete this message"
+msgstr "Sei sicuro di voler cancellare questo messaggio?"
+
+#: app/class-yobro-localize-scripts.php:40
+msgid "Send Message"
+msgstr "Invia messaggio"
+
+#: app/class-yobro-localize-scripts.php:41
+msgid "Message Sent Successfully"
+msgstr "Messaggio inviato con successo"
+
+#: app/class-yobro-localize-scripts.php:42
+msgid "!Opps Something went wrong"
+msgstr "Qualcosa è andato storto!"
+
+#: app/class-yobro-localize-scripts.php:43
+msgid "Select All"
+msgstr "Seleziona Tutto"
+
+#: app/class-yobro-localize-scripts.php:44
+msgid "Select None"
+msgstr "Annulla seleziona"
+
+#: app/class-yobro-localize-scripts.php:45
+msgid "Are you sure?"
+msgstr "Sei sicuro/a?"
+
+#: app/class-yobro-localize-scripts.php:46
+msgid "You will not be able to recover this imaginary file!"
+msgstr "Non sarà possibile annullare l'azione."
+
+#: app/class-yobro-localize-scripts.php:47
+msgid "Your imaginary file has been deleted."
+msgstr "Il file è stato eliminato."
+
+#: app/class-yobro-localize-scripts.php:48
+msgid "Message can not be deleted"
+msgstr "Impossibile eliminare il messaggio."
+
+#: app/class-yobro-localize-scripts.php:49
+msgid "Sorry! No Message to Read"
+msgstr "No, spiacenti!"
+
+#: app/class-yobro-localize-scripts.php:50
+msgid "See All"
+msgstr "Vedi tutti"
+
+#: app/class-yobro-localize-scripts.php:51
+msgid "Ok"
+msgstr "Ok"
+
+#: app/class-yobro-localize-scripts.php:52
+msgid "Go to conversation"
+msgstr "Siete tutti pronti per partire!"
+
+#: app/class-yobro-localize-scripts.php:53
+msgid "Send to All"
+msgstr "Invia a tutti"
+
+#: app/class-yobro-localize-scripts.php:54
+msgid "Unseen Messages"
+msgstr "Messaggi di invisibili"
+
+#: app/yobro-visual-composer.php:6
+msgid "Yo Bro Chat Box"
+msgstr "Yo Bro Chat Box"
+
+#: app/yobro-visual-composer.php:9 app/yobro-visual-composer.php:19
+msgid "Pages"
+msgstr "Pagine"
+
+#: app/yobro-visual-composer.php:16
+msgid "Yo Bro Chat Notification"
+msgstr "Yo Bro Chat Notification"
+
+#: yobro.php:25
+msgid ""
+"Sorry this plugin use some <b>PHP VERSION 5.4</b> functionality. If you want "
+"to use this plugin please update your server <b>PHP VERSION 5.4</b> or "
+"higher."
+msgstr ""
+"Mi dispiace questo plugin utilizzare alcune funzionalità di <b>PHP versione "
+"5.4</b> . Se si desidera utilizzare questo plugin si prega di aggiornare il "
+"server <b>PHP versione 5.4</b> o superiore."
+
+#. Plugin Name of the plugin/theme
+msgid "YoBro Pro"
+msgstr "YoBro Pro"
+
+#. Plugin URI of the plugin/theme
+msgid "https://goo.gl/GTcEQD"
+msgstr "https://goo.gl/GTcEQD"
+
+#. Description of the plugin/theme
+msgid "A simple WordPress messaging / chat solution"
+msgstr "Un semplice scenario di messaggistica"
+
+#. Author of the plugin/theme
+msgid "redqteam"
+msgstr "redqteam"
+
+#. Author URI of the plugin/theme
+msgid "https://redq.io"
+msgstr "https://redq.io/"

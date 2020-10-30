@@ -26,5 +26,15 @@
     </section>
   </div>
 </div>
+<?php 
+if (function_exists('wise_chat')) { wise_chat(); }
+?>
+<div id="others-clients" data-more-ti="<?php echo $clientImpIDs; ?>"></div>
+<div id="has-chat" data-ti="<?php echo $clientCurrentID; ?>"></div>
+<style type="text/css">
+  .wcContainer .wcMessagesContainerTab.wcMessagesContainerTabActive:after{
+    background: url(<?php echo $climg; ?>);
+  }
+</style>
 <?php endwhile; ?>
 <?php get_footer(); ?>
