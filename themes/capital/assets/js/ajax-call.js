@@ -85,7 +85,6 @@ function getConversationData(){
     }
 
 }*/
-
 // Usage
 setInterval(function() {
     getConversationData();          // => hit...hit...etc (every second, stops after 10)

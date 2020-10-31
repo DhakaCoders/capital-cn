@@ -80,14 +80,6 @@ function get_conversation_date(){
 		if($results){
 			$output = '';
 			foreach ($results as $key => $value) {
-				/*$return_arr[] = array(
-					"id" => $value->id,
-                    "sender" => $value->sender_id,
-                    "message" => $value->message,
-                    "receiver" => $value->receiver_id,
-                    "created" => $value->created_at
-                );*/
-
 	            if($receiverid == $value->sender_id ){
 	                $output .= "<div class='message-receiver'><span class='chatavatar'></span><span class='receiver'>$value->message</span></div>";
 	            }else{
@@ -100,7 +92,6 @@ function get_conversation_date(){
 			$data['error'] = 'error';
 			echo json_encode($data);
 		}
-
 		wp_die();
 	}
 }
