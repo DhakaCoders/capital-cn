@@ -33,28 +33,11 @@ if ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
             <div class="col-md-12">
 
             <div class="requests-sec-inr clearfix">
-              <div class="userChatBox">
-                <div class="get_messages">
-                  <span><?php //echo $receiver_data->display_name; ?></span>
-                  <hr/>
-                  <div id="get_messages">
-                    
-                  </div>
-                </div>
-                <form class="form" id="user_conversation" onsubmit="userConversationFormData(); return false">
-                  <input type="hidden" name="action" value="user_conversation_data">
-                  <input type="hidden" name="receiver_id" id="receiverid" value="<?php echo $receiver_id; ?>">
-                  <div class="cnt-btn">
-                    <input type="hidden" name="user_conversation_nonce" value="<?php echo wp_create_nonce('user-conversation-nonce'); ?>"/>
-                    <div class="inputFields-row">
-                      <div class="inputField">
-                        <input type="text" name="message" id="message" placeholder="Write a message...">
-                      </div>
-                    </div>
-                    <input type="submit" value="SEND">
-                  </div>
-                </form>
-              </div>
+<div class="userChatBox">
+<?php 
+if (function_exists('wise_chat')) { wise_chat(); }
+?>
+</div>
             </div>
             </div>
           </div>
