@@ -21,8 +21,6 @@ Text Domain: capital
 }
 
 .userChatBox{
-	max-width: 700px;
-	margin: 0 auto;
 }
 .userChatBox .wcUsersList,
 .wcWindowTitle{

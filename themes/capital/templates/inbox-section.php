@@ -35,7 +35,7 @@ if ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
             <div class="requests-sec-inr clearfix">
               <div class="userChatBox">
                 <div class="get_messages">
-                  <span><?php //echo $receiver_data->display_name; ?></span>
+                  <span><?php echo $receiver_data->display_name; ?></span>
                   <hr/>
                   <div id="get_messages">
                     
