@@ -30,7 +30,14 @@
   <![endif]-->	
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<?php 
+$var1 = $wp_query->get( 'var1' );
+$onload = '';
+if( !empty($var1) && $var1 == 'inbox' ){
+  $onload = 'onload="getConversationData(); return false;"';
+}
+?>
+<body <?php body_class(); ?> <?php echo $onload; ?>>
 <?php 
 $user = wp_get_current_user();
 ?>

@@ -54,6 +54,99 @@
 	font-size: 18px;
 }
 
+.userChatBox {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.get_messages{
+    width: 100%;
+    min-height: 150px;
+    padding-left: 0px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    color: #545454;
+    font-weight: 600;
+    background: #FFFFFF;
+    border: 0px solid transparent;
+    border-radius: 0;
+    position: relative;
+}
+#get_messages{
+	height: 400px;
+	overflow-y:scroll;
+}
+.message-top {
+    background: #2B6F6E;
+    color: #fff;
+    padding-bottom: 10px;
+}
+.recever-img {
+    height: 50px;
+    width: 50px;
+    display: inline-flex;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border-radius: 50px;
+    vertical-align: middle;
+}
+span.chatavatar {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background: #E1E1E1;
+    vertical-align: sub;
+    border-radius: 50px;
+    margin-right: 10px;
+    border: 1px solid #369694;
+}
+.message-sender {
+    width: 100%;
+    text-align: right;
+    padding: 5px 0;
+}
+
+.message-sender span.sender {
+    background: #F7F7F7;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    color: #858585;
+}
+.message-receiver {
+    width: 100%;
+    text-align: left;
+    padding: 3px 0;
+}
+.message-receiver span.receiver {
+    background: #369694;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    vertical-align: super;
+}
+.inputField.message-box{
+	position: relative;
+}
+.inputField.message-box input[type=text] {
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 23%;
+    color: #545454;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: capitalize;
+    background: #F2F2F2;
+    border: 1px solid #F2F2F2;
+    border-radius: 0;
+}
+.inputField.message-box input.send-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 22% !important;
+    border-radius: 0;
+}
 
 @media(max-width: 991px){
 	.msg-avater-info-inr{

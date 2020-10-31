@@ -1,11 +1,11 @@
 <?php 
   global $wp_query, $wpdb;
   $user_data = current_user_data();
-  $clientCurrentID = $wp_query->get( 'var2' );
-  if( empty($clientCurrentID) ) { echo '<script> location.replace("'.home_url().'"); </script>'; exit(); }
+  $receiverID = $wp_query->get( 'var2' );
+  if( empty($receiverID) ) { echo '<script> location.replace("'.home_url().'"); </script>'; exit(); }
 
 $clientImpIDs = '';
-if ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
+if ( current_user_can( 'rsmanager' )){
   $cients = get_users(
     array(
       'meta_key' => 'accesspermission',
@@ -15,13 +15,15 @@ if ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
   $clientIDs = array();
   if( $cients ){
     foreach( $cients as $cient ): 
-      if( $clientCurrentID != $cient->ID ){
+      if( $receiverID != $cient->ID ){
         $clientIDs[] = $cient->ID;
       }
     endforeach;
     $clientImpIDs = implode(',', $clientIDs);
   }
 }
+  $receiver_data = get_user_by('id', $receiverID);
+  $receiver_img = get_user_image_url($receiverID);
 ?>
 <div class="sections-cntlr">
   <span class="sections-rgt-icon"><img src="<?php echo THEME_URI; ?>/assets/images/sections-rgt-icon.png"></span>
@@ -35,23 +37,25 @@ if ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
             <div class="requests-sec-inr clearfix">
               <div class="userChatBox">
                 <div class="get_messages">
-                  <span><?php echo $receiver_data->display_name; ?></span>
-                  <hr/>
+                  <div class="message-top">
+                    <div class="recever-img" style="background: url(<?php echo $receiver_img; ?>);"></div>
+                    <span><?php echo $receiver_data->display_name; ?></span>
+                  </div>
                   <div id="get_messages">
                     
                   </div>
                 </div>
                 <form class="form" id="user_conversation" onsubmit="userConversationFormData(); return false">
                   <input type="hidden" name="action" value="user_conversation_data">
-                  <input type="hidden" name="receiver_id" id="receiverid" value="<?php echo $receiver_id; ?>">
+                  <input type="hidden" name="receiver_id" id="receiverid" value="<?php echo $receiverID; ?>">
                   <div class="cnt-btn">
                     <input type="hidden" name="user_conversation_nonce" value="<?php echo wp_create_nonce('user-conversation-nonce'); ?>"/>
                     <div class="inputFields-row">
-                      <div class="inputField">
+                      <div class="inputField message-box">
                         <input type="text" name="message" id="message" placeholder="Write a message...">
+                        <input type="submit" class="send-btn" value="SEND">
                       </div>
                     </div>
-                    <input type="submit" value="SEND">
                   </div>
                 </form>
               </div>
@@ -62,13 +66,3 @@ if ( current_user_can( 'rsmanager' ) && is_user_logged_in() ){
       </section>
   </div>
 </div>
-<div id="others-clients" data-more-ti="<?php echo $clientImpIDs; ?>"></div>
-<div id="has-chat" data-ti="<?php echo $clientCurrentID; ?>"></div>
-<?php 
-$climg = get_user_image_url($clientCurrentID);
-?>
-<style type="text/css">
-  .wcContainer .wcMessagesContainerTab.wcMessagesContainerTabActive:after{
-    background: url(<?php echo $climg; ?>);
-  }
-</style>

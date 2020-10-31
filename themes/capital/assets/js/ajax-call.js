@@ -28,6 +28,7 @@ function userRequestFormData(){
 function userConversationFormData(){
     var error = false;
     var serialized = jQuery( '#user_conversation' ).serialize();
+    console.log(serialized);
     jQuery.ajax({
         type: 'POST',
         dataType: 'JSON',
@@ -35,7 +36,7 @@ function userConversationFormData(){
         data: serialized,
         success: function(data){
             console.log(data);
-            if(typeof(data['success']) != "undefined" &&  data['success'].length != 0){
+            if(typeof(data['success']) != "undefined" &&  data['success'].length != 0 &&  data['success'] == 'success'){
                 jQuery("#get_messages").append(data['message']);
                 jQuery("#message").val('');
             }else{
@@ -50,7 +51,7 @@ function userConversationFormData(){
 function getConversationData(){
     var error = false;
     var receiverid = jQuery("#receiverid").val();
-    console.log(receiverid);
+    //console.log(receiverid);
     jQuery.ajax({
         type: 'POST',
         dataType: 'JSON',
@@ -67,20 +68,25 @@ function getConversationData(){
                 
                 
             }else{ 
-                var len = data.length;
-                for(var i=0; i<len; i++){
-                    
-                    if(receiverid == data[i].sender ){
-                        var tr_str = "<div class='message-receiver'><span class='chatavatar'></span><span class='receiver'>" +data[i].message+"</span></div>";
-                    }else{
-                       var tr_str = "<div class='message-sender'><span class='sender'>" +data[i].message+"</div>"; 
-                    }
-                    jQuery("#get_messages").append(tr_str);
-                }
-                
+                jQuery("#get_messages").html(data['success']); 
             }
         }
     });
 
     return false
 }
+
+
+// Definition
+/*function setIntervalLimited(callback, interval, x) {
+
+    for (var i = 0; i < x; i++) {
+        setTimeout(callback, i * interval);
+    }
+
+}*/
+
+// Usage
+setInterval(function() {
+    getConversationData();          // => hit...hit...etc (every second, stops after 10)
+}, 5000);

@@ -38,9 +38,9 @@ function user_conversation_data(){
 		if($status){
 			// mail script
 			$data['message'] = '<div class="message-sender"><span class="sender">'.$message.'</span></div>';
-			$data['success'] = 'The Request has been sent successfully!';
+			$data['success'] = 'success';
 		}else{
-			$data['error'] = 'The Request has not been sent!';
+			$data['error'] = 'error';
 		}
 		echo json_encode($data);
 		wp_die();
@@ -78,16 +78,24 @@ function get_conversation_date(){
 
 
 		if($results){
+			$output = '';
 			foreach ($results as $key => $value) {
-				$return_arr[] = array(
+				/*$return_arr[] = array(
 					"id" => $value->id,
                     "sender" => $value->sender_id,
                     "message" => $value->message,
                     "receiver" => $value->receiver_id,
                     "created" => $value->created_at
-                );
+                );*/
+
+	            if($receiverid == $value->sender_id ){
+	                $output .= "<div class='message-receiver'><span class='chatavatar'></span><span class='receiver'>$value->message</span></div>";
+	            }else{
+	               $output .= "<div class='message-sender'><span class='sender'>$value->message</div>"; 
+	            }
 			}
-			echo json_encode($return_arr);
+			$data['success'] = $output;
+			echo json_encode($data);
 		}else{
 			$data['error'] = 'error';
 			echo json_encode($data);
