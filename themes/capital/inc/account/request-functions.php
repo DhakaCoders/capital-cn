@@ -4,6 +4,7 @@ function user_request_action_hooks(){
 		ajax_user_request_init();
 		ajax_user_conversation_init();
 		ajax_get_conversation_init();
+		ajax_get_conversation_count_init();
 }
 
 function ajax_user_conversation_init(){
@@ -26,11 +27,12 @@ function user_conversation_data(){
 		$message = sanitize_text_field($_POST['message']);
 		$table = $wpdb->prefix . 'conversation'; 
 		$status = false;
-		$unser = array();
+		$status_key = $user_id.'_status';
 		if( !empty($receiver_id) && !empty($message) ){
 			$status = Cbv_Db_Query::create($table, array(
 				'sender_id' => $user_id,
 				'message' => $message,
+				'status_key' => $status_key,
 				'receiver_id' => $receiver_id,
 				'created_at' => date('Y-m-d H:i:s'),
 			));
@@ -65,8 +67,34 @@ function get_conversation_date(){
 	if (isset( $_POST["none"] ) && $_POST["none"] == 'none') {
 		global $wpdb;
 		$receiverid = $_POST["receiverid"];
+		$status_check = $_POST["status_check"];
 	    $senderid = get_current_user_id();
 		$table = $wpdb->prefix . 'conversation';
+
+		if( !empty($status_check) && !empty($status_check) ){
+			$status_key = $receiverid.'_status';
+			if( current_user_can( 'rsmanager' ) ){
+				Cbv_Db_Query::update($table, 
+					array(
+						'status' => $status_check
+					),
+					array(
+						'status_key' => $status_key,
+						'receiver_id' => $senderid,
+					)
+				);
+			}else{
+				Cbv_Db_Query::update($table, 
+					array(
+						'status' => $status_check,
+					),
+					array(
+						'receiver_id' => $senderid,
+					)
+				);
+			}
+			
+		}
 
 		$totalcount = $wpdb->get_var ("
         SELECT COUNT(*)
@@ -106,6 +134,50 @@ function get_conversation_date(){
 		wp_die();
 	}
 }
+
+function ajax_get_conversation_count_init(){
+    wp_register_script('ajax-get-conversation-count-script', get_stylesheet_directory_uri(). '/assets/js/ajax-call.js', array('jquery') );
+    wp_enqueue_script('ajax-get-conversation-count-script');
+
+    wp_localize_script( 'ajax-get-conversation-count-script', 'ajax_get_conversation_count_object', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ));
+    // Enable the user with no privileges to run ajax_login() in AJAX
+}
+//add_action('wp_ajax_nopriv_user_request_data', 'user_request_data');
+add_action('wp_ajax_get_conversation_data_count', 'get_conversation_data_count');
+function get_conversation_data_count(){
+	$data = array();
+	if (isset( $_POST["none"] ) && $_POST["none"] == 'none') {
+		global $wpdb;
+	    $senderid = get_current_user_id();
+	    $receiverid = $_POST['receiver_id'];
+		$table = $wpdb->prefix . 'conversation';
+		if( $receiverid > 0 ){
+			$totalcount = $wpdb->get_var ("
+	        SELECT COUNT(*)
+	        FROM  $table 
+	        WHERE (receiver_id =  $senderid AND sender_id =  $receiverid AND status = 'unread')
+	        ");
+		}else{
+			$totalcount = $wpdb->get_var ("
+	        SELECT COUNT(*)
+	        FROM  $table 
+	        WHERE (receiver_id =  $senderid AND status = 'unread')
+	        ");
+		}
+
+        if($totalcount){
+        	$data['unreadcount'] = $totalcount;
+        }else{
+        	$data['unreadcount'] = 0;
+        }
+
+		echo json_encode($data);
+		wp_die();
+	}
+}
+
 
 function ajax_user_request_init(){
     wp_register_script('ajax-user-request-script', get_stylesheet_directory_uri(). '/assets/js/ajax-call.js', array('jquery') );

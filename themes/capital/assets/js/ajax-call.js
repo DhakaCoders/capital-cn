@@ -50,6 +50,7 @@ function userConversationFormData(){
 function getConversationData(){
     var error = false;
     var receiverid = jQuery("#receiverid").val();
+    var status_check = jQuery("#status_check").val();
     jQuery.ajax({
         type: 'POST',
         dataType: 'JSON',
@@ -57,11 +58,11 @@ function getConversationData(){
         url: ajax_get_conversation_date_object.ajaxurl,
         data:{
            action : 'get_conversation_date',
+           status_check: status_check,
            receiverid: receiverid,
            none: 'none'
          },
         success: function(data){
-            console.log(data);
             if(typeof(data['error']) != "undefined" &&  data['error'].length != 0){  
                 
             }else{ 
@@ -74,21 +75,20 @@ function getConversationData(){
     return false
 }
 
-function getConversationCount(){
+function getConversationCount(id){
     var error = false;
-    var receiverid = jQuery("#receiverid").val();
     jQuery.ajax({
         type: 'POST',
         dataType: 'JSON',
         async: true,
-        url: ajax_get_conversation_date_object.ajaxurl,
+        url: ajax_get_conversation_count_object.ajaxurl,
         data:{
            action : 'get_conversation_data_count',
-           receiverid: receiverid,
+           receiver_id: id,
            none: 'none'
          },
         success: function(data){
-            console.log(data);
+            //console.log(data);
             if(typeof(data['error']) != "undefined" &&  data['error'].length != 0){  
                 
             }else{ 
@@ -100,7 +100,6 @@ function getConversationCount(){
     return false
 }
 
-
 // Definition
 /*function setIntervalLimited(callback, interval, x) {
 
@@ -110,6 +109,17 @@ function getConversationCount(){
 
 }*/
 // Usage
-setInterval(function() {
-    getConversationData();          // => hit...hit...etc (every second, stops after 10)
-}, 5000);
+if( jQuery( "#check_chat" ).length ){
+    setInterval(function() {
+        getConversationData();          // => hit...hit...etc (every second, stops after 10)
+    }, 5000);
+}else{
+    if( jQuery( "#user_unread_data" ).length ){
+        var receiverID = jQuery( "#user_unread_data" ).data('receiver');
+        setInterval(function() {
+            getConversationCount(receiverID);          // => hit...hit...etc (every second, stops after 10)
+        }, 5000);
+    }  
+}
+
+

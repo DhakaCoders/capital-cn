@@ -45,11 +45,8 @@ $user_data = current_user_data();
                           <div class="cl-profile-in">
                             <div class="cl-profile-img">
                             <?php 
-                              $imageID = get_user_meta($cient->ID, 'profileimage', true);
-                              if( isset($imageID) && !empty($imageID)){
-                                echo cbv_get_image_tag( $imageID);
-                              }else{
-                                echo '';
+                              if( isset($cient->ID) && !empty($cient->ID)){
+                                echo get_user_image_tag($cient->ID);
                               }
                             ?>
                             </div>

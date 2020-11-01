@@ -25,7 +25,7 @@ if ( current_user_can( 'rsmanager' )){
   $receiver_data = get_user_by('id', $receiverID);
   $receiver_img = get_user_image_url($receiverID);
 ?>
-<div class="sections-cntlr">
+<div class="sections-cntlr" id="check_chat">
   <span class="sections-rgt-icon"><img src="<?php echo THEME_URI; ?>/assets/images/sections-rgt-icon.png"></span>
   <div class="requests-page-cntlr">
 
@@ -47,6 +47,7 @@ if ( current_user_can( 'rsmanager' )){
                 </div>
                 <form class="form" id="user_conversation" onsubmit="userConversationFormData(); return false">
                   <input type="hidden" name="action" value="user_conversation_data">
+                  <input type="hidden" name="status_check" id="status_check" value="read">
                   <input type="hidden" name="receiver_id" id="receiverid" value="<?php echo $receiverID; ?>">
                   <div class="cnt-btn">
                     <input type="hidden" name="user_conversation_nonce" value="<?php echo wp_create_nonce('user-conversation-nonce'); ?>"/>
