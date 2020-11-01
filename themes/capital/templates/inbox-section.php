@@ -67,3 +67,8 @@ if ( current_user_can( 'rsmanager' )){
       </section>
   </div>
 </div>
+<style type="text/css">
+  .message-receiver span.chatavatar{
+    background: url(<?php echo $receiver_img; ?>);
+  }
+</style>

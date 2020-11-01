@@ -94,11 +94,13 @@ span.chatavatar {
     height: 40px;
     width: 40px;
     display: inline-block;
-    background: #E1E1E1;
     vertical-align: sub;
     border-radius: 50px;
     margin-right: 10px;
     border: 1px solid #369694;
+    background-size: cover!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
 }
 .message-sender {
     width: 100%;
