@@ -32,6 +32,7 @@
 </head>
 <?php 
 $var1 = $wp_query->get( 'var1' );
+$authorid = $wp_query->get( 'var2' );
 $onload = '';
 if( !empty($var1) && $var1 == 'inbox' ){
   $onload = 'onload="getConversationData(); return false;"';
@@ -65,9 +66,9 @@ if( is_array($logoObj) ){
             <div class="login-hdr-rgt">
               <div class="hdr-grd-item hdr-grd-item-01">
                 <div>
-                  <a href="#">
+                  <a href="<?php echo esc_url( home_url('account/inbox/'.$authorid) );?>">
                     <img src="<?php echo THEME_URI; ?>/assets/images/message-icon.svg">
-                    <span>6</span>
+                    <span id="unreadcount">0</span>
                   </a>
                 </div>
               </div>

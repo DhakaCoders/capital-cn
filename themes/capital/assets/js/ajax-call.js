@@ -28,7 +28,6 @@ function userRequestFormData(){
 function userConversationFormData(){
     var error = false;
     var serialized = jQuery( '#user_conversation' ).serialize();
-    console.log(serialized);
     jQuery.ajax({
         type: 'POST',
         dataType: 'JSON',
@@ -51,7 +50,6 @@ function userConversationFormData(){
 function getConversationData(){
     var error = false;
     var receiverid = jQuery("#receiverid").val();
-    //console.log(receiverid);
     jQuery.ajax({
         type: 'POST',
         dataType: 'JSON',
@@ -64,11 +62,37 @@ function getConversationData(){
          },
         success: function(data){
             console.log(data);
-            if(typeof(data['error']) != "undefined" &&  data['error'].length != 0){
-                
+            if(typeof(data['error']) != "undefined" &&  data['error'].length != 0){  
                 
             }else{ 
-                jQuery("#get_messages").html(data['success']); 
+                jQuery("#get_messages").html(data['success']);  
+                jQuery("#unreadcount").html(data['unreadcount']);
+            }
+        }
+    });
+
+    return false
+}
+
+function getConversationCount(){
+    var error = false;
+    var receiverid = jQuery("#receiverid").val();
+    jQuery.ajax({
+        type: 'POST',
+        dataType: 'JSON',
+        async: true,
+        url: ajax_get_conversation_date_object.ajaxurl,
+        data:{
+           action : 'get_conversation_data_count',
+           receiverid: receiverid,
+           none: 'none'
+         },
+        success: function(data){
+            console.log(data);
+            if(typeof(data['error']) != "undefined" &&  data['error'].length != 0){  
+                
+            }else{ 
+                jQuery("#unreadcount").html(data['unreadcount']); 
             }
         }
     });

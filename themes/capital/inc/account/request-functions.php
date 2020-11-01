@@ -26,6 +26,7 @@ function user_conversation_data(){
 		$message = sanitize_text_field($_POST['message']);
 		$table = $wpdb->prefix . 'conversation'; 
 		$status = false;
+		$unser = array();
 		if( !empty($receiver_id) && !empty($message) ){
 			$status = Cbv_Db_Query::create($table, array(
 				'sender_id' => $user_id,
@@ -33,6 +34,7 @@ function user_conversation_data(){
 				'receiver_id' => $receiver_id,
 				'created_at' => date('Y-m-d H:i:s'),
 			));
+			
 		}
 
 		if($status){
@@ -64,17 +66,26 @@ function get_conversation_date(){
 		global $wpdb;
 		$receiverid = $_POST["receiverid"];
 	    $senderid = get_current_user_id();
-		$table = $wpdb->prefix . 'conversation'; 
-		$results = false;
-		$results = false;
-		$results = $wpdb->get_results (
-        "
+		$table = $wpdb->prefix . 'conversation';
+
+		$totalcount = $wpdb->get_var ("
+        SELECT COUNT(*)
+        FROM  $table 
+        WHERE (receiver_id =  $senderid AND sender_id =  $receiverid AND status = 'unread')
+        ");
+        if($totalcount){
+        	$data['unreadcount'] = $totalcount;
+        }else{
+        	$data['unreadcount'] = 0;
+        }
+
+
+		$results = $wpdb->get_results ("
         SELECT * 
         FROM  $table 
         WHERE (sender_id =  $senderid AND receiver_id = $receiverid)
         OR (sender_id =  $receiverid AND receiver_id = $senderid)
-        "
-        );
+        ");
 
 
 		if($results){
@@ -87,11 +98,11 @@ function get_conversation_date(){
 	            }
 			}
 			$data['success'] = $output;
-			echo json_encode($data);
 		}else{
 			$data['error'] = 'error';
-			echo json_encode($data);
+			
 		}
+		echo json_encode($data);
 		wp_die();
 	}
 }

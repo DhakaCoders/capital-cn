@@ -73,12 +73,13 @@
 }
 #get_messages{
 	height: 400px;
+	padding: 10px 20px;
 	overflow-y:scroll;
 }
 .message-top {
     background: #2B6F6E;
     color: #fff;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 .recever-img {
     height: 50px;
