@@ -117,6 +117,7 @@ function get_conversation_date(){
 
 
 		if($results){
+			date_default_timezone_set("UTC");
 			$output = '';
 			foreach ($results as $key => $value) {
 	            if($receiverid == $value->sender_id ){
