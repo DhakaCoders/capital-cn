@@ -64,6 +64,7 @@ function getConversationData(){
             if(typeof(data['error']) != "undefined" &&  data['error'].length != 0){  
                 
             }else{ 
+                //console.log(data['success']);
                 jQuery("#get_messages").html(data['success']);  
                 jQuery("#unreadcount").html(data['unreadcount']);
             }
@@ -74,6 +75,7 @@ function getConversationData(){
 }
 
 function getConversationCount(id){
+
     var error = false;
     jQuery.ajax({
         type: 'POST',
