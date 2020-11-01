@@ -1,14 +1,12 @@
 function userRequestFormData(){
     var error = false;
     var serialized = jQuery( '#user_request' ).serialize();
-    //console.log(serialized);
     jQuery.ajax({
         type: 'POST',
         dataType: 'JSON',
         url: ajax_user_request_object.ajaxurl,
         data: serialized,
         success: function(data){
-            console.log(data);
             if(typeof(data['success']) != "undefined" &&  data['success'].length != 0){
                 jQuery('.selectpicker').selectpicker('refresh');
                 jQuery("#request_notes").val('');
@@ -88,7 +86,6 @@ function getConversationCount(id){
            none: 'none'
          },
         success: function(data){
-            //console.log(data);
             if(typeof(data['error']) != "undefined" &&  data['error'].length != 0){  
                 
             }else{ 
@@ -111,13 +108,13 @@ function getConversationCount(id){
 // Usage
 if( jQuery( "#check_chat" ).length ){
     setInterval(function() {
-        getConversationData();          // => hit...hit...etc (every second, stops after 10)
+        getConversationData();
     }, 5000);
 }else{
     if( jQuery( "#user_unread_data" ).length ){
         var receiverID = jQuery( "#user_unread_data" ).data('receiver');
         setInterval(function() {
-            getConversationCount(receiverID);          // => hit...hit...etc (every second, stops after 10)
+            getConversationCount(receiverID);
         }, 5000);
     }  
 }
