@@ -32,7 +32,7 @@
 </head>
 <?php 
 $var1 = $wp_query->get( 'var1' );
-$authorid = $wp_query->get( 'var2' );
+$receiverID = $wp_query->get( 'var2' );
 $onload = '';
 if( !empty($var1) && $var1 == 'inbox' ){
   $onload = 'onload="getConversationData(); return false;"';
@@ -48,6 +48,21 @@ if( is_array($logoObj) ){
   $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
 }else{
   $logo_tag = '';
+}
+
+
+if ( current_user_can( 'client' ) ) { 
+  $receiverID =  get_user_meta($user->ID, 'accesspermission', true);
+  echo '<span style="display:none;" id="user_unread_data" data-receiver="'.$receiverID.'"></span>';
+
+}elseif( current_user_can( 'rsmanager' ) ){
+  if( !empty($receiverID) ){
+    echo '<span style="display:none;" id="user_unread_data" data-receiver="'.$receiverID.'"></span>';
+  }else{
+    $receiverID = 0;
+    echo '<span style="display:none;" id="user_unread_data" data-receiver="'.$receiverID.'"></span>';
+  }
+ 
 }
 ?>
 <header class="login-heder">
@@ -66,7 +81,11 @@ if( is_array($logoObj) ){
             <div class="login-hdr-rgt">
               <div class="hdr-grd-item hdr-grd-item-01">
                 <div>
-                  <a href="<?php echo esc_url( home_url('account/inbox/'.$authorid) );?>">
+                  <?php if( !empty($receiverID) ){ ?>
+                  <a href="<?php echo esc_url( home_url('account/inbox/'.$receiverID) );?>">
+                  <?php }else{ ?>
+                    <a href="<?php echo esc_url( home_url('account') );?>">
+                  <?php } ?>
                     <img src="<?php echo THEME_URI; ?>/assets/images/message-icon.svg">
                     <span id="unreadcount">0</span>
                   </a>

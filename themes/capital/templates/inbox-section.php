@@ -35,39 +35,21 @@ if ( current_user_can( 'rsmanager' )){
             <div class="col-md-12">
 
             <div class="requests-sec-inr clearfix">
-<div class="userChatBox">
+              <div class="userChatBox">
                 <div class="get_messages">
                   <div class="message-top">
-                    <div class="recever-img" style="background: url(http://localhost/2020/10/capital/capital-cn/uploads/2020/10/big.jpg);"></div>
-                    <span>Nmanager 1</span>
+                    <div class="recever-img" style="background: url(<?php echo $receiver_img; ?>);"></div>
+                    <span><?php echo $receiver_data->display_name; ?></span>
                   </div>
                   <div id="get_messages">
-                    <div class="message-receiver">
-                      <span class="chatavatar"></span>
-                      <span class="mgs-time">5.30</span>
-                      <span class="receiver">Hello</span>
-                    </div>
-                    <div class="message-receiver">
-                      <span class="chatavatar"></span>
-                      <span class="mgs-time">5.30</span>
-                      <span class="receiver">how are you doing today?</span>
-                    </div>
-                    <div class="message-receiver">
-                      <span class="chatavatar"></span>
-                      <span class="mgs-time">5.30</span>
-                      <span class="receiver">Is there everything ok?</span>
-                    </div>
-                    <div class="message-sender">
-                      <span class="mgs-time">5.30</span>
-                      <span class="sender">Hey, I am good thanks!</span>
-                    </div>
+                    
                   </div>
                 </div>
                 <form class="form" id="user_conversation" onsubmit="userConversationFormData(); return false">
                   <input type="hidden" name="action" value="user_conversation_data">
-                  <input type="hidden" name="receiver_id" id="receiverid" value="11">
+                  <input type="hidden" name="receiver_id" id="receiverid" value="<?php echo $receiverID; ?>">
                   <div class="cnt-btn">
-                    <input type="hidden" name="user_conversation_nonce" value="32f51dc3f3">
+                    <input type="hidden" name="user_conversation_nonce" value="<?php echo wp_create_nonce('user-conversation-nonce'); ?>"/>
                     <div class="inputFields-row">
                       <div class="inputField message-box">
                         <input type="text" name="message" id="message" placeholder="Write a message...">

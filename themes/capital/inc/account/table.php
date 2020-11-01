@@ -37,27 +37,13 @@ if (!class_exists('cbv_create_tables')) {
 					sender_id BIGINT(20) UNSIGNED NOT NULL,
 					message MEDIUMTEXT,
 					status VARCHAR(30) DEFAULT 'unread',
+					status_key VARCHAR(30),
 					receiver_id BIGINT(20) UNSIGNED NOT NULL,
 					created_at datetime
 					) $charset_collate; ";
 				require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 				dbDelta( $b_sql );
 			}
-
-			/*creating Order table*/
-			/*$conversation_tbl_name = $wpdb->prefix . 'conversation_flag'; 
-			if($wpdb->get_var("SHOW TABLES LIKE '$conversation_tbl_name'") != $conversation_tbl_name) {
-				$b_sql = "CREATE TABLE $conversation_tbl_name (
-					id BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-					sender_id BIGINT(20) UNSIGNED NOT NULL,
-					message MEDIUMTEXT,
-					status VARCHAR(30) DEFAULT 'unread',
-					receiver_id BIGINT(20) UNSIGNED NOT NULL,
-					created_at datetime
-					) $charset_collate; ";
-				require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-				dbDelta( $b_sql );
-			}*/
 		}
 	}
 }
