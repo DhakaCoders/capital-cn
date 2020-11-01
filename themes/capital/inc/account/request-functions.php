@@ -117,12 +117,18 @@ function get_conversation_date(){
 
 
 		if($results){
+			date_default_timezone_set("UTC");
 			$output = '';
 			foreach ($results as $key => $value) {
 	            if($receiverid == $value->sender_id ){
-	                $output .= "<div class='message-receiver'><span class='chatavatar'></span><span class='receiver'>$value->message</span></div>";
+	            	$time = date('h:i', strtotime($value->created_at));
+	                $output .= "<div class='message-receiver'><span class='chatavatar'></span>
+	                <span class='mgs-time'>$time</span>
+	                <span class='receiver'>$value->message</span></div>";
 	            }else{
-	               $output .= "<div class='message-sender'><span class='sender'>$value->message</div>"; 
+	               $output .= "<div class='message-sender'>
+	               <span class='mgs-time'>$time</span>
+	               <span class='sender'>$value->message</div>"; 
 	            }
 			}
 			$data['success'] = $output;
