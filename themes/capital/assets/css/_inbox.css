@@ -182,6 +182,10 @@ span.chatavatar{
 .message-receiver ~ .message-sender .mgs-time{
     display: none;
 }
+.message-sender + .message-receiver .chatavatar,
+.message-sender + .message-receiver .mgs-time{
+    display: block;
+}
 @media(max-width: 991px){
 	.msg-avater-info-inr{
 		padding-left: 80px;
