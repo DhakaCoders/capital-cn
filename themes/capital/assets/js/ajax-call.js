@@ -47,7 +47,7 @@ function userConversationFormData(){
     return false
 }
 
-function getConversationData(){
+function getConversationData1(){
     var error = false;
     var receiverid = jQuery("#receiverid").val();
     jQuery.ajax({
@@ -65,6 +65,7 @@ function getConversationData(){
             if(typeof(data['error']) != "undefined" &&  data['error'].length != 0){  
                 
             }else{ 
+                //console.log(data['success']);
                 jQuery("#get_messages").html(data['success']);  
                 jQuery("#unreadcount").html(data['unreadcount']);
             }
@@ -74,7 +75,7 @@ function getConversationData(){
     return false
 }
 
-function getConversationCount(){
+function getConversationCount1(){
     var error = false;
     var receiverid = jQuery("#receiverid").val();
     jQuery.ajax({

@@ -104,27 +104,40 @@ span.chatavatar {
     width: 100%;
     text-align: right;
     padding: 5px 0;
+    position: relative;
 }
 
 .message-sender span.sender {
     background: #F7F7F7;
     display: inline-block;
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 5px;
     color: #858585;
+    font-size: 14px;
+    line-height: 18px;
 }
 .message-receiver {
     width: 100%;
     text-align: left;
     padding: 3px 0;
+    padding-left: 50px;
+    min-height: 40px;
+    position: relative;
+}
+span.chatavatar{
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 .message-receiver span.receiver {
     background: #369694;
     display: inline-block;
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 5px;
     color: #fff;
     vertical-align: super;
+    font-size: 14px;
+    line-height: 18px;
 }
 .inputField.message-box{
 	position: relative;
@@ -148,7 +161,27 @@ span.chatavatar {
     width: 22% !important;
     border-radius: 0;
 }
-
+.mgs-time{
+    display: block;
+    clear: both;
+    vertical-align: top;
+    font-size: 10px;
+    line-height: 12px;
+    margin-top: -2px;
+    padding-bottom: 3px;    
+}
+.message-receiver ~ .message-receiver .chatavatar,
+.message-receiver ~ .message-receiver .mgs-time{
+    display: none;
+}
+.message-receiver ~ .message-receiver {
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.message-receiver ~ .message-sender .mgs-time{
+    display: none;
+}
 @media(max-width: 991px){
 	.msg-avater-info-inr{
 		padding-left: 80px;
