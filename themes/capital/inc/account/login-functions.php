@@ -75,7 +75,7 @@ function user_login_account(){
 
 	 		if(!$user || !wp_check_password($password, $user->user_pass, $user->ID)) {
 				// if the user name doesn't exist
-				$login_errors['loging_error'] = 'Unsuccessfully Your Login';
+				$login_errors['loging_error'] = 'Unsuccessful Login';
 				$success = false;
 			}
 
@@ -93,7 +93,7 @@ function user_login_account(){
 	            }
 	        }
 		}else{
-			$login_errors['loging_error'] = 'Unsuccessfully Your Login';
+			$login_errors['loging_error'] = 'Unsuccessful Login';
 		}
 
 	}
@@ -119,7 +119,7 @@ function user_forget_password(){
 		    if($body){
 				$email_errors['email_success'] = 'Please check your email and click on the link to set a new password';
 			}else{
-				$email_errors['email_error'] = 'Something went wrong! Please try again.';
+				$email_errors['email_error'] = 'Something went wrong! Please try again later.';
 			}
 		}else{
 			$email_errors['email_error'] = 'Email address does not found';
